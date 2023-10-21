@@ -12,7 +12,6 @@ library/
 
 #img
 *.img
-*.png
 *.jpg
 *.webp
 *.svg
