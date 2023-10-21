@@ -1,0 +1,251 @@
+/* header override due to conflict between .content's border radius */
+
+header a.active {
+    border-radius: 44px;
+}
+
+/* main */
+
+main {
+    width: 75vw;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    margin-top: 3.2rem;
+    gap: 5%;
+}
+
+main img {
+    width: 200px;
+    height: 200px;
+    clip-path: circle(50%);
+    object-fit: cover;
+}
+
+/* aside */
+
+aside {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* aside description */
+
+.aside-description {
+    margin-top: 5%;
+}
+
+.aside-description h1 {
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+/* aside links */
+
+.aside-links {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 5%;
+}
+
+.aside-links a {
+    margin: 5%;
+    text-decoration: none;
+    font-size: 32px;
+    color: #363945;
+    transition: all 0.25s ease-in-out;
+}
+
+.aside-links a:hover {
+    transform: scale(1.1);
+    color: #ff7355;
+}
+
+/* aside e-mail */
+
+.aside-links-email {
+    color: #ece5e0;
+    background-color: #363945;
+    border-radius: 18px;
+    font-size: 1.2rem;
+    padding: .50rem;
+    text-decoration: none;
+    transition: all .25s ease-in-out;
+}
+
+.aside-links-email i {
+    margin-right: .50rem;
+}
+
+.aside-links-email:hover {
+    color: #282828;
+    background-color: #ff7355;
+}
+
+/* cv */
+
+.cv {
+    font-size: 22px;
+}
+
+.cv h2 {
+    font-size: 1.5rem;
+}
+
+/* cv-headings */
+
+.cv-headings {
+    margin-bottom: 1%;
+}
+
+.cv-headings hr {
+    margin-top: 0.50%;
+    border: 1px solid #363945;
+}
+
+/* reference */
+
+.reference-middle {
+    text-align: center;
+}
+
+/* topics */
+
+.main-topics ul {
+    list-style-type: circle;
+}
+
+/* separator */
+
+#separator {
+    padding: 0.50%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2.5%;
+    margin-bottom: 2.5%;
+}
+
+#separator h2 {
+    padding: 0.50%;
+    font-size: 1.5rem;
+    border: 2px ridge #282828;
+    border-radius: 18px;
+    pointer-events: none;
+    text-align: center;
+}
+
+#separator hr {
+    border: 1px solid #282828;
+    width: 100%;
+}
+
+/* collapsible */
+
+.collapsible-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    vertical-align: middle;
+}
+
+.collapsible-child {
+    margin-bottom: 1rem;
+}
+
+.collapsible {
+    color: #ece5e0;
+    background-color: #363945;
+    cursor: pointer;
+    padding: 2%;
+    width: 100%;
+    border: none;
+    border-radius: 18px;
+    -webkit-border-radius: 18px;
+    -moz-border-radius: 18px;
+    outline: none;
+    text-align: left;
+    font-size: 1.2rem;
+    font-weight: bold;
+    transition: border-radius 0.25s ease-in-out;
+}
+
+.active,
+.collapsible:hover,
+.collapsible:hover i {
+    border-radius: 0;
+    -webkit-border-top-left-radius: 18px;
+    -webkit-border-top-right-radius: 18px;
+    -moz-border-radius-topleft: 18px;
+    -moz-border-radius-topright: 18px;
+    border-top-left-radius: 18px;
+    border-top-right-radius: 18px;
+    background-color: #282828;
+}
+
+.content {
+    padding: 0 18px;
+    max-height: 0;
+    overflow: hidden;
+    color: #ece5e0;
+    background-color: #363945;
+    transition: max-height 0.25s ease-in-out;
+    -webkit-border-bottom-right-radius: 18px;
+    -webkit-border-bottom-left-radius: 18px;
+    -moz-border-radius-bottomright: 18px;
+    -moz-border-radius-bottomleft: 18px;
+    border-bottom-right-radius: 18px;
+    border-bottom-left-radius: 18px;
+}
+
+.content p {
+    margin-top: 2px;
+    margin-bottom: 4px;
+    padding: 6px;
+}
+
+.rotate {
+    transform: rotate(90deg);
+    transition: transform 0.25s ease-in-out;
+}
+
+/* collapsible-child */
+
+/* RESPONSIVE */
+
+@media screen and (max-width: 768px) and (min-width: 250px) {
+    main {
+        width: 85vw;
+        margin-top: 1.2rem;
+        flex-direction: column;
+    }
+
+    main img {
+        width: 256px;
+        height: 256px;
+    }
+
+    .aside-description h1 {
+        font-size: 1.5rem;
+        text-align: center;
+    }
+
+    .cv {
+        width: 100%;
+        margin-top: 1rem;
+    }
+
+    .cv-headings {
+        margin-bottom: 2.5%;
+    }
+
+    .cv-headings hr {
+        margin-top: 2.5%;
+        border: 1px solid #363945;
+    }
+}
