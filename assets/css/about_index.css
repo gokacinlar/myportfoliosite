@@ -113,6 +113,13 @@ aside {
     text-align: center;
 }
 
+/* inline links */
+
+.inline-link {
+    color: #ff7355;
+    text-decoration: none;
+}
+
 /* topics */
 
 .main-topics ul {
