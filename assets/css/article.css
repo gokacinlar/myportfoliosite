@@ -394,15 +394,6 @@ article {
     border-radius: 12px;
 }
 
-.article-top img {
-    margin: 0 auto;
-    width: 1024px;
-    border-radius: 12px;
-    box-shadow: 0px 0px 8px 1px rgba(0, 0, 0, 0.35);
-    -webkit-box-shadow: 0px 0px 8px 1px rgba(0, 0, 0, 0.35);
-    -moz-box-shadow: 0px 0px 8px 1px rgba(0, 0, 0, 0.35);
-}
-
 /* article-top-child */
 
 .article-top-child {
@@ -445,14 +436,17 @@ article {
     border: 1px solid #282828;
 }
 
-.atc-left h5 {
+.atc-left time {
+    font-weight: bold;
     font-style: italic;
 }
 
 /* atc-right */
 
 .atc-right a {
+    color: #282828;
     margin-right: 1rem;
+    font-weight: bold;
 }
 
 /* figure */
@@ -461,12 +455,23 @@ figure {
     gap: 2rem;
 }
 
+figure img {
+    margin: 0 auto;
+    width: 75vw;
+    height: 85vh;
+    object-fit: cover;
+    border-radius: 12px;
+    box-shadow: 0px 0px 8px 1px rgba(0, 0, 0, 0.35);
+    -webkit-box-shadow: 0px 0px 8px 1px rgba(0, 0, 0, 0.35);
+    -moz-box-shadow: 0px 0px 8px 1px rgba(0, 0, 0, 0.35);
+}
+
 figure figcaption {
     font-style: italic;
-    margin: 0 auto;
-    margin-bottom: 1rem;
-    width: 50%;
-    font-size: 22px;
+    margin: auto;
+    margin-top: .50rem;
+    width: 75vw;
+    font-size: 1.25rem;
 }
 
 /* article-container */
@@ -492,13 +497,33 @@ figure figcaption {
     justify-content: center;
     align-items: center;
     text-align: left;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.article-main p {
+    color: #000000;
+    margin-bottom: 1.5rem;
+    text-indent: 3.5rem;
+}
+
+.article-main>.am-first-paragraph {
+    text-indent: 0;
 }
 
 .article-main p::selection {
-    color: #ece5e0;
+    color: #ffffff;
     background: #363945;
 }
+
+.article-main ul::selection {
+    color: #ffffff;
+    background: #363945;
+}
+
+.article-main li::selection {
+    color: #ffffff;
+    background: #363945;
+}
+
 
 /* article span links */
 
@@ -544,22 +569,73 @@ figure figcaption {
     display: flex;
     flex-direction: column;
     width: 90%;
-    padding: 6px;
-    margin-top: 1.4rem;
-    margin-bottom: 1.4rem;
+    height: fit-content;
+    padding: 6px 6px;
+    margin-bottom: 1.5rem;
     font-style: italic;
     border-left: 6px solid #cc5c43;
 }
 
 .article-quote p {
-    padding: 8px;
+    text-indent: 0;
+    padding-left: .50rem;
 }
 
 .article-quote i {
     align-self: flex-start;
-    font-size: 1.5rem;
-    padding-left: 8px;
+    font-size: 2rem;
+    padding-left: .50rem;
 }
+
+/* lists */
+
+.article-ulist {
+    margin-left: 4rem;
+    margin-right: 4rem;
+    margin-bottom: 1.25rem;
+}
+
+.article-ulist>li {
+    padding-bottom: .25rem;
+}
+
+.article-olist {
+    margin-left: 4rem;
+    margin-right: 4rem;
+    margin-bottom: 1.25rem;
+}
+
+.article-olist>li {
+    padding-bottom: .25rem;
+}
+
+/* article images */
+
+.am-in-img {
+    border-radius: 18px;
+    margin-bottom: 1.5rem;
+}
+
+/* font styling */
+
+.am-in-bold {
+    font-weight: bold;
+}
+
+.am-in-italic {
+    font-style: italic;
+}
+
+.am-in-bold::selection {
+    color: #ffffff;
+    background: #363945;
+}
+
+.am-in-italic::selection {
+    color: #ffffff;
+    background: #363945;
+}
+
 
 /* scroll to top btn */
 
@@ -596,8 +672,7 @@ figure figcaption {
 
 .am-first-paragraph::first-letter {
     initial-letter: 3;
-    padding: 0.25%;
-    border-bottom: 2px solid #363945;
+    margin-right: .50rem;
 }
 
 /* last paragraph */
@@ -984,10 +1059,15 @@ footer {
         gap: 2rem;
     }
 
+    figure img {
+        width: 85vw;
+        height: 35vh;
+    }
+
     figure figcaption {
         margin-bottom: 0;
         width: 100%;
-        font-size: 18px;
+        font-size: 1.2rem;
     }
 
     /* article main */
@@ -1040,10 +1120,15 @@ footer {
 
     /* figure properties */
 
+    figure img {
+        width: 85vw;
+        height: 55vh;
+    }
+
     figure figcaption {
         margin-bottom: 0;
         width: 100%;
-        font-size: 20px;
+        font-size: 1.5rem;
     }
 
     /* article main */
@@ -1098,8 +1183,14 @@ footer {
 
     /* figure properties */
 
+    figure img {
+        width: 85vw;
+        height: 75vh;
+    }
+
     figure figcaption {
-        font-size: 24px;
+        width: 85vw;
+        font-size: 1.5rem;
     }
 
     /* article main */
@@ -1120,7 +1211,7 @@ footer {
     /* first letter */
 
     .am-first-paragraph::first-letter {
-        initial-letter: 2;
+        initial-letter: 3;
     }
 }
 
