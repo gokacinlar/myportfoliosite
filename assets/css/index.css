@@ -178,7 +178,7 @@ header a.active {
 .dropdown-content {
     display: none;
     position: absolute;
-    top: 15%;
+    top: 10%;
     left: 0;
     width: 100%;
     background-color: #363945;
@@ -230,7 +230,7 @@ header a.active {
     }
 
     .dropdown-content {
-        top: 12.75%;
+        top: 10%;
     }
 }
 
