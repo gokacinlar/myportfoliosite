@@ -1127,6 +1127,24 @@ footer {
         height: 16px;
     }
 
+    /* lists */
+
+    .article-ulist {
+        margin-left: 2.5rem;
+        margin-right: 2.5rem;
+    }
+
+    .article-olist {
+        margin-left: 2.5rem;
+        margin-right: 2.5rem;
+    }
+
+    /* article inline flow */
+
+    .am-in-img {
+        max-width: 95vw;
+    }
+
     /* figure properties */
 
     figure img {
