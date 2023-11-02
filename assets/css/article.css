@@ -635,7 +635,6 @@ figure figcaption {
     background: #363945;
 }
 
-
 /* scroll to top btn */
 
 #scrollTopBtn {
@@ -803,62 +802,7 @@ footer {
     color: #cc5c43;
 }
 
-/* footer responsive */
-
-@media screen and (max-width: 768px) and (min-width: 250px) {
-
-    /* footer-top */
-
-    .footer-top {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        gap: 12px;
-    }
-
-    .footer-top h2 {
-        font-size: 32px;
-    }
-
-    .footer-top hr {
-        margin-top: 0.15rem;
-        margin-bottom: 0.25rem;
-        height: 0;
-        width: 90%;
-        border: 1px solid #ece5e0;
-        border-radius: 12px;
-    }
-
-    .footer-top-right a {
-        text-decoration: none;
-        color: #ece5e0;
-        transition: all 0.25s ease-in-out;
-        margin-right: 0.75rem;
-    }
-
-    .footer-top-right i {
-        font-size: 36px;
-    }
-
-    .footer-top-right img {
-        width: 38px;
-        height: 38px;
-    }
-
-    /* footer-bottom */
-
-    .footer-bottom {
-        text-align: center;
-        margin: 0 auto;
-        margin-top: 0;
-        font-size: 20px;
-        width: 100%;
-        padding: 12px;
-    }
-}
-
-/* RESPONSIVE */
+/********** RESPONSIVE **********/
 
 @media screen and (max-width: 768px) and (min-width: 250px) {
     /* nav */
@@ -927,6 +871,151 @@ footer {
         display: block;
         max-height: fit-content;
         overflow-y: auto;
+    }
+
+    /* article top */
+
+    .article-top h1 {
+        font-size: 32px;
+    }
+
+    .article-top hr {
+        margin-top: 0.50rem;
+        width: 85vw;
+    }
+
+    .article-top img {
+        width: 85vw;
+    }
+
+    /* article-top-child */
+
+    .article-top-child {
+        width: 100%;
+    }
+
+    .article-top-child a {
+        padding: 2px;
+    }
+
+    /* atc-left */
+    .atc-left h3 {
+        font-size: 18px;
+    }
+
+    .atc-left hr {
+        margin: 0;
+        width: 0;
+        height: 16px;
+        flex: 1;
+        border: 1px solid #282828;
+    }
+
+    /* atc-right */
+
+    .atc-right a {
+        margin-right: 0.25rem;
+    }
+
+    /* lists */
+
+    .article-ulist {
+        margin-left: 1.5rem;
+        margin-right: 1.5rem;
+    }
+
+    .article-olist {
+        margin-left: 1.5rem;
+        margin-right: 1.5rem;
+    }
+
+    /* article inline flow */
+
+    .am-in-img {
+        max-width: 95vw;
+    }
+
+    /* figure properties */
+
+    figure {
+        gap: 2rem;
+    }
+
+    figure img {
+        width: 85vw;
+        height: 35vh;
+    }
+
+    figure figcaption {
+        margin-bottom: 0;
+        width: 100%;
+        font-size: 1.2rem;
+    }
+
+    /* article main */
+
+    .article-main {
+        width: 90vw;
+        font-size: 20px;
+    }
+
+    .article-quote {
+        font-size: 20px;
+        width: 85vw;
+    }
+
+    .article-quote i {
+        font-size: 24px;
+    }
+
+    /* footer-top */
+
+    .footer-top {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 12px;
+    }
+
+    .footer-top h2 {
+        font-size: 32px;
+    }
+
+    .footer-top hr {
+        margin-top: 0.15rem;
+        margin-bottom: 0.25rem;
+        height: 0;
+        width: 90%;
+        border: 1px solid #ece5e0;
+        border-radius: 12px;
+    }
+
+    .footer-top-right a {
+        text-decoration: none;
+        color: #ece5e0;
+        transition: all 0.25s ease-in-out;
+        margin-right: 0.75rem;
+    }
+
+    .footer-top-right i {
+        font-size: 36px;
+    }
+
+    .footer-top-right img {
+        width: 38px;
+        height: 38px;
+    }
+
+    /* footer-bottom */
+
+    .footer-bottom {
+        text-align: center;
+        margin: 0 auto;
+        margin-top: 0;
+        font-size: 20px;
+        width: 100%;
+        padding: 12px;
     }
 }
 
@@ -1004,85 +1093,6 @@ footer {
         display: block;
         max-height: 412px;
         overflow-y: auto;
-    }
-}
-
-@media screen and (max-width: 768px) and (min-width: 250px) {
-    /* article top */
-
-    .article-top h1 {
-        font-size: 32px;
-    }
-
-    .article-top hr {
-        margin-top: 0.50rem;
-        width: 85vw;
-    }
-
-    .article-top img {
-        width: 85vw;
-    }
-
-    /* article-top-child */
-
-    .article-top-child {
-        width: 100%;
-    }
-
-    .article-top-child a {
-        padding: 2px;
-    }
-
-    /* atc-left */
-    .atc-left h3 {
-        font-size: 18px;
-    }
-
-    .atc-left hr {
-        margin: 0;
-        width: 0;
-        height: 16px;
-        flex: 1;
-        border: 1px solid #282828;
-    }
-
-    /* atc-right */
-
-    .atc-right a {
-        margin-right: 0.25rem;
-    }
-
-    /* figure properties */
-
-    figure {
-        gap: 2rem;
-    }
-
-    figure img {
-        width: 85vw;
-        height: 35vh;
-    }
-
-    figure figcaption {
-        margin-bottom: 0;
-        width: 100%;
-        font-size: 1.2rem;
-    }
-
-    /* article main */
-
-    .article-main {
-        width: 90vw;
-        font-size: 20px;
-    }
-
-    .article-quote {
-        font-size: 20px;
-        width: 85vw;
-    }
-
-    .article-quote i {
-        font-size: 24px;
     }
 }
 
