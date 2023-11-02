@@ -209,64 +209,6 @@ header a.active {
     display: block;
 }
 
-/* header */
-
-@media screen and (max-width: 768px) and (min-width: 250px) {
-    header a.header-text {
-        font-size: 28px;
-        font-weight: bold;
-        width: fit-content;
-        margin-right: 5%;
-    }
-
-    .header-right {
-        display: none;
-        flex-direction: column;
-    }
-
-    .header-dropdown {
-        display: flex;
-        margin-right: 0;
-    }
-
-    .dropdown-content {
-        top: 10%;
-    }
-}
-
-@media screen and (max-width: 1024px) and (min-width: 768px) {
-    header a.header-text {
-        font-size: 32px;
-        font-weight: bold;
-        width: fit-content;
-        margin-right: auto;
-    }
-
-    .header-right a {
-        padding: 12px;
-        margin-right: .50rem;
-    }
-
-    .header-dropdown {
-        margin-right: 2.5%;
-    }
-
-    .dropdown-content {
-        top: 10.5%;
-    }
-}
-
-@media screen and (max-width: 1024px) {
-    .header-text {
-        padding: 12px;
-    }
-
-    header a {
-        padding: 6px;
-        margin-right: 0rem;
-    }
-}
-
 /* container */
 
 .main-container {
@@ -945,9 +887,191 @@ footer {
     color: #cc5c43;
 }
 
-/* footer responsive */
+/********** RESPONSIVE **********/
+
+@media screen and (max-width: 1024px) {
+    .header-text {
+        padding: 12px;
+    }
+
+    header a {
+        padding: 6px;
+        margin-right: 0rem;
+    }
+}
 
 @media screen and (max-width: 768px) and (min-width: 250px) {
+    header a.header-text {
+        font-size: 28px;
+        font-weight: bold;
+        width: fit-content;
+        margin-right: 5%;
+    }
+
+    .header-right {
+        display: none;
+        flex-direction: column;
+    }
+
+    .header-dropdown {
+        display: flex;
+        margin-right: 0;
+    }
+
+    .dropdown-content {
+        top: 11%;
+    }
+
+    .main-container {
+        width: 100%;
+        height: 400px;
+        overflow: hidden;
+        position: relative;
+    }
+
+    .main-container img {
+        height: 450px;
+    }
+
+    /* child */
+
+    .main-child {
+        top: 10px;
+    }
+
+    .main-child h1 {
+        padding: 6px;
+        font-size: 28px;
+        margin-bottom: 1rem;
+    }
+
+    .main-child h2 {
+        width: fit-content;
+        margin-bottom: 2rem;
+        font-size: 20px;
+    }
+
+    .main-child img {
+        width: 128px;
+        height: 128px;
+    }
+
+    .main-child a {
+        margin-top: 0;
+        font-size: 1.4rem;
+    }
+
+    .header-text {
+        margin-bottom: 0.50rem;
+    }
+
+    .posts {
+        margin: 0 auto;
+        padding: 0;
+    }
+
+    /* posts top */
+
+    .posts-top h2 {
+        font-size: 22px;
+    }
+
+    .posts-top hr {
+        width: 25vw;
+    }
+
+    /* posts bottom */
+
+    .posts-bottom {
+        width: 100%;
+        flex-direction: column;
+        gap: 0;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    /* posts content */
+
+    .posts-content {
+        font-size: 1.2rem;
+        margin-bottom: 0;
+        width: 90vw;
+        height: fit-content;
+    }
+
+    .posts-content h3 {
+        font-size: 1.2rem;
+    }
+
+    .posts-content p {
+        font-size: 1.2rem;
+    }
+
+    .posts-content img {
+        height: 35vh;
+    }
+
+    .posts-content hr {
+        width: 50%;
+    }
+
+    /* posts date */
+
+    .posts-date {
+        font-size: 1rem;
+    }
+
+    /* posts data */
+
+    .posts-data {
+        display: flex;
+        flex-direction: column;
+        gap: 0.75rem;
+    }
+
+    .qualifications-main {
+        flex-direction: column;
+        margin-top: 0;
+        margin-bottom: 0;
+        padding: 5%;
+        gap: 2rem;
+    }
+
+    .qualifications-main img {
+        width: 312px;
+        height: 312px;
+        max-width: 90vw;
+        max-height: auto;
+    }
+
+    /* qualifications child */
+
+    .qm-child {
+        width: 90vw;
+        flex-direction: column;
+        gap: 0;
+        text-align: center;
+    }
+
+    .qm-child h4 {
+        margin-top: 2.5%;
+        font-size: 24px;
+    }
+
+    .qmfirst {
+        margin-bottom: 0;
+    }
+
+    .qmsecond {
+        flex-direction: column-reverse;
+    }
+
+    /* separator */
+
+    .qm-between-separator {
+        border: 1px solid #282828;
+        width: 50vw;
+    }
 
     /* footer-top */
 
@@ -1000,144 +1124,27 @@ footer {
     }
 }
 
-/* RESPONSIVE */
-
-/* main container */
-
-@media screen and (max-width: 768px) and (min-width: 250px) {
-    .main-container {
-        width: 100%;
-        height: 400px;
-        overflow: hidden;
-        position: relative;
-    }
-
-    .main-container img {
-        height: 450px;
-    }
-
-    /* child */
-
-    .main-child {
-        top: 10px;
-    }
-
-    .main-child h1 {
-        padding: 6px;
-        font-size: 28px;
-        margin-bottom: 1rem;
-    }
-
-    .main-child h2 {
+@media screen and (max-width: 1024px) and (min-width: 768px) {
+    header a.header-text {
+        font-size: 32px;
+        font-weight: bold;
         width: fit-content;
-        margin-bottom: 2rem;
-        font-size: 20px;
+        margin-right: auto;
     }
 
-    .main-child img {
-        width: 128px;
-        height: 128px;
+    .header-right a {
+        padding: 12px;
+        margin-right: .50rem;
     }
 
-    .main-child a {
-        margin-top: 0;
-        font-size: 1.4rem;
+    .header-dropdown {
+        margin-right: 2.5%;
     }
 
-    .header-text {
-        margin-bottom: 0.50rem;
-    }
-}
-
-@media screen and (max-width: 1024px) and (min-width: 768px) {
-    .main-container {
-        height: 600px;
+    .dropdown-content {
+        top: 10.5%;
     }
 
-    .main-container img {
-        height: 600px;
-    }
-
-    /* child */
-
-    .main-child {
-        top: 75px;
-    }
-
-    .main-child h1 {
-        font-size: 56px;
-    }
-
-    .main-child h2 {
-        font-size: 28px;
-    }
-
-    .main-child a {
-        font-size: 1.75rem;
-    }
-
-    .main-child img {
-        width: 150px;
-        height: 150px;
-    }
-}
-
-/* posts */
-
-@media screen and (max-width: 768px) and (min-width: 250px) {
-    .posts {
-        margin: 0 auto;
-        padding: 0;
-    }
-
-    /* posts top */
-
-    .posts-top h2 {
-        font-size: 22px;
-    }
-
-    .posts-top hr {
-        width: 25vw;
-    }
-
-    /* posts bottom */
-
-    .posts-bottom {
-        width: 100%;
-        flex-direction: column;
-        gap: 0;
-        margin: 0 auto;
-        text-align: center;
-    }
-
-    /* posts content */
-
-    .posts-content {
-        font-size: 22px;
-        padding: 6px;
-        width: 90vw;
-    }
-
-    .posts-content hr {
-        width: 50%;
-    }
-
-    /* posts date */
-
-    .posts-date {
-        font-size: 1rem;
-    }
-
-    /* posts data */
-
-    .posts-data {
-        display: flex;
-        flex-direction: column;
-        gap: 0.75rem;
-    }
-}
-
-@media screen and (max-width: 1024px) and (min-width: 768px) {
     /* posts top */
 
     .posts-top h2 {
@@ -1180,7 +1187,39 @@ footer {
     .posts-date {
         font-size: 1rem;
     }
+
+    .main-container {
+        height: 600px;
+    }
+
+    .main-container img {
+        height: 600px;
+    }
+
+    /* child */
+
+    .main-child {
+        top: 75px;
+    }
+
+    .main-child h1 {
+        font-size: 56px;
+    }
+
+    .main-child h2 {
+        font-size: 28px;
+    }
+
+    .main-child a {
+        font-size: 1.75rem;
+    }
+
+    .main-child img {
+        width: 150px;
+        height: 150px;
+    }
 }
+
 
 @media screen and (max-width: 1366px) and (min-width: 1024px) {
     /* posts top */
@@ -1227,54 +1266,6 @@ footer {
 
     .posts-date {
         font-size: 1rem;
-    }
-}
-
-/* qualifications main */
-
-@media screen and (max-width: 768px) and (min-width: 250px) {
-    .qualifications-main {
-        flex-direction: column;
-        margin-top: 0;
-        margin-bottom: 0;
-        padding: 5%;
-        gap: 2rem;
-    }
-
-    .qualifications-main img {
-        width: 312px;
-        height: 312px;
-        max-width: 90vw;
-        max-height: auto;
-    }
-
-    /* qualifications child */
-
-    .qm-child {
-        width: 90vw;
-        flex-direction: column;
-        gap: 0;
-        text-align: center;
-    }
-
-    .qm-child h4 {
-        margin-top: 2.5%;
-        font-size: 24px;
-    }
-
-    .qmfirst {
-        margin-bottom: 0;
-    }
-
-    .qmsecond {
-        flex-direction: column-reverse;
-    }
-
-    /* separator */
-
-    .qm-between-separator {
-        border: 1px solid #282828;
-        width: 50vw;
     }
 }
 
