@@ -124,9 +124,6 @@ header a.header-text:active {
 header a:hover {
     transition: border 0;
     background-color: #53586b;
-    box-shadow: 0px 0px 12px 0px rgba(12, 12, 12, 0.5);
-    -webkit-box-shadow: 0px 0px 12px 0px rgba(12, 12, 12, 0.5);
-    -moz-box-shadow: 0px 0px 12px 0px rgba(12, 12, 12, 0.5);
 }
 
 header a.active {
@@ -168,7 +165,7 @@ header a.active {
 
 .header-dropdown button i {
     color: #FF7355;
-    font-size: 2.5rem;
+    font-size: 2.75rem;
 }
 
 .header-dropdown button i:active {
@@ -386,13 +383,11 @@ header a.active {
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    margin-top: 0.25rem;
-    margin-bottom: 0.25rem;
 }
 
 .posts-top h2 {
-    font-size: 24px;
-    padding: 0.50rem;
+    font-size: 1.2rem;
+    padding: .50rem;
     border: 2px ridge #282828;
     border-radius: 12px;
     pointer-events: none;
@@ -401,7 +396,7 @@ header a.active {
 
 .posts-top hr {
     border: 1px solid #282828;
-    width: 25vw;
+    width: 25%;
 }
 
 /* posts bottom */
@@ -420,11 +415,10 @@ header a.active {
 /* posts content */
 
 .posts-content {
-    margin-bottom: 2rem;
     font-size: 22px;
     padding: .50rem;
     width: 27.5%;
-    height: 768px;
+    height: fit-content;
     border-radius: 18px;
     transition: all 0.25s ease-in-out;
     background-color: #d2cac6;
@@ -559,12 +553,10 @@ header a.active {
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    margin-top: 0.25rem;
-    margin-bottom: 0.25rem;
 }
 
 .qualifications-top h2 {
-    font-size: 24px;
+    font-size: 1.2rem;
     padding: 0.50rem;
     border: 2px ridge #282828;
     border-radius: 12px;
@@ -574,7 +566,7 @@ header a.active {
 
 .qualifications-top hr {
     border: 1px solid #282828;
-    width: 25vw;
+    width: 25%;
 }
 
 /* qualifications main */
@@ -889,23 +881,12 @@ footer {
 
 /********** RESPONSIVE **********/
 
-@media screen and (max-width: 1024px) {
-    .header-text {
-        padding: 12px;
-    }
-
-    header a {
-        padding: 6px;
-        margin-right: 0rem;
-    }
-}
-
 @media screen and (max-width: 768px) and (min-width: 250px) {
     header a.header-text {
-        font-size: 28px;
+        font-size: 1.55rem;
         font-weight: bold;
         width: fit-content;
-        margin-right: 5%;
+        margin-right: .50rem;
     }
 
     .header-right {
@@ -919,7 +900,7 @@ footer {
     }
 
     .dropdown-content {
-        top: 11%;
+        top: 12.25%;
     }
 
     .main-container {
@@ -1004,15 +985,11 @@ footer {
     }
 
     .posts-content p {
-        font-size: 1.2rem;
+        font-size: 1.05rem;
     }
 
     .posts-content img {
-        height: 35vh;
-    }
-
-    .posts-content hr {
-        width: 50%;
+        height: 90%;
     }
 
     /* posts date */
@@ -1178,8 +1155,8 @@ footer {
     }
 
     .posts-content img {
-        width: 300px;
-        height: 300px;
+        width: 90%;
+        height: auto;
     }
 
     /* posts date */
@@ -1225,11 +1202,11 @@ footer {
     /* posts top */
 
     .posts-top h2 {
-        font-size: 24px;
+        font-size: 1rem;
     }
 
     .posts-top hr {
-        width: 50vw;
+        width: 25%;
     }
 
     /* posts bottom */
@@ -1244,9 +1221,9 @@ footer {
     /* posts content */
 
     .posts-content {
-        font-size: 20px;
-        padding: 6px;
-        width: 30%;
+        font-size: 1.2rem;
+        padding: 4px;
+        width: 33.33%;
     }
 
     .posts-content h3 {
@@ -1254,8 +1231,8 @@ footer {
     }
 
     .posts-content img {
-        width: 300px;
-        height: 300px;
+        width: 90%;
+        height: auto;
     }
 
     .posts-content hr {
