@@ -869,6 +869,7 @@ footer {
     .form-row>.form-column>input {
         padding: .50em;
         font-size: 1.25rem;
+        width: 100%;
     }
 
     .form-group>textarea {
