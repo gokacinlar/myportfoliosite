@@ -54,8 +54,6 @@
                 <a href="https://www.linkedin.com/in/dervisoksuzoglu/"><i class="bi bi-linkedin"></i></a>
                 <a href="https://www.github.com/gokacinlar/"><i class="bi bi-github"></i></a>
             </div>
-            <a class="aside-links-email" href="mailto:oksuzogludervis@gmail.com"><i
-                    class="bi bi-envelope"></i>E-Posta</a>
         </aside>
         <article class="cv">
             <section class="cv-headings">
@@ -105,6 +103,41 @@
                         :3)"</li>
                 </ul>
                 </p>
+            </section>
+            <section class="cv-email-heading">
+                <h2>E-Posta Göndermek İçin Aşağıdaki Formu Doldurun</h2>
+                <hr>
+            </section>
+            <section class="cv-email">
+                <form class="cv-email-form" target="_blank"
+                    action="https://formsubmit.co/gokacinlarthedissident@gmail.com" method="POST">
+                    <div class="form-group">
+                        <div class="form-row">
+                            <div class="form-column">
+                                <label for="fname">İsminiz:</label>
+                                <input type="text" name="fname" class="form-control" required autocomplete="on">
+                            </div>
+                            <div class="form-column">
+                                <label for="email">E-Postanız:</label>
+                                <input type="email" name="email" class="form-control" required autocomplete="on">
+                            </div>
+                            <div class="form-column">
+                                <label class="form-not-required" for="topic">Konu:</label>
+                                <input list="topic" name="topic">
+                                <datalist id="topic">
+                                    <option value="İş">
+                                    <option value="Özel">
+                                </datalist>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Mesajınız</label>
+                        <textarea placeholder="Aklınızdan geçenleri yazın..." class="form-control" name="message"
+                            required></textarea>
+                    </div>
+                    <button class="submit-btn" type="submit">Gönder</button>
+                </form>
             </section>
             <section id="separator">
                 <hr>
