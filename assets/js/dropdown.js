@@ -15,7 +15,7 @@ function myFunction() {
         icon.style.fontSize = "1rem";
     }
     setTimeout(function () {
-        icon.classList.remove('transiiton');
+        icon.classList.remove('transition');
     }, 2500);
 }
 
