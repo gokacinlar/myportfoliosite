@@ -632,6 +632,30 @@ figure figcaption {
     background: #363945;
 }
 
+/* am in ol & ul content */
+
+.am-in-ol-content {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+}
+
+.am-in-ol-content>ol {
+    list-style: decimal;
+}
+
+.am-in-ol-content li>.am-in-heading {
+    font-size: 1.50rem;
+    font-weight: 600;
+}
+
+.am-in-ol-content li>.am-in-heading::selection {
+    color: #ffffff;
+    background-color: #363945;
+}
+
 /* scroll to top btn */
 
 #scrollTopBtn {
