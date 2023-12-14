@@ -14,6 +14,7 @@
     yazılıma müdahale gerektiren (konfigürasyon, hataların kullanıcı tarafından çözülmesi gibi
     birkaç “ekstra” çabaya dayalı çalışma) bir program mı?">
     <meta name="referrer" content="no-referrer-when-downgrade">
+    <base href="http://www.dervisoksuzoglu.net" target="_blank">
     <link rel="canonical"
         href="http://dervisoksuzoglu.net/content/2023/11/linux-hakkinda-I-linux-kullanmak-icin-etik-sebeplerin-degerlendirilmesi-01.html">
     <!--open graph-->
@@ -22,11 +23,13 @@
     yoksa hiçbir şey feda etmeden kullanacağınız yaygın olmayan & genellikle kullanıcı tarafından
     yazılıma müdahale gerektiren (konfigürasyon, hataların kullanıcı tarafından çözülmesi gibi
     birkaç “ekstra” çabaya dayalı çalışma) bir program mı?">
-    <meta property="og:type" content="article">
     <meta property="og:url"
         content="http://dervisoksuzoglu.net/content/2023/11/linux-hakkinda-I-linux-kullanmak-icin-etik-sebeplerin-degerlendirilmesi-01.html">
     <meta property="og:image" content="http://dervisoksuzoglu.net/assets/img/content/2023/11/img/01/01.webp">
-    <!--twitter/x-->
+    <meta property="article:published_time" content="2023-11-23">
+    <meta property="og:type" content="article">
+    <meta property="og:locale" content="tr_TR">
+    <!--x/twitter-->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:url"
         content="http://dervisoksuzoglu.net/content/2023/11/linux-hakkinda-I-linux-kullanmak-icin-teknik-sebeplerin-degerlendirilmesi-01.html">
@@ -36,36 +39,47 @@
     yazılıma müdahale gerektiren (konfigürasyon, hataların kullanıcı tarafından çözülmesi gibi
     birkaç “ekstra” çabaya dayalı çalışma) bir program mı?">
     <meta name="twitter:image" content="http://dervisoksuzoglu.net/assets/img/content/2023/11/img/01/01.webp">
+    <meta name="twitter:image:alt" content="Bazı özgürlüklerinizi feda ederek kullanacağınız yaygın & kullanımı kolay bir program mı
+    yoksa hiçbir şey feda etmeden kullanacağınız yaygın olmayan & genellikle kullanıcı tarafından
+    yazılıma müdahale gerektiren (konfigürasyon, hataların kullanıcı tarafından çözülmesi gibi
+    birkaç “ekstra” çabaya dayalı çalışma) bir program mı?">
     <!--favicon-->
-    <link rel="icon" type="image/webp" sizes="32x32"
-        href="http://dervisoksuzoglu.net/assets/img/title_logos/titlelogo_32x32.webp">
-    <link rel="icon" type="image/webp" sizes="16x16"
-        href="http://dervisoksuzoglu.net/assets/img/title_logos/titlelogo_16x16.webp">
-    <link rel="stylesheet" type="text/css" href="http://dervisoksuzoglu.net/assets/css/article.css">
+    <link rel="icon" type="image/webp" sizes="32x32" href="assets/img/title_logos/titlelogo_32x32.webp">
+    <link rel="icon" type="image/webp" sizes="16x16" href="assets/img/title_logos/titlelogo_16x16.webp">
+    <link rel="stylesheet" type="text/css" href="assets/css/index.css" as="style">
+    <link rel="stylesheet" type="text/css" href="assets/css/article.css" as="style">
     <title>Linux Hakkında I: Linux’u Kullanmak İçin “Etik” Gerekçelerin Değerlendirilmesi</title>
 </head>
 
 <body>
     <header>
-        <a href="http://dervisoksuzoglu.net" class="header-text">Derviş Öksüzoğlu</a>
-        <div class="header-right">
-            <a href="http://dervisoksuzoglu.net"><i class="material-symbols-rounded">home</i>Anasayfa</a>
-            <a class="active" href="."><i class="material-symbols-rounded">library_books</i>Blog</a>
-            <a href="http://dervisoksuzoglu.net/projects.html"><i class="bi bi-boxes"></i>Projeler</a>
-            <a href="http://dervisoksuzoglu.net/about.html"><i class="material-symbols-rounded">person</i>Hakkımda</a>
-        </div>
-        <div class="header-dropdown">
-            <button class="dropbtn" onclick="myFunction()">
+        <a href="index.html" class="header-text">Derviş Öksüzoğlu</a>
+        <section class="header-right">
+            <ul class="header-right-navigation">
+                <li><a href="index.html"><i class="material-symbols-rounded">home</i>Anasayfa</a></li>
+                <li><a class="active" href="blog.html"><i class="material-symbols-rounded">library_books</i>Blog</a>
+                </li>
+                <li><a href="projects.html"><i class="bi bi-boxes"></i>Projeler</a></li>
+                <li><a href="toolbox.html"><i class="bi bi-gear"></i>Araçlar</a></li>
+                <li><a href="about.html"><i class="material-symbols-rounded">person</i>Hakkımda</a></li>
+            </ul>
+        </section>
+        <section class="header-dropdown">
+            <button class="dropbtn" onclick="dropDownFunction()" title="Menü">
                 <i class="bi bi-list"></i>
             </button>
             <div class="dropdown-content" id="dropdown">
-                <a href="http://dervisoksuzoglu.net"><i class="material-symbols-rounded">home</i>Anasayfa</a>
-                <a class="active" href="."><i class="material-symbols-rounded">library_books</i>Blog</a>
-                <a href="http://dervisoksuzoglu.net/projects.html"><i class="bi bi-boxes"></i>Projeler</a>
-                <a href="http://dervisoksuzoglu.net/about.html"><i
-                        class="material-symbols-rounded">person</i>Hakkımda</a>
+                <ul class="header-right-navigation">
+                    <li><a href="index.html"><i class="material-symbols-rounded">home</i>Anasayfa</a>
+                    </li>
+                    <li><a class="active" href="blog.html"><i class="material-symbols-rounded">library_books</i>Blog</a>
+                    </li>
+                    <li><a href="projects.html"><i class="bi bi-boxes"></i>Projeler</a></li>
+                    <li><a href="toolbox.html"><i class="bi bi-gear"></i>Araçlar</a></li>
+                    <li><a href="about.html"><i class="material-symbols-rounded">person</i>Hakkımda</a></li>
+                </ul>
             </div>
-        </div>
+        </section>
     </header>
     <section>
         <nav>
@@ -103,8 +117,8 @@
                     </div>
                 </div>
                 <figure>
-                    <img src="http://dervisoksuzoglu.net/assets/img/content/2023/11/img/01/01.webp"
-                        alt="Article-Image-Linux-Ubuntu-Terminal" defer>
+                    <img src="assets/img/content/2023/11/img/01/01.webp" alt="Article-Image-Linux-Ubuntu-Terminal"
+                        defer>
                     <figcaption>Bazı özgürlüklerinizi feda ederek kullanacağınız yaygın & kullanımı kolay bir program mı
                         yoksa hiçbir şey feda etmeden kullanacağınız yaygın olmayan & genellikle kullanıcı tarafından
                         yazılıma müdahale gerektiren (konfigürasyon, hataların kullanıcı tarafından çözülmesi gibi
@@ -115,17 +129,18 @@
                 <div class="article-main">
                     <p class="am-first-paragraph"><span class="first-letter">L</span>inux ile, yakın bir arkadaşımın
                         vasıtasıyla, Debian’ın adeta kendi başına bir IQ testi olan yükleme ve kurulumunu kolaylaştırmak
-                        (Linux’u yaratan adam olan Linus Torvalds bile Debian <span class="am-in-link"><a
+                        (Linux’u yaratan adam olan Linus Torvalds bile Debian <span class="am-in-link"><a rel="noopener"
                                 href="https://www.youtube.com/watch?v=qHGTs1NSB1s" target="_blank">çok zor olduğu için
                                 yükleyemediğini</a></span>
                         belirtmiştir :D) ve insanları Linux ile kolay bir şekilde etkileşime geçip bu çekirdeğe dayalı
                         sistemi ve bu sistemin esas aldığı yazılım ve bir nevi hayat felsefesi sayılabilecek <span
-                            class="am-in-link"><a href="https://www.gnu.org/home.tr.html" target="_blank">GNU</a></span>
+                            class="am-in-link"><a rel="noopener" href="https://www.gnu.org/home.tr.html"
+                                target="_blank">GNU</a></span>
                         fikrini
-                        yaygınlaştırmayı misyon edinmiş <span class="am-in-link"><a href="https://ubuntu.com/"
-                                target="_blank">Ubuntu</a></span>’nun 10.10
+                        yaygınlaştırmayı misyon edinmiş <span class="am-in-link"><a rel="noopener"
+                                href="https://ubuntu.com/" target="_blank">Ubuntu</a></span>’nun 10.10
                         sürümüyle tanışmam sonrası pek çok dağıtımı
-                        deneme ve linux terminolojisi ise <span class="am-in-link am-in-italic"><a
+                        deneme ve linux terminolojisi ise <span class="am-in-link am-in-italic"><a rel="noopener"
                                 href="https://embeddedinventor.com/distro-hopping-what-why-how-explained/"
                                 target="_blank">“distro
                                 hopping”</a></span> yapmaya fırsatım oldu. Genel anlamıyla
@@ -142,6 +157,7 @@
                         Eğer Microsoft’un üretip dağıtımını yaptığı Windows işletim sistemi ailesinin herhangi bir
                         sürümünü
                         kendi bilgisayarınıza kurup kullanmak isterseniz, <span class="am-in-link am-in-italic"><a
+                                rel="noopener"
                                 href="https://www.technopat.net/sosyal/konu/windows-10-final-tuerkce-kullanici-soezlesmesi-eula.230483/"
                                 target="_blank">
                                 “EULA (End-User License Agreement)”</a></span> denilen
@@ -155,7 +171,7 @@
                         bir işletim sisteminin sayfalarca uzunluktaki legal dökümanı için zaman ayırmaz. Fakat
                         ayıranlar, bu
                         EULA’da şöyle bir ifadeye denk gelecektir (detaylı incelemesine <span class="am-in-link"><a
-                                href="https://www.cagataycebi.com/free_articles/freedom/eula_facts.html"
+                                rel="noopener" href="https://www.cagataycebi.com/free_articles/freedom/eula_facts.html"
                                 target="_blank">buradan</a>
                             ulaşabilirsiniz</span>):
                     </p>
@@ -178,7 +194,7 @@
                     <ul class="article-ulist">
                         <li>Kodların ve yazılımın sahibi olan şirketin, bunlara olan talebi para kazanmak için
                             değerlendirmek istemesi.</li>
-                        <li>Bill Gates’in meşhur bir mektubu olan, <span class="am-in-link"><a
+                        <li>Bill Gates’in meşhur bir mektubu olan, <span class="am-in-link"><a rel="noopener"
                                     href="https://genius.com/Bill-gates-an-open-letter-to-hobbyists-annotated"
                                     target="_blank">“An Open
                                     Letter to Hobbyists”</a></span>da açıkladığı gibi, “bu
@@ -224,10 +240,10 @@
                         alışkanlıklarınızı, reklam partnerlerine uygun şekilde yönlendirerek yapar. Aşağıdaki diyagram
                         bu süreci özetlemektedir.
                     </p>
-                    <a href="https://www.researchgate.net/figure/The-Google-Ads-workflow-chart_fig1_335409816"
+                    <a rel="noopener"
+                        href="https://www.researchgate.net/figure/The-Google-Ads-workflow-chart_fig1_335409816"
                         class="am-in-img-with-link" target="_blank">
-                        <img class="am-in-img"
-                            src="http://dervisoksuzoglu.net/assets/img/content/2023/11/img/01/01-01.webp"
+                        <img class="am-in-img" src="assets/img/content/2023/11/img/01/01-01.webp"
                             alt="How Google Ads Work" title="Google Reklamları Nasıl Çalışır?">
                     </a>
                     <p class="article-paragraph">
@@ -277,28 +293,28 @@
             Dön<i class="bi bi-arrow-up-circle-fill"></i></button>
         </main>
         <footer>
-            <div class="footer-top">
-                <div class="footer-top-left">
-                    <img src="http://dervisoksuzoglu.net/assets/img/myself.webp" alt="Derviş Öksüzoğlu">
+            <section class="footer-top">
+                <article class="footer-top-left">
+                    <img class="lazyload" src="assets/img/main/myself.webp" alt="Derviş Öksüzoğlu">
                     <h2>Derviş Öksüzoğlu</h2>
-                </div>
+                </article>
                 <hr>
-                <div class="footer-top-right">
-                    <a href="https://www.linkedin.com/in/dervisoksuzoglu/" target="_blank"><i
-                            class="bi bi-linkedin"></i></a>
-                    <a href="https://www.github.com/gokacinlar/" target="_blank"><i class="bi bi-github"></i></a>
-                </div>
-            </div>
-            <div class="footer-bottom">
+                <article class="footer-top-right">
+                    <a rel="noopener" href="https://www.linkedin.com/in/dervisoksuzoglu/" target="_blank"><i
+                            class="bi bi-linkedin" title="LinkedIn"></i></a>
+                    <a rel="noopener" href="https://www.github.com/gokacinlar/" target="_blank" title="GitHub"><i
+                            class="bi bi-github"></i></a>
+                </article>
+            </section>
+            <section class="footer-bottom">
                 <p>Bu sitedeki tüm materyaller ve kaynaklar, <span class="footer-link-bottom">CC0 1.0 Evrensel
                         Lisansı</span> kapsamında lisanslanmıştır;
                     tekrardan dağıtılabilir, değiştirilebilir ve hatta para ile satılabilir. Detaylı bilgi için
-                    <span class="footer-link-bottom"><a href="https://creativecommons.org/publicdomain/zero/1.0/deed.tr"
+                    <span class="footer-link-bottom"><a rel="noopener"
+                            href="https://creativecommons.org/publicdomain/zero/1.0/deed.tr"
                             target="_blank">tıklayın</a></span>.
                 </p>
-            </div>
+            </section>
         </footer>
-        <script src="http://dervisoksuzoglu.net/assets/js/dropdown.js"></script>
-        <script src="http://dervisoksuzoglu.net/assets/js/scrolltotop.js"></script>
-        <script src="http://dervisoksuzoglu.net/assets/js/progressbar.js"></script>
+        <script src="../../../../assets/js/script.js"></script>
 </body>

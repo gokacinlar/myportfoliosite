@@ -12,52 +12,61 @@
     <meta name="description" content="Makaleler | Derviş Öksüzoğlu: Pedagoji, Web Geliştirme, Felsefe ve Dahası">
     <meta name="referrer" content="no-referrer-when-downgrade">
     <link rel="canonical" href="http://www.dervisoksuzoglu.net">
+    <base href="http://www.dervisoksuzoglu.net" target="_blank">
     <!--open graph-->
     <meta property="og:title" content="Derviş Öksüzoğlu | Blog">
+    <meta property="og:url" content="http://www.dervisoksuzoglu.net/blog">
     <meta property="og:description" content="Derviş Öksüzoğlu: İngilizce Öğretmeni & Front-end Web Geliştiricisi">
+    <meta property="og:image" content="http://www.dervisoksuzoglu.net/assets/img/myself.webp">
     <meta property="og:type" content="website">
-    <meta property="og:image" content="http://www.dervisoksuzoglu.net/public_html/assets/img/myself.webp">
-    <meta property="og:url" content="http://www.dervisoksuzoglu.net">
+    <meta property="og:locale" content="tr_TR">
     <!--twitter-->
     <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="http://www.dervisoksuzoglu.net/blog">
     <meta name="twitter:title" content="Derviş Öksüzoğlu | Blog">
     <meta name="twitter:description" content="Derviş Öksüzoğlu: İngilizce Öğretmeni & Front-end Web Geliştiricisi">
-    <meta name="twitter:image" content="http://www.dervisoksuzoglu.net/public_html/assets/img/myself.webp">
-    <meta name="twitter:url" content="http://www.dervisoksuzoglu.net">
+    <meta name="twitter:image" content="http://www.dervisoksuzoglu.net/assets/img/myself.webp">
+    <meta name="twitter:image:alt" content="Derviş Öksüzoğlu">
     <!--favicon-->
     <link rel="icon" type="image/webp" sizes="32x32" href="assets/img/title_logos/titlelogo_32x32.webp">
     <link rel="icon" type="image/webp" sizes="16x16" href="assets/img/title_logos/titlelogo_16x16.webp">
-    <link rel="stylesheet" type="text/css" href="http://www.dervisoksuzoglu.net/assets/css/blog.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/index.css" as="style">
+    <link rel="stylesheet" type="text/css" href="assets/css/blog.css" as="style">
     <title>Derviş Öksüzoğlu | Makaleler</title>
 </head>
 
 <body>
     <header>
-        <a href="http://www.dervisoksuzoglu.net" class="header-text" target="_blank">Derviş Öksüzoğlu</a>
-        <div class="header-right">
-            <a href="http://www.dervisoksuzoglu.net"><i class="material-symbols-rounded">home</i>Anasayfa</a>
-            <a class="active" href="http://www.dervisoksuzoglu.net/blog.html"><i
-                    class="material-symbols-rounded">library_books</i>Blog</a>
-            <a href="http://www.dervisoksuzoglu.net/projects.html"><i class="bi bi-boxes"></i>Projeler</a>
-            <a href="http://www.dervisoksuzoglu.net/about.html"><i
-                    class="material-symbols-rounded">person</i>Hakkımda</a>
-        </div>
-        <div class="header-dropdown">
-            <button class="dropbtn" onclick="myFunction()">
+        <a href="index.html" class="header-text">Derviş Öksüzoğlu</a>
+        <section class="header-right">
+            <ul class="header-right-navigation">
+                <li><a href="index.html"><i class="material-symbols-rounded">home</i>Anasayfa</a></li>
+                <li><a class="active" href="blog.html"><i class="material-symbols-rounded">library_books</i>Blog</a>
+                </li>
+                <li><a href="projects.html"><i class="bi bi-boxes"></i>Projeler</a></li>
+                <li><a href="toolbox.html"><i class="bi bi-gear"></i>Araçlar</a></li>
+                <li><a href="about.html"><i class="material-symbols-rounded">person</i>Hakkımda</a></li>
+            </ul>
+        </section>
+        <section class="header-dropdown">
+            <button class="dropbtn" onclick="dropDownFunction()" title="Menü">
                 <i class="bi bi-list"></i>
             </button>
             <div class="dropdown-content" id="dropdown">
-                <a href="http://www.dervisoksuzoglu.net/"><i class="material-symbols-rounded">home</i>Anasayfa</a>
-                <a class="active" href="http://www.dervisoksuzoglu.net/blog.html"><i
-                        class="material-symbols-rounded">library_books</i>Blog</a>
-                <a href="http://www.dervisoksuzoglu.net/projects.html"><i class="bi bi-boxes"></i>Projeler</a>
-                <a href="http://www.dervisoksuzoglu.net/about.html"><i
-                        class="material-symbols-rounded">person</i>Hakkımda</a>
+                <ul class="header-right-navigation">
+                    <li><a href="index.html"><i class="material-symbols-rounded">home</i>Anasayfa</a>
+                    </li>
+                    <li><a class="active" href="blog.html"><i class="material-symbols-rounded">library_books</i>Blog</a>
+                    </li>
+                    <li><a href="projects.html"><i class="bi bi-boxes"></i>Projeler</a></li>
+                    <li><a href="toolbox.html"><i class="bi bi-gear"></i>Araçlar</a></li>
+                    <li><a href="about.html"><i class="material-symbols-rounded">person</i>Hakkımda</a></li>
+                </ul>
             </div>
-        </div>
+        </section>
     </header>
     <main>
-        <nav>
+        <nav class="content-navigation">
             <div class="nav-left">
                 <i class="bi bi-list" id="menu-icon"></i>
                 <h2>Konular</h2>
@@ -89,13 +98,13 @@
                         yazılıma müdahale gerektiren (konfigürasyon, hataların kullanıcı tarafından çözülmesi gibi
                         birkaç “ekstra” çabaya dayalı çalışma) bir program mı?</p>
                     <a
-                        href="http://www.dervisoksuzoglu.net/content/Teknoloji/2023/11/linux-hakkinda-I-linux-kullanmak-icin-etik-sebeplerin-degerlendirilmesi-01.html">Devamını
+                        href="content/Teknoloji/2023/11/linux-hakkinda-I-linux-kullanmak-icin-etik-sebeplerin-degerlendirilmesi-01.html">Devamını
                         Oku<i class="bi bi-arrow-right-short"></i></a>
                 </div>
             </div>
             <div class="content-child-right"> <a
-                    href="http://www.dervisoksuzoglu.net/content/Teknoloji/2023/11/linux-hakkinda-I-linux-kullanmak-icin-etik-sebeplerin-degerlendirilmesi-01.html"><img
-                        src="http://www.dervisoksuzoglu.net/assets/img/content/2023/11/img/01/01.webp"
+                    href="content/Teknoloji/2023/11/linux-hakkinda-I-linux-kullanmak-icin-etik-sebeplerin-degerlendirilmesi-01.html"><img
+                        src="assets/img/content/2023/11/img/01/01.webp"
                         alt="Linux Hakkında I: Linux’u Kullanmak İçin “Etik” Gerekçelerin Değerlendirilmesi"
                         decoding="async" loading="lazy"></a>
             </div>
@@ -108,8 +117,8 @@
         <section class="container">
             <article class="container-child">
                 <a
-                    href="http://www.dervisoksuzoglu.net/content/Teknoloji/2023/11/linux-hakkinda-I-linux-kullanmak-icin-etik-sebeplerin-degerlendirilmesi-01.html"><img
-                        class="cc-img" src="http://www.dervisoksuzoglu.net/assets/img/content/2023/11/img/01/01.webp"
+                    href="content/Teknoloji/2023/11/linux-hakkinda-I-linux-kullanmak-icin-etik-sebeplerin-degerlendirilmesi-01.html"><img
+                        class="cc-img" src="assets/img/content/2023/11/img/01/01.webp"
                         alt="Linux Hakkında I: Linux’u Kullanmak İçin “Etik” Gerekçelerin Değerlendirilmesi"
                         decoding="async" loading="lazy"></a>
                 <div class="container-child-description">
@@ -123,7 +132,7 @@
                         birkaç “ekstra” çabaya dayalı çalışma) bir program mı?</p>
                     <div class="read-further">
                         <a
-                            href="http://www.dervisoksuzoglu.net/content/Teknoloji/2023/11/linux-hakkinda-I-linux-kullanmak-icin-etik-sebeplerin-degerlendirilmesi-01.html">Devamını
+                            href="content/Teknoloji/2023/11/linux-hakkinda-I-linux-kullanmak-icin-etik-sebeplerin-degerlendirilmesi-01.html">Devamını
                             Oku</a>
                         <i class="bi bi-arrow-right"></i>
                     </div>
@@ -140,30 +149,30 @@
     </main>
     <footer>
         <section class="footer-top">
-            <div class="footer-top-left">
-                <img src="http://www.dervisoksuzoglu.net/assets/img/myself.webp" alt="Derviş Öksüzoğlu" decoding="async"
-                    loading="lazy">
+            <article class="footer-top-left">
+                <img class="lazyload" src="assets/img/main/myself.webp" alt="Derviş Öksüzoğlu">
                 <h2>Derviş Öksüzoğlu</h2>
-            </div>
+            </article>
             <hr>
-            <div class="footer-top-right">
-                <a href="https://www.linkedin.com/in/dervisoksuzoglu/" target="_blank"><i
-                        class="bi bi-linkedin"></i></a>
-                <a href="https://www.github.com/gokacinlar/" target="_blank"><i class="bi bi-github"></i></a>
-            </div>
+            <article class="footer-top-right">
+                <a rel="noopener" href="https://www.linkedin.com/in/dervisoksuzoglu/" target="_blank"><i
+                        class="bi bi-linkedin" title="LinkedIn"></i></a>
+                <a rel="noopener" href="https://www.github.com/gokacinlar/" target="_blank" title="GitHub"><i
+                        class="bi bi-github"></i></a>
+            </article>
         </section>
         <section class="footer-bottom">
             <p>Bu sitedeki tüm materyaller ve kaynaklar, <span class="footer-link-bottom">CC0 1.0 Evrensel
                     Lisansı</span> kapsamında lisanslanmıştır;
                 tekrardan dağıtılabilir, değiştirilebilir ve hatta para ile satılabilir. Detaylı bilgi için
-                <span class="footer-link-bottom"><a href="https://creativecommons.org/publicdomain/zero/1.0/deed.tr"
+                <span class="footer-link-bottom"><a rel="noopener"
+                        href="https://creativecommons.org/publicdomain/zero/1.0/deed.tr"
                         target="_blank">tıklayın</a></span>.
             </p>
         </section>
     </footer>
-    <script src="http://www.dervisoksuzoglu.net/assets/js/clamp.js"></script>
-    <script src="http://www.dervisoksuzoglu.net/assets/js/script.js"></script>
-    <script src="http://www.dervisoksuzoglu.net/assets/js/dropdown.js"></script>
+    <script src="assets/js/script.js"></script>
+    <script src="assets/js/lazysizes.min.js"></script>
 </body>
 
 </html>

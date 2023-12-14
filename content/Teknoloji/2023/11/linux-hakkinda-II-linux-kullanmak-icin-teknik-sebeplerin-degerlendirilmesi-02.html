@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="owner" content="Derviş Öksüzoğlu">
+    <meta name="author" content="Derviş Öksüzoğlu">
+    <meta name="keywords"
+        content="derviş, öksüzoğlu, blog, portfolyo, blog, pedagoji, felsefe, web geliştirme, psikoloji">
+    <meta name="description"
+        content="Linux son kullanıcı açısından donanım & yazılım arasındaki optimizasyon için ne vaat ediyor? Neyi Windows'tan veya MacOS'ten doğru yapıyor?">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    <link rel="canonical" href="http://www.dervisoksuzoglu.net">
+    <!--open graph-->
+    <meta property="og:title" content="Linux Hakkında II: Linux Kullanmak İçin “Teknik” Gerekçelerin Değerlendirilmesi">
+    <meta property="og:description"
+        content="Linux son kullanıcı açısından donanım & yazılım arasındaki optimizasyon için ne vaat ediyor? Neyi Windows'tan veya MacOS'ten doğru yapıyor?">
+    <meta property="og:type" content="article">
+    <meta property="og:url"
+        content="http://dervisoksuzoglu.net/content/2023/11/linux-hakkinda-II-linux-kullanmak-icin-teknik-sebeplerin-degerlendirilmesi-02.html">
+    <meta property="og:image" content="http://dervisoksuzoglu.net/assets/img/content/2023/11/img/02/01.webp">
+    <!--twitter/x-->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url"
+        content="http://dervisoksuzoglu.net/content/2023/11/linux-hakkinda-II-linux-kullanmak-icin-teknik-sebeplerin-degerlendirilmesi-02.html">
+    <meta name="twitter:title" content="Linux Hakkında I: Linux Kullanmak İçin “Etik” Gerekçelerin Değerlendirilmesi">
+    <meta name="twitter:description"
+        content="Linux son kullanıcı açısından donanım & yazılım arasındaki optimizasyon için ne vaat ediyor? Neyi Windows'tan veya MacOS'ten doğru yapıyor?">
+    <meta name="twitter:image" content="http://dervisoksuzoglu.net/assets/img/content/2023/11/img/02/01.webp">
+    <!--favicon-->
+    <link rel="icon" type="image/webp" sizes="32x32"
+        href="http://dervisoksuzoglu.net/assets/img/title_logos/titlelogo_32x32.webp">
+    <link rel="icon" type="image/webp" sizes="16x16"
+        href="http://dervisoksuzoglu.net/assets/img/title_logos/titlelogo_16x16.webp">
+    <link rel="stylesheet" type="text/css" href="../../../../assets/css/article.css">
+    <title>Linux Hakkında II: Linux’u Kullanmak İçin “Teknik” Gerekçelerin Değerlendirilmesi</title>
+</head>
+
+<body>
+    <header>
+        <a href="http://www.dervisoksuzoglu.net" class="header-text">Derviş Öksüzoğlu</a>
+        <section class="header-right">
+            <ul class="header-right-navigation">
+                <li><a class="active" href="http://www.dervisoksuzoglu.net"><i
+                            class="material-symbols-rounded">home</i>Anasayfa</a></li>
+                <li><a href="http://www.dervisoksuzoglu.net/blog.html"><i
+                            class="material-symbols-rounded">library_books</i>Blog</a></li>
+                <li><a href="http://www.dervisoksuzoglu.net/projects.html"><i class="bi bi-boxes"></i>Projeler</a></li>
+                <li><a href="http://www.dervisoksuzoglu.net/toolbox.html"><i class="bi bi-gear"></i>Araçlar</a></li>
+                <li><a href="http://www.dervisoksuzoglu.net/about.html"><i
+                            class="material-symbols-rounded">person</i>Hakkımda</a></li>
+            </ul>
+        </section>
+        <section class="header-dropdown">
+            <button class="dropbtn" onclick="dropDownFunction()" title="Menü">
+                <i class="bi bi-list"></i>
+            </button>
+            <div class="dropdown-content" id="dropdown">
+                <a class="active" href="http://www.dervisoksuzoglu.net"><i
+                        class="material-symbols-rounded">home</i>Anasayfa</a>
+                <a href="http://www.dervisoksuzoglu.net/blog.html"><i
+                        class="material-symbols-rounded">library_books</i>Blog</a>
+                <a href="http://www.dervisoksuzoglu.net/projects.html"><i class="bi bi-boxes"></i>Projeler</a>
+                <a href="http://www.dervisoksuzoglu.net/toolbox.html"><i class="bi bi-gear"></i>Araçlar</a>
+                <a href="http://www.dervisoksuzoglu.net/about.html"><i
+                        class="material-symbols-rounded">person</i>Hakkımda</a>
+            </div>
+        </section>
+    </header>
+    <main>
+        <nav>
+            <div class="nav-left">
+                <i class="bi bi-list" id="menu-icon"></i>
+                <h2>Konular</h2>
+            </div>
+            <div class="nav-right" id="nav-right">
+                <ul>
+                    <li><a class="topics-today" href="">Gündem</a></li>
+                    <li><a class="topics-technology" href="">Teknoloji</a></li>
+                    <li><a href="" class="topics-">HTML5</a></li>
+                    <li><a href="" class="topics-">CSS3</a></li>
+                    <li><a href="" class="topics-">JavaScript</a></li>
+                    <li><a href="" class="topics-">Pedagoji</a></li>
+                    <li><a href="" class="topics-">Felsefe</a></li>
+                </ul>
+            </div>
+        </nav>
+        <section class="progress-bar-container">
+            <section class="progress-bar-child" id="myBar"></section>
+        </section>
+        <article>
+            <section class="article-top">
+                <h1>Linux Hakkında II: Linux’u Kullanmak İçin “Teknik” Gerekçelerin Değerlendirilmesi</h1>
+                <hr>
+                <div class="article-top-child">
+                    <div class="atc-left">
+                        <h3>Derviş Öksüzoğlu</h3>
+                        <hr>
+                        <time datetime="2023-11-26">26-11-2023</time>
+                    </div>
+                    <div class="atc-right">
+                        <a href="">Teknoloji</a>
+                    </div>
+                </div>
+                <figure>
+                    <img src="http://dervisoksuzoglu.net/assets/img/content/2023/11/img/02/01.webp"
+                        alt="Article-Image-Linux-Ubuntu-Terminal" defer>
+                    <figcaption>Linux son kullanıcı açısından donanım & yazılım arasındaki optimizasyon için ne vaat
+                        ediyor? Neyi Windows'tan veya MacOS'ten doğru yapıyor?</figcaption>
+                </figure>
+            </section>
+            <section class="article-container">
+                <div class="article-main">
+                    <p class="am-first-paragraph"><span class="first-letter">D</span>
+                        aha önceki yazımda Linux’u gündelik olarak kullanmak için öne sürülen sebepleri iki
+                        ana kategoride genelleştirip açıklayabileceğimiz bir girizgâh hazırlamıştım. Bu yazıda ise, bu
+                        girizgahın etik boyutunun devamı olan ve Linux’u, diğer işletim sistemleri arasında “teknik”
+                        olarak ayıran özelliklerini ve eğer bu işletim sistemini kullanmak istiyorsanız size ne gibi
+                        faydalar sağlayacağını tartışacağım. Linux’u uzun süredir kullanıyorum ve bazı spesifik
+                        ihtiyaçlar için inanılmaz derecede iyi bir işletim sistemi −benim kullanımımda sağladığı
+                        faydalar kendisini sunucu altyapısı, geliştirici aygıtları veya low-end kullanımda donanım ve
+                        yazılım optimizasyonunu maksimize eden hafif masaüstü ortamlarıyla taçlandırıyor. Ve elbette
+                        bundan çok daha fazlasına muktedir bir OS. Peki, Linux donanımızın mevcudiyeti ile size ne gibi
+                        artılar veriyor?</p>
+                    <p class="article-paragraph">
+                        Konuyu iki ana soru etrafında açmak istiyorum: “Linux, son kullanıcı ve power user dediğimiz,
+                        kısaca bilgisayara dair çoğu şeyi öğrenip uygulayan profesyonel kullanıcı için ne ifade ediyor?”
+                        ve “Windows veya MacOS’e kıyasla Linux son kullanıcı için ne vaat ediyor?”. Konunun etikten
+                        farkı, Linux'u “Neden” değil “Hangi faydaları gözeterek” kullanacağımız olacak. Fakat konuya
+                        geçmeden önce belirtmem gerekiyor ki, Linux topluluğunun en temel sorunlarından biri olan
+                        elitizmden veya RTFM gibi son-kullanıcı düşmanı ve Linux'a gelen insanları caydıran bir
+                        retorikten uzak durmakta fayda olduğunu belirtmek istiyorum. Nihayetinde Linux, diğer işletim
+                        sistemleri gibi sizin amacınız için kullanacağınız bir araçtır ve konunun etik kısmıyla
+                        ilgilenmediğimiz için, burada söylenenler kullanım senaryoları itibariyle tamamiyle göreceli
+                        olarak düşünülmeli ve Linux'u diğer işletim sistemleriyle herhangi bir rekabet ediyormuşçasına
+                        algılanmamalıdır.
+                    </p>
+                    <p class="article-paragraph">
+                        Sıradan (son) kullanıcıların pek çoğu, <span class="am-in-link"><a rel="noopener"
+                                href="https://www.statista.com/forecasts/805796/favorite-pc-laptop-activities-in-the-us"
+                                target="_blank">bu
+                                makaledeki</a></span> istatistiklerde gösterildiği gibi
+                        genellikle bilgisayarını mesajlaşmaktan ofis uygulamalarını kullanmaya, ilgilendikleri şeylerle
+                        ilgili araştırmalar yaparak internette gezinip alışveriş yapmaya kadar pek çok alışkanlığını
+                        ezici üstünlükle bir “web tarayıcısı” vasıtasıyla hallediyorlar. İkincil olarak ise
+                        bilgisayarlar
+                        genellikle oyun oynamak için bir platform olarak kullanılıyor. Bunlardan yola çıkarak, mevcut
+                        işletim sistemleri olan MacOS, ChromeOS veya pazar payında lider olan Windows gibi işletim
+                        sistemlerinin sunabildiklerine karşılık Linux ne vaat ediyor? Bunu daha kolay anlamanız için
+                        maddelere böldüm. Her alt başlıkta önce son kullanıcı, ardından geliştiriciler için Linux'un ne
+                        ifade ettiğini açıklamaya çalıştım.
+                    </p>
+                    <section class="sum-details-wrapper">
+                        <div class="am-in-sum-paragraph">
+                            <h2 class="am-in-heading">Linux Açık Kaynaklıdır</h2>
+                            <p class="article-paragraph">
+                            </p>
+                        </div>
+                        <div class="am-in-sum-paragraph">
+                            <h2 class="am-in-heading">Linux Ücretsizdir</h2>
+                            <p class="article-paragraph">
+                            </p>
+                        </div>
+                        <div class="am-in-sum-paragraph">
+                            <h2 class="am-in-heading">Linux Göreceli Olarak Daha Güvenlidir</h2>
+                            <p class="article-paragraph">
+                            </p>
+                        </div>
+                        <div class="am-in-sum-paragraph">
+                            <h2 class="am-in-heading">Linux Göreceli Olarak Daha Az Kaynak Tüketir</h2>
+                            <p class="article-paragraph">
+                            </p>
+                        </div>
+                        <div class="am-in-sum-paragraph">
+                            <h2 class="am-in-heading">Linux Geliştiriciler İçin Önemli Bir Platformdur</h2>
+                            <p class="article-paragraph">
+                            </p>
+                        </div>
+                    </section>
+                </div>
+            </section>
+        </article>
+        <button onclick="topFunction()" id="scrollTopBtn" title="Geri Dön">Geri
+            Dön<i class="bi bi-arrow-up-circle-fill"></i></button>
+    </main>
+    <footer>
+        <section class="footer-top">
+            <article class="footer-top-left">
+                <img class="lazyload" src="http://dervisoksuzoglu.net/assets/img/main/myself.webp"
+                    alt="Derviş Öksüzoğlu">
+                <h2>Derviş Öksüzoğlu</h2>
+            </article>
+            <hr>
+            <article class="footer-top-right">
+                <a rel="noopener" href="https://www.linkedin.com/in/dervisoksuzoglu/" target="_blank"><i
+                        class="bi bi-linkedin" title="LinkedIn"></i></a>
+                <a rel="noopener" href="https://www.github.com/gokacinlar/" target="_blank" title="GitHub"><i
+                        class="bi bi-github"></i></a>
+            </article>
+        </section>
+        <section class="footer-bottom">
+            <p>Bu sitedeki tüm materyaller ve kaynaklar, <span class="footer-link-bottom">CC0 1.0 Evrensel
+                    Lisansı</span> kapsamında lisanslanmıştır;
+                tekrardan dağıtılabilir, değiştirilebilir ve hatta para ile satılabilir. Detaylı bilgi için
+                <span class="footer-link-bottom"><a rel="noopener"
+                        href="https://creativecommons.org/publicdomain/zero/1.0/deed.tr"
+                        target="_blank">tıklayın</a></span>.
+            </p>
+        </section>
+    </footer>
+    <script src="http://dervisoksuzoglu.net/assets/js/dropdown.js"></script>
+    <script src="http://dervisoksuzoglu.net/assets/js/scrolltotop.js"></script>
+    <script src="http://dervisoksuzoglu.net/assets/js/progressbar.js"></script>
+</body>
+
+</html>
