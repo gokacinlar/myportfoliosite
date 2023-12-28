@@ -1,3 +1,14 @@
+// nav dropdown
+
+const menuIcon = document.getElementById("menu-icon");
+const navRight = document.getElementById("nav-right");
+
+menuIcon.addEventListener("click", toggleNav);
+
+function toggleNav() {
+    navRight.classList.toggle("show");
+}
+
 // progress bar
 
 window.onscroll = function () {
@@ -67,18 +78,6 @@ window.onclick = function (e) {
             myDropdown.classList.remove('show');
         }
     }
-}
-
-
-// nav dropdown
-
-const menuIcon = document.getElementById("menu-icon");
-const navRight = document.getElementById("nav-right");
-
-menuIcon.addEventListener("click", toggleNav);
-
-function toggleNav() {
-    navRight.classList.toggle("show");
 }
 
 // scroll to top button
