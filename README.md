@@ -3,6 +3,6 @@ Nothing new, nothing special. Just source codes of my website. Use CSS & JS code
 
 # Screenshots
 
-![Screenshot 1](https://github.com/gokacinlar/dervisoksuzoglu/blob/main/screenshots/ss1.png)
-![Screenshot 1](https://github.com/gokacinlar/dervisoksuzoglu/blob/main/screenshots/ss2.png)
-![Screenshot 1](https://github.com/gokacinlar/dervisoksuzoglu/blob/main/screenshots/ss3.png)
+![Screenshot 1](https://github.com/gokacinlar/myportfoliosite/blob/main/screenshots/ss1.png)
+![Screenshot 1](https://github.com/gokacinlar/myportfoliosite/blob/main/screenshots/ss2.png)
+![Screenshot 1](https://github.com/gokacinlar/myportfoliosite/blob/main/screenshots/ss3.png)
