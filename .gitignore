@@ -9,6 +9,7 @@
 img/
 fonts/
 library/
+content/
 
 #img
 *.img
