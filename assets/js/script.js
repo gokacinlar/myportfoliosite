@@ -1,27 +1,3 @@
-// nav dropdown
-
-const menuIcon = document.getElementById("menu-icon");
-const navRight = document.getElementById("nav-right");
-
-menuIcon.addEventListener("click", toggleNav);
-
-function toggleNav() {
-    navRight.classList.toggle("show");
-}
-
-// progress bar
-
-window.onscroll = function () {
-    pBarFunc();
-};
-
-function pBarFunc() {
-    var winScroll = window.scrollY || document.documentElement.scrollTop;
-    var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-    var scrolled = (winScroll / height) * 100;
-    document.getElementById("myBar").style.width = scrolled + "%";
-}
-
 // slide carousel
 
 let slideIndex = 0;
@@ -58,6 +34,31 @@ function updateIndicators(index) {
 }
 
 showSlide(slideIndex);
+
+// nav dropdown
+
+const menuIcon = document.getElementById("menu-icon");
+const navRight = document.getElementById("nav-right");
+
+menuIcon.addEventListener("click", toggleNav);
+
+function toggleNav() {
+    navRight.classList.toggle("show");
+}
+
+
+// progress bar
+
+window.onscroll = function () {
+    pBarFunc();
+};
+
+function pBarFunc() {
+    var winScroll = window.scrollY || document.documentElement.scrollTop;
+    var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    var scrolled = (winScroll / height) * 100;
+    document.getElementById("myBar").style.width = scrolled + "%";
+}
 
 // header dropdown
 
