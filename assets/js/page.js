@@ -3,8 +3,6 @@ navButtons.forEach(function (button) {
     button.addEventListener("click", function () {
         var pageName = this.getAttribute("data-page");
         openPage(pageName);
-
-        // Hide the tool-nav-desc section when a button is clicked
         document.querySelector('.tool-nav-desc').style.display = "none";
     });
 });

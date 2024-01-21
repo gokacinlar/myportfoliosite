@@ -2123,7 +2123,7 @@ label.form-not-required::after {
     }
 }
 
-@media screen and (max-width: 1366px) and (min-width: 1024px) {
+@media screen and (max-width: 1367px) and (min-width: 1024px) {
     /* posts top */
 
     .posts-top h2 {
@@ -2208,7 +2208,7 @@ label.form-not-required::after {
     }
 }
 
-@media screen and (max-width: 1440px) and (min-width: 1366px) {
+@media screen and (max-width: 1440px) and (min-width: 1367px) {
     /* qualifications main */
 
     .qualifications-main img {
