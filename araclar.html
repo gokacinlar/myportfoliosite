@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="owner" content="Derviş Öksüzoğlu">
+    <meta name="author" content="Derviş Öksüzoğlu">
+    <meta name="keywords"
+        content="derviş, öksüzoğlu, blog, portfolyo, blog, pedagoji, felsefe, web geliştirme, psikoloji">
+    <meta name="description" content="Araçlar | Derviş Öksüzoğlu: Pedagoji, Web Geliştirme, Felsefe ve Dahası">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    <link rel="canonical" href="http://www.dervisoksuzoglu.net">
+    <!--base url-->
+    
+    <!--open graph-->
+    <meta property="og:title" content="Derviş Öksüzoğlu | Araçlar">
+    <meta property="og:url" content="http://www.dervisoksuzoglu.net/araclar">
+    <meta property="og:description" content="Derviş Öksüzoğlu: İngilizce Öğretmeni & Front-end Web Geliştiricisi">
+    <meta property="og:image" content="http://www.dervisoksuzoglu.net/assets/img/myself.webp">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="tr_TR">
+    <!--twitter-->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="http://www.dervisoksuzoglu.net/araclar">
+    <meta name="twitter:title" content="Derviş Öksüzoğlu | Blog">
+    <meta name="twitter:description" content="Derviş Öksüzoğlu: İngilizce Öğretmeni & Front-end Web Geliştiricisi">
+    <meta name="twitter:image" content="http://www.dervisoksuzoglu.net/assets/img/myself.webp">
+    <meta name="twitter:image:alt" content="Derviş Öksüzoğlu">
+    <!--favicon-->
+    <link rel="icon" type="image/webp" sizes="32x32" href="assets/img/title_logos/titlelogo_32x32.webp">
+    <link rel="icon" type="image/webp" sizes="16x16" href="assets/img/title_logos/titlelogo_16x16.webp">
+    <link rel="stylesheet" type="text/css" href="assets/css/index.css" as="style">
+    <title>Derviş Öksüzoğlu | Araçlar</title>
+</head>
+
+<body>
+    <header>
+        <a href="index.html" class="header-text">Derviş Öksüzoğlu</a>
+        <section class="header-right">
+            <ul class="header-right-navigation">
+                <li><a href="index.html"><i class="material-symbols-rounded">home</i>Anasayfa</a></li>
+                <li><a href="blog.html"><i class="material-symbols-rounded">library_books</i>Blog</a>
+                </li>
+                <li><a href="projects.html"><i class="bi bi-boxes"></i>Projeler</a></li>
+                <li><a class="active" href="araclar.html"><i class="bi bi-gear"></i>Araçlar</a></li>
+                <li><a href="about.html"><i class="material-symbols-rounded">person</i>Hakkımda</a></li>
+            </ul>
+        </section>
+        <section class="header-dropdown">
+            <button class="dropbtn" onclick="dropDownFunction()" title="Menü">
+                <i class="bi bi-list"></i>
+            </button>
+            <div class="dropdown-content" id="dropdown">
+                <ul class="header-right-navigation">
+                    <li><a href="index.html"><i class="material-symbols-rounded">home</i>Anasayfa</a>
+                    </li>
+                    <li><a href="blog.html"><i class="material-symbols-rounded">library_books</i>Blog</a>
+                    </li>
+                    <li><a href="projects.html"><i class="bi bi-boxes"></i>Projeler</a></li>
+                    <li><a class="active" href="araclar.html"><i class="bi bi-gear"></i>Araçlar</a></li>
+                    <li><a href="about.html"><i class="material-symbols-rounded">person</i>Hakkımda</a></li>
+                </ul>
+            </div>
+        </section>
+    </header>
+    <main class="tool-nav">
+        <nav class="tabs-navigation">
+            <ul>
+                <li>
+                    <button data-page="toDo" class="navBtn"><i class="bi bi-check-all"></i>To-Do</button>
+                </li>
+            </ul>
+        </nav>
+        <article class="tool-nav-desc">
+            <p>Araçlar sayfasında hoşunuza gidebilecek birkaç adet üretkenlik programı bulunmaktadır.</p>
+            <p>Bu programlar tamamiyle olmasa da büyük ölçüde gösteri amaçlıdır. Fakat yine de kullanılabilirler.</p>
+        </article>
+        <section class="nav-page" id="toDo">
+            <h2>Yapılacaklar</h2>
+            <div id="toDoInputSection" class="to-do-inp-sect">
+                <input type="text" id="myInput" placeholder="Ne yapmak istiyorsunuz?">
+                <span id="addToDo" class="td-add-btn">Yapılacaklara Ekle</span>
+            </div>
+            <ul id="toDoList">
+                <li class="td-item">GYM'e git!<span class="close bi bi-x-circle"></span></li>
+                <li class="td-item checked">Faturaları Öde!<span class="close bi bi-x-circle"></span></li>
+            </ul>
+        </section>
+    </main>
+    <footer>
+        <section class="footer-top">
+            <article class="footer-top-left">
+                <img class="lazyload" src="assets/img/main/myself.webp" alt="Derviş Öksüzoğlu">
+                <h2>Derviş Öksüzoğlu</h2>
+            </article>
+            <hr>
+            <article class="footer-top-right">
+                <a rel="noopener" href="https://www.linkedin.com/in/dervisoksuzoglu/" target="_blank"><i
+                        class="bi bi-linkedin" title="LinkedIn"></i></a>
+                <a rel="noopener" href="https://www.github.com/gokacinlar/" target="_blank" title="GitHub"><i
+                        class="bi bi-github"></i></a>
+            </article>
+        </section>
+        <section class="footer-bottom">
+            <p>Bu sitedeki tüm materyaller ve kaynaklar, <span class="footer-link-bottom">CC0 1.0 Evrensel
+                    Lisansı</span> kapsamında lisanslanmıştır;
+                tekrardan dağıtılabilir, değiştirilebilir ve hatta para ile satılabilir. Detaylı bilgi için
+                <span class="footer-link-bottom"><a rel="noopener"
+                        href="https://creativecommons.org/publicdomain/zero/1.0/deed.tr"
+                        target="_blank">tıklayın</a></span>.
+            </p>
+        </section>
+    </footer>
+    <script src="assets/js/script.js" as="script"></script>
+    <script src="assets/js/page.js" as="script"></script>
+</body>
+
+</html>
