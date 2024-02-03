@@ -572,6 +572,7 @@ nav {
     header a.header-text {
         font-size: 1.55rem;
         font-weight: bold;
+        width: -moz-fit-content;
         width: fit-content;
         margin-right: .50rem;
     }
@@ -654,6 +655,7 @@ nav {
 
     .nav-right.show {
         display: block;
+        max-height: -moz-fit-content;
         max-height: fit-content;
         overflow-y: auto;
     }
@@ -805,6 +807,7 @@ nav {
     header a.header-text {
         font-size: 2.25rem;
         font-weight: bold;
+        width: -moz-fit-content;
         width: fit-content;
         margin-right: auto;
     }
@@ -863,6 +866,7 @@ nav {
 
     .read-further {
         text-align: center;
+        width: -moz-fit-content;
         width: fit-content;
     }
 

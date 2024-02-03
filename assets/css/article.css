@@ -234,6 +234,7 @@ figure figcaption {
     color: #000000;
     margin-bottom: 1.5rem;
     text-indent: 3.5rem;
+    text-wrap: pretty;
 }
 
 .article-main>.am-first-paragraph {
@@ -440,7 +441,7 @@ figure figcaption {
     }
 
     .dropdown-content {
-        top: 10%;
+        top: 11.5%;
     }
 
     /* nav */
@@ -750,7 +751,7 @@ figure figcaption {
     }
 
     .dropdown-content {
-        top: 10.5%;
+        top: 11%;
     }
 
     /* article top */
