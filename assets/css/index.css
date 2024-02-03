@@ -1318,6 +1318,10 @@ label.form-not-required::after {
     list-style: none;
 }
 
+.tabs-navigation>ul li>button {
+    min-width: 6rem;
+}
+
 .tool-nav:has(h1) {
     margin: 0 auto;
     text-align: center;
@@ -1408,6 +1412,7 @@ label.form-not-required::after {
 .td-add-btn {
     margin-top: 1.50rem;
     padding: .50em;
+    width: -moz-fit-content;
     width: fit-content;
     text-align: center;
     font-size: 1.25rem;
@@ -1478,6 +1483,7 @@ label.form-not-required::after {
     outline: 0;
     padding: .50em;
     margin-top: 1.25rem;
+    width: -moz-fit-content;
     width: fit-content;
     text-align: center;
     font-size: 1.25rem;
@@ -1503,6 +1509,83 @@ label.form-not-required::after {
 
 .tool-nav-desc>p {
     font-size: 1.50rem;
+}
+
+/* clock */
+
+.clock-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 1fr;
+    grid-column-gap: 36px;
+    grid-row-gap: 0px;
+    width: 70rem;
+}
+
+.clock-container:has(h3) {
+    font-size: 2rem;
+    text-align: center;
+}
+
+.clock-itself {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+#nativeClock {
+    width: calc(100% + 0px);
+    font-size: 4rem;
+    padding: 64px 64px;
+    color: #ece5e0;
+    background-color: #363945;
+    border-radius: 36px;
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+}
+
+/* stopwatch */
+
+.stopwatch {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.stopwatch-itself {
+    width: calc(100% + 0px);
+    font-size: 4rem;
+    padding: 64px 64px;
+    color: #ece5e0;
+    background-color: #363945;
+    border-radius: 36px;
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+}
+
+.stopwatch-parts {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 1.25rem;
+    margin-top: 1.75rem;
+}
+
+.stopwatch-parts>button {
+    cursor: pointer;
+    outline: 0;
+    border: 0;
+    padding: 18px 22px;
+    font-size: 2rem;
+    color: #ece5e0;
+    background-color: #363945;
+    border-radius: 44px;
+    transition: all .25s ease-in-out;
+}
+
+.stopwatch-parts>button:is(:hover, :active, :focus) {
+    background-color: #282828;
 }
 
 /********** RESPONSIVE **********/
@@ -1708,6 +1791,31 @@ label.form-not-required::after {
         text-align: center;
     }
 
+    /* clock */
+
+    .clock-container {
+        width: 95%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 2rem;
+    }
+
+    .clock-container:has(h3) {
+        font-size: 1.50rem;
+    }
+
+    #nativeClock {
+        font-size: 1.50rem;
+        width: 95%;
+    }
+
+    .stopwatch-itself {
+        font-size: 1.50rem;
+        width: 95%;
+    }
+
     /* footer-top */
 
     .footer-top {
@@ -1833,18 +1941,38 @@ label.form-not-required::after {
     }
 }
 
-@media screen and (max-width: 1280px) and (min-width: 768px) {
-    header a.header-text {
-        font-size: 2rem;
-        margin-right: auto;
+@media screen and (max-width: 1124px) and (min-width: 768px) {
+    /* header */
+
+    .header-right-navigation {
+        flex-direction: column;
     }
 
-    .header-right a {
-        padding: .50rem;
+    .header-right-navigation>li {
+        display: block;
+    }
+
+    header a.header-text {
+        font-size: 1.75rem;
+    }
+
+    .header-right {
+        display: none;
+        flex-direction: column;
+    }
+
+    .header-dropdown {
+        display: flex;
+        margin-right: 0;
     }
 
     .dropdown-content {
-        top: 10.5%;
+        top: 7.5%;
+    }
+
+    .posts {
+        margin: 0 auto;
+        padding: 0;
     }
 
     /* main child */
@@ -1861,12 +1989,14 @@ label.form-not-required::after {
 
     /* posts top */
 
-    .posts-top h2 {
-        font-size: 24px;
+    .posts-top {
+        font-size: 1.25rem;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
     }
 
     .posts-top hr {
-        width: 50vw;
+        width: 25vw;
     }
 
     /* posts bottom */
@@ -1904,8 +2034,13 @@ label.form-not-required::after {
     /* qualifications main */
 
     .qualifications-top {
+        font-size: 1.25rem;
         margin-top: 1rem;
         margin-bottom: 1rem;
+    }
+
+    .qualifications-top>hr {
+        width: 25vw;
     }
 
     .qualifications-main {
@@ -2009,76 +2144,6 @@ label.form-not-required::after {
         margin-top: 1.15rem;
         padding: .50em;
     }
-}
-
-@media screen and (max-width: 1200px) and (min-width: 768px) {
-    /* header */
-
-    .header-right-navigation {
-        flex-direction: column;
-    }
-
-    .header-right-navigation>li {
-        display: block;
-    }
-
-    header a.header-text {
-        font-size: 1.75rem;
-    }
-
-    .header-right {
-        display: none;
-        flex-direction: column;
-    }
-
-    .header-dropdown {
-        display: flex;
-        margin-right: 0;
-    }
-
-    .dropdown-content {
-        top: 8.5%;
-    }
-
-    .posts {
-        margin: 0 auto;
-        padding: 0;
-    }
-
-    /* posts top */
-
-    .posts-top {
-        font-size: 1.25rem;
-        margin-top: 1rem;
-        margin-bottom: 1rem;
-    }
-
-    .posts-top hr {
-        width: 25vw;
-    }
-
-    .posts-content>hr {
-        width: 95%;
-    }
-
-    .posts-content img {
-        width: 100%;
-        height: 50%;
-    }
-
-    .qualifications-main {
-        margin: 0 auto;
-    }
-
-    .qualifications-top {
-        font-size: 1.25rem;
-        margin-top: 1rem;
-        margin-bottom: 1rem;
-    }
-
-    .qualifications-top>hr {
-        width: 25vw;
-    }
 
     /***** ABOUT PAGE *****/
 
@@ -2120,6 +2185,31 @@ label.form-not-required::after {
     .tool-nav-desc>p {
         font-size: 1.50rem;
         text-align: center;
+    }
+
+    /* clock */
+
+    .clock-container {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 2rem;
+    }
+
+    .clock-container:has(h3) {
+        font-size: 1.75rem;
+    }
+
+    #nativeClock {
+        font-size: 2rem;
+        width: 95%;
+    }
+
+    .stopwatch-itself {
+        font-size: 2rem;
+        width: 95%;
     }
 }
 
@@ -2206,9 +2296,25 @@ label.form-not-required::after {
         margin-top: 1.15rem;
         padding: .50em;
     }
+
+    /* stopwatch */
+
+    .clock-container {
+        width: 100%;
+    }
+
+    #nativeClock {
+        padding: 32px 32px;
+        font-size: 3rem;
+    }
+
+    .stopwatch-itself {
+        font-size: 3rem;
+        padding: 32px 32px;
+    }
 }
 
-@media screen and (max-width: 1440px) and (min-width: 1367px) {
+@media screen and (max-width: 1441px) and (min-width: 1367px) {
     /* qualifications main */
 
     .qualifications-main img {
@@ -2267,6 +2373,12 @@ label.form-not-required::after {
     .submit-btn {
         margin-top: 1.15rem;
         padding: .50em;
+    }
+
+    /* stopwatch */
+
+    .clock-container {
+        width: 100%;
     }
 }
 

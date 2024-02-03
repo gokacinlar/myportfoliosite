@@ -71,3 +71,60 @@ document.addEventListener('DOMContentLoaded', function () {
         document.getElementById("myInput").value = "";
     }
 });
+
+// clock and stopwatch
+
+function clockTime() {
+    const clock = new Date();
+    let h = clock.getHours();
+    let m = clock.getMinutes();
+    let s = clock.getSeconds();
+    let meridyen = "ÖÖ" ? "ÖÖ" : "ÖS";
+    m = checkTime(m);
+    s = checkTime(s);
+    document.getElementById('nativeClock').innerHTML = h + ":" + m + ":" + s + " " + meridyen;
+    setTimeout(clockTime, 1000);
+}
+
+function checkTime(i) {
+    if (i < 10) { i = "0" + i };
+    return i;
+}
+
+let [seconds, minutes, hours] = [0, 0, 0];
+let stopWatch = document.getElementById("stopWatch");
+let int = null;
+
+document.getElementById("swStart").addEventListener("click", () => {
+    if (int != null) {
+        clearInterval(int);
+    }
+    int = setInterval(stopWatchTimer, 10);
+})
+
+document.getElementById("swStop").addEventListener("click", () => {
+    clearInterval(int);
+})
+
+document.getElementById("swReset").addEventListener("click", () => {
+    clearInterval(int);
+    [seconds, minutes, hours] = [0, 0, 0];
+    stopWatch.innerHTML = "00:00:00";
+})
+
+function stopWatchTimer() {
+    seconds += 1;
+    if (seconds == 60) {
+        seconds = 0;
+        minutes++
+    } if (minutes == 60) {
+        minutes = 0;
+        hours++;
+    }
+
+    let h = hours < 10 ? "0" + hours : hours;
+    let m = minutes < 10 ? "0" + minutes : minutes;
+    let s = seconds < 10 ? "0" + seconds : seconds;
+
+    stopWatch.innerHTML = `${h} : ${m} : ${s}`;
+}

@@ -46,7 +46,6 @@ function toggleNav() {
     navRight.classList.toggle("show");
 }
 
-
 // progress bar
 
 window.onscroll = function () {

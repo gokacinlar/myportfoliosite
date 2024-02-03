@@ -13,7 +13,7 @@
     <meta name="referrer" content="no-referrer-when-downgrade">
     <link rel="canonical" href="http://www.dervisoksuzoglu.net">
     <!--base url-->
-    
+    <base href="http://www.dervisoksuzoglu.net">
     <!--open graph-->
     <meta property="og:title" content="Derviş Öksüzoğlu | Araçlar">
     <meta property="og:url" content="http://www.dervisoksuzoglu.net/araclar">
@@ -35,7 +35,7 @@
     <title>Derviş Öksüzoğlu | Araçlar</title>
 </head>
 
-<body>
+<body onload="clockTime()">
     <header>
         <a href="index.html" class="header-text">Derviş Öksüzoğlu</a>
         <section class="header-right">
@@ -70,6 +70,7 @@
             <ul>
                 <li>
                     <button data-page="toDo" class="navBtn"><i class="bi bi-check-all"></i>To-Do</button>
+                    <button data-page="clock" class="navBtn"><i class="bi bi-stopwatch"></i>Saat</button>
                 </li>
             </ul>
         </nav>
@@ -85,8 +86,26 @@
             </div>
             <ul id="toDoList">
                 <li class="td-item">GYM'e git!<span class="close bi bi-x-circle"></span></li>
-                <li class="td-item checked">Faturaları Öde!<span class="close bi bi-x-circle"></span></li>
+                <li class="td-item">Faturaları Öde!<span class="close bi bi-x-circle"></span></li>
             </ul>
+        </section>
+        <section class="nav-page" id="clock">
+            <h2>Saat & Kronometre</h2>
+            <article class="clock-container">
+                <div class="clock-itself">
+                    <h3>Saat</h3>
+                    <div id="nativeClock"></div>
+                </div>
+                <div class="stopwatch">
+                    <h3>Kronometre</h3>
+                    <div class="stopwatch-itself" id="stopWatch">00:00:00</div>
+                    <div class="stopwatch-parts">
+                        <button id="swStart" title="Başla"><i class="bi bi-play"></i></button>
+                        <button id="swStop" title="Dur"><i class="bi bi-stop"></i></button>
+                        <button id="swReset" title="Sıfırla"><i class="bi bi-arrow-clockwise"></i></button>
+                    </div>
+                </div>
+            </article>
         </section>
     </main>
     <footer>
@@ -113,6 +132,7 @@
             </p>
         </section>
     </footer>
+    </script>
     <script src="assets/js/script.js" as="script"></script>
     <script src="assets/js/page.js" as="script"></script>
 </body>
