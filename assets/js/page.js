@@ -136,8 +136,8 @@ let wcBtn = document.getElementById("wcBtn");
 let countResult = document.getElementById("wcResultNumber");
 
 wcBtn.addEventListener("click", function () {
-    let str = wcArea.value;
-    let wordsList = str.split(" ");
+    let str = wcArea.value.trim();
+    let wordsList = str.split(/\s+/);
     let count = wordsList.length;
     countResult.innerHTML = count;
 

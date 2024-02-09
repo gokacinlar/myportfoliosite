@@ -1319,7 +1319,9 @@ label.form-not-required::after {
 }
 
 .tabs-navigation>ul li>button {
-    min-width: 6rem;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
 }
 
 .tool-nav:has(h1) {
@@ -1350,10 +1352,7 @@ label.form-not-required::after {
 
 .navBtn>i {
     margin-right: .25rem;
-    font-size: 1.25rem;
-    border-radius: 50%;
-    width: 15px;
-    height: 15px;
+    font-size: 1.50rem;
 }
 
 .navBtn:is(:hover, :active) {
