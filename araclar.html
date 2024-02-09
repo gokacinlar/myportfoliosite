@@ -14,7 +14,6 @@
     <meta name="Content-Security-Policy" content="script-src 'none'">
     <meta name="Content-Security-Policy" content="object-src 'none'">
     <link rel="canonical" href="http://www.dervisoksuzoglu.net">
-
     <!--open graph-->
     <meta property="og:title" content="Derviş Öksüzoğlu | Araçlar">
     <meta property="og:url" content="http://www.dervisoksuzoglu.net/araclar">
@@ -25,7 +24,7 @@
     <!--twitter-->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:url" content="http://www.dervisoksuzoglu.net/araclar">
-    <meta name="twitter:title" content="Derviş Öksüzoğlu | Blog">
+    <meta name="twitter:title" content="Derviş Öksüzoğlu | Araçlar">
     <meta name="twitter:description" content="Derviş Öksüzoğlu: İngilizce Öğretmeni & Front-end Web Geliştiricisi">
     <meta name="twitter:image" content="http://www.dervisoksuzoglu.net/assets/img/myself.webp">
     <meta name="twitter:image:alt" content="Derviş Öksüzoğlu">
@@ -116,7 +115,10 @@
                 <textarea name="wordCount" id="wcArea" cols="40" rows="15" title="Kelime Sayacı"
                     placeholder="Paragraf girin..."></textarea>
                 <div class="wc-misc">
-                    <button id="wcBtn" title="Kelime Say">Kelime Sayısı Hesapla</button>
+                    <div class="wc-btn-wrapper">
+                        <button id="wcBtn" title="Kelime Say">Kelime Sayısı Hesapla</button>
+                        <button id="wcBtnReset" title="Temizle"><i class="bi bi-arrow-counterclockwise"></i></button>
+                    </div>
                     <p id="wcResultIndicator">Kelime Sayısı: <span id="wcResultNumber">0</span></p>
                 </div>
             </div>

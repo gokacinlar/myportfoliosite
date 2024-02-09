@@ -133,6 +133,7 @@ function stopWatchTimer() {
 
 let wcArea = document.getElementById("wcArea");
 let wcBtn = document.getElementById("wcBtn");
+let wcResetBtn = document.getElementById("wcBtnReset");
 let countResult = document.getElementById("wcResultNumber");
 
 wcBtn.addEventListener("click", function () {
@@ -144,4 +145,8 @@ wcBtn.addEventListener("click", function () {
     if (str.length == 0) {
         countResult.innerHTML = 0;
     }
+});
+
+wcResetBtn.addEventListener("click", () => {
+    wcArea.value = "";
 });

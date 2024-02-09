@@ -1637,6 +1637,30 @@ label.form-not-required::after {
     background-color: #282828;
 }
 
+#wcBtnReset:is(:active, :hover) {
+    background-color: #282828;
+}
+
+#wcBtnReset {
+    border: 0;
+    outline: 0;
+    padding: 12px 12px;
+    font-size: 1.25rem;
+    color: #ece5e0;
+    background-color: #363945;
+    border-radius: 44px;
+    cursor: pointer;
+    transition: all .25s ease-in-out;
+}
+
+.wc-btn-wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 1.25rem;
+}
+
 /********** RESPONSIVE **********/
 
 @media screen and (max-width: 768px) and (min-width: 250px) {
