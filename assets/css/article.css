@@ -368,6 +368,15 @@ figure figcaption {
     background: #363945;
 }
 
+.aih-circle::before {
+    content: "☞";
+    position: relative;
+    display: inline-flex;
+    justify-self: center;
+    align-self: center;
+    margin-right: .25rem;
+}
+
 /* summary & details content */
 
 .sum-details-wrapper {
