@@ -128,3 +128,20 @@ function stopWatchTimer() {
 
     stopWatch.innerHTML = `${h} : ${m} : ${s}`;
 }
+
+// word counter
+
+let wcArea = document.getElementById("wcArea");
+let wcBtn = document.getElementById("wcBtn");
+let countResult = document.getElementById("wcResultNumber");
+
+wcBtn.addEventListener("click", function () {
+    let str = wcArea.value;
+    let wordsList = str.split(" ");
+    let count = wordsList.length;
+    countResult.innerHTML = count;
+
+    if (str.length == 0) {
+        countResult.innerHTML = 0;
+    }
+});

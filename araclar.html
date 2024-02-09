@@ -12,8 +12,7 @@
     <meta name="description" content="Araçlar | Derviş Öksüzoğlu: Pedagoji, Web Geliştirme, Felsefe ve Dahası">
     <meta name="referrer" content="no-referrer-when-downgrade">
     <link rel="canonical" href="http://www.dervisoksuzoglu.net">
-    <!--base url-->
-    <base href="http://www.dervisoksuzoglu.net">
+
     <!--open graph-->
     <meta property="og:title" content="Derviş Öksüzoğlu | Araçlar">
     <meta property="og:url" content="http://www.dervisoksuzoglu.net/araclar">
@@ -71,6 +70,7 @@
                 <li>
                     <button data-page="toDo" class="navBtn"><i class="bi bi-check-all"></i>To-Do</button>
                     <button data-page="clock" class="navBtn"><i class="bi bi-stopwatch"></i>Saat</button>
+                    <button data-page="wordCounter" class="navBtn"><i class="bi bi-stopwatch"></i>Kelime Sayacı</button>
                 </li>
             </ul>
         </nav>
@@ -100,12 +100,24 @@
                     <h3>Kronometre</h3>
                     <div class="stopwatch-itself" id="stopWatch">00:00:00</div>
                     <div class="stopwatch-parts">
-                        <button id="swStart" title="Başla"><i class="bi bi-play"></i></button>
-                        <button id="swStop" title="Dur"><i class="bi bi-stop"></i></button>
-                        <button id="swReset" title="Sıfırla"><i class="bi bi-arrow-clockwise"></i></button>
+                        <button id="swStart" title="Başla" aria-label="Başla"><i class="bi bi-play"></i></button>
+                        <button id="swStop" title="Dur" aria-label="Dur"><i class="bi bi-stop"></i></button>
+                        <button id="swReset" title="Sıfırla" aria-label="Sıfırla"><i
+                                class="bi bi-arrow-clockwise"></i></button>
                     </div>
                 </div>
             </article>
+        </section>
+        <section class="nav-page" id="wordCounter">
+            <h2>Kelime Sayacı</h2>
+            <div class="wc-container">
+                <textarea name="wordCount" id="wcArea" cols="40" rows="15" title="Kelime Sayacı"
+                    placeholder="Paragraf girin..."></textarea>
+                <div class="wc-misc">
+                    <button id="wcBtn" title="Kelime Say">Kelime Sayısı Hesapla</button>
+                    <p id="wcResultIndicator">Kelime Sayısı: <span id="wcResultNumber">0</span></p>
+                </div>
+            </div>
         </section>
     </main>
     <footer>

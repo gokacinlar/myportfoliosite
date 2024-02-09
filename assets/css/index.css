@@ -1588,6 +1588,56 @@ label.form-not-required::after {
     background-color: #282828;
 }
 
+/* word counter */
+
+#wcArea {
+    resize: none;
+    border: 2px solid #363945;
+    border-radius: 6px;
+    outline: 0;
+    padding: 8px 8px;
+    font-size: 1.25rem;
+    font-family: 'Figtree', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 550;
+    text-wrap: pretty;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+}
+
+.wc-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.wc-misc {
+    margin-top: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.25rem;
+}
+
+.wc-misc>p {
+    font-size: 1.25rem;
+}
+
+#wcBtn {
+    border: 0;
+    outline: 0;
+    padding: 12px 12px;
+    font-size: 1.25rem;
+    color: #ece5e0;
+    background-color: #363945;
+    border-radius: 44px;
+    cursor: pointer;
+    transition: all .25s ease-in-out;
+}
+
+#wcBtn:is(:active, :hover) {
+    background-color: #282828;
+}
+
 /********** RESPONSIVE **********/
 
 @media screen and (max-width: 768px) and (min-width: 250px) {
