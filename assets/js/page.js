@@ -149,4 +149,5 @@ wcBtn.addEventListener("click", function () {
 
 wcResetBtn.addEventListener("click", () => {
     wcArea.value = "";
+    countResult.innerHTML = "0";
 });
