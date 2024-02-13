@@ -1307,14 +1307,19 @@ label.form-not-required::after {
     display: flex;
     align-content: center;
     justify-content: center;
-    overflow: hidden;
+    overflow-x: scroll;
     color: #ece;
     background-color: #282828;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.tabs-navigation::-webkit-scrollbar {
+    display: none;
 }
 
 .tabs-navigation>ul li {
     display: flex;
-    flex-direction: row;
     list-style: none;
 }
 
@@ -1322,6 +1327,8 @@ label.form-not-required::after {
     display: flex;
     align-items: center;
     justify-content: flex-start;
+    min-width: 8.5rem;
+    max-width: 8.5rem;
 }
 
 .tool-nav:has(h1) {
@@ -1840,6 +1847,12 @@ label.form-not-required::after {
     .qm-between-separator {
         border: 1px solid #282828;
         width: 50vw;
+    }
+
+    /***** tools page *****/
+
+    .tabs-navigation {
+        justify-content: flex-start;
     }
 
     /* to do */
