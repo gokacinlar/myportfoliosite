@@ -112,14 +112,15 @@
         <section class="nav-page" id="wordCounter">
             <h2>Kelime Sayacı</h2>
             <div class="wc-container">
-                <textarea name="wordCount" id="wcArea" cols="40" rows="15" title="Kelime Sayacı"
+                <textarea class="wc-textarea" name="wordCount" id="wcArea" cols="50" rows="20" title="Kelime Sayacı"
                     placeholder="Paragraf girin..."></textarea>
                 <div class="wc-misc">
                     <div class="wc-btn-wrapper">
                         <button id="wcBtn" title="Kelime Say">Kelime Sayısı Hesapla</button>
                         <button id="wcBtnReset" title="Temizle"><i class="bi bi-arrow-counterclockwise"></i></button>
                     </div>
-                    <p id="wcResultIndicator">Kelime Sayısı: <span id="wcResultNumber">0</span></p>
+                    <p class="wc-result" id="wcResultIndicator">Kelime Sayısı: <span class="wc-result-indicator"
+                            id="wcResultNumber">0</span></p>
                 </div>
             </div>
         </section>

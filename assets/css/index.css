@@ -1596,7 +1596,7 @@ label.form-not-required::after {
 
 /* word counter */
 
-#wcArea {
+.wc-textarea {
     resize: none;
     border: 2px solid #363945;
     border-radius: 6px;
@@ -1638,13 +1638,10 @@ label.form-not-required::after {
     border-radius: 44px;
     cursor: pointer;
     transition: all .25s ease-in-out;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
 }
 
 #wcBtn:is(:active, :hover) {
-    background-color: #282828;
-}
-
-#wcBtnReset:is(:active, :hover) {
     background-color: #282828;
 }
 
@@ -1658,6 +1655,11 @@ label.form-not-required::after {
     border-radius: 44px;
     cursor: pointer;
     transition: all .25s ease-in-out;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+}
+
+#wcBtnReset:is(:active, :hover) {
+    background-color: #282828;
 }
 
 .wc-btn-wrapper {
@@ -1667,6 +1669,75 @@ label.form-not-required::after {
     justify-content: center;
     gap: 1.25rem;
 }
+
+.wc-result {
+    padding: 12px 12px;
+    font-size: 1.25rem;
+    color: #ece5e0;
+    background-color: #363945;
+    border-radius: 44px;
+    gap: .25rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: .50rem;
+}
+
+.wc-result-indicator {
+    display: inline-flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    color: #282828;
+    background-color: #ffb756;
+    font-weight: 600;
+    font-size: 1.25rem;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+.wc-result-animate {
+    animation: scale-in-ver-bottom 0.25s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+}
+
+@-webkit-keyframes scale-in-ver-bottom {
+    0% {
+        -webkit-transform: scaleY(0);
+        transform: scaleY(0);
+        -webkit-transform-origin: 0% 100%;
+        transform-origin: 0% 100%;
+        opacity: 1;
+    }
+
+    100% {
+        -webkit-transform: scaleY(1);
+        transform: scaleY(1);
+        -webkit-transform-origin: 0% 100%;
+        transform-origin: 0% 100%;
+        opacity: 1;
+    }
+}
+
+@keyframes scale-in-ver-bottom {
+    0% {
+        -webkit-transform: scaleY(0);
+        transform: scaleY(0);
+        -webkit-transform-origin: 0% 100%;
+        transform-origin: 0% 100%;
+        opacity: 1;
+    }
+
+    100% {
+        -webkit-transform: scaleY(1);
+        transform: scaleY(1);
+        -webkit-transform-origin: 0% 100%;
+        transform-origin: 0% 100%;
+        opacity: 1;
+    }
+}
+
 
 /********** RESPONSIVE **********/
 

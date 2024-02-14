@@ -150,4 +150,8 @@ wcBtn.addEventListener("click", function () {
 wcResetBtn.addEventListener("click", () => {
     wcArea.value = "";
     countResult.innerHTML = "0";
+    countResult.classList.add("wc-result-animate");
+    setTimeout(() => {
+        countResult.classList.remove("wc-result-animate");
+    }, 250);
 });
