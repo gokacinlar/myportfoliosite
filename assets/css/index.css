@@ -1308,38 +1308,19 @@ label.form-not-required::after {
     align-content: center;
     justify-content: center;
     overflow-x: scroll;
-    color: #ece;
+    color: #ece5e0;
     background-color: #282828;
     -ms-overflow-style: none;
-    -webkit-overflow-scrolling: touch;
-    overflow: hidden;
     position: relative;
-
-    &:before {
-        content: "";
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        left: 0;
-        height: 100%;
-        width: 2.5%;
-        box-shadow: inset 10px 0px 10px rgba(0, 0, 0, 0.2);
-    }
-
-    &:after {
-        content: "";
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        right: 0;
-        width: 2.5%;
-        height: 100%;
-        box-shadow: inset -10px 0px 10px rgba(0, 0, 0, 0.2);
-    }
 }
 
 .tabs-navigation::-webkit-scrollbar {
     display: none;
+}
+
+.tabs-navigation>ul {
+    position: relative;
+    box-shadow: inset 10px 0px 10px rgba(0, 0, 0, 0.2), inset -10px 0px 10px rgba(0, 0, 0, 0.2);
 }
 
 .tabs-navigation>ul li {
@@ -1348,12 +1329,31 @@ label.form-not-required::after {
     scrollbar-width: none;
 }
 
+.tabs-navigation>ul:before,
+.tabs-navigation>ul:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 5%;
+}
+
+.tabs-navigation>ul:before {
+    right: 5%;
+    box-shadow: inset 10px 0px 10px rgba(0, 0, 0, 0.2);
+}
+
+.tabs-navigation>ul:after {
+    right: -5%;
+    box-shadow: inset -10px 0px 10px rgba(0, 0, 0, 0.2);
+}
+
 .tabs-navigation>ul li>button {
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    min-width: 8.5rem;
-    max-width: 8.5rem;
+    min-width: 8rem;
+    max-width: 8rem;
 }
 
 .tool-nav:has(h1) {
