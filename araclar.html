@@ -14,8 +14,7 @@
     <meta name="Content-Security-Policy" content="script-src 'none'">
     <meta name="Content-Security-Policy" content="object-src 'none'">
     <link rel="canonical" href="https://www.dervisoksuzoglu.net">
-    <!--base url-->
-    <base href="https://www.dervisoksuzoglu.net">
+
     <!--open graph-->
     <meta property="og:title" content="Derviş Öksüzoğlu | Araçlar">
     <meta property="og:url" content="https://www.dervisoksuzoglu.net/araclar">
@@ -74,6 +73,8 @@
                     <button data-page="toDo" class="navBtn"><i class="bi bi-check-all"></i>To-Do & Yapılacaklar</button>
                     <button data-page="clock" class="navBtn"><i class="bi bi-stopwatch"></i>Saat & Kronometre</button>
                     <button data-page="wordCounter" class="navBtn"><i class="bi bi-file-word"></i>Kelime Sayacı</button>
+                    <button data-page="unitConverter" class="navBtn"><i class="bi bi-nut"></i>Birim
+                        Çeviricisi</button>
                 </li>
             </ul>
         </nav>
@@ -124,6 +125,39 @@
                     </div>
                     <p class="wc-result" id="wcResultIndicator">Kelime Sayısı: <span class="wc-result-indicator"
                             id="wcResultNumber">0</span></p>
+                </div>
+            </div>
+        </section>
+        <section class="nav-page" id="unitConverter">
+            <h2>Birim Çeviricisi</h2>
+            <div class="uc-container">
+                <div class="uc-first-value">
+                    <label for="First Input">Çevrilecek Değeri Giriniz:</label>
+                    <input type="text" title="Değer Giriniz" name="First Input">
+                </div>
+                <div class="uc-input-selection">
+                    <div class="uc-child uc-one">
+                        <label for="uc-value-one">Çevrilecek</label>
+                        <select name="uc-value-one" id="ucValueOne" title="1. Değer">
+                            <option value="İkilik">İkilik</option>
+                            <option value="Ondalık">Ondalık</option>
+                            <option value="Sekizlik">Sekizlik</option>
+                            <option value="Onaltılık">Onaltılık</option>
+                        </select>
+                    </div>
+                    <div class="uc-child uc-two">
+                        <label for="uc-value-one">Sonuç</label>
+                        <select name="uc-value-two" id="ucValueTwo" title="2. Değer">
+                            <option value="İkilik">İkilik</option>
+                            <option value="Ondalık">Ondalık</option>
+                            <option value="Sekizlik">Sekizlik</option>
+                            <option value="Onaltılık">Onaltılık</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="uc-second-value">
+                    <button class="uc-convert-btn" id="ucConvertBtn">Çevir!</button>
+                    <textarea class="uc-output-value" id="ucOutputValue" title="Sonuç" readonly></textarea>
                 </div>
             </div>
         </section>

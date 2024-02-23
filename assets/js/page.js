@@ -155,3 +155,60 @@ wcResetBtn.addEventListener("click", () => {
         countResult.classList.remove("wc-result-animate");
     }, 250);
 });
+
+// unit converter
+
+const inputField = document.querySelector("input[name='First Input']");
+const outputTextarea = document.getElementById("ucOutputValue");
+const convertBtn = document.getElementById("ucConvertBtn");
+const valueOneSelect = document.getElementById("ucValueOne");
+const valueTwoSelect = document.getElementById("ucValueTwo");
+
+function addSpacesToBinary(binaryString, spacing) {
+    let formattedString = '';
+    for (let i = 0; i < binaryString.length; i++) {
+        formattedString += binaryString[i];
+        if ((i + 1) % spacing === 0 && i !== binaryString.length - 1) {
+            formattedString += ' ';
+        }
+    }
+    return formattedString;
+}
+
+convertBtn.addEventListener("click", () => {
+    const inputValue = inputField.value.trim();
+    const fromUnit = valueOneSelect.value;
+    const toUnit = valueTwoSelect.value;
+
+    let convertedValue;
+
+    if (fromUnit === "İkilik" && toUnit === "Ondalık") {
+        convertedValue = parseInt(inputValue, 2).toString(10);
+    } else if (fromUnit === "İkilik" && toUnit === "Sekizlik") {
+        convertedValue = parseInt(inputValue, 2).toString(8);
+    } else if (fromUnit === "İkilik" && toUnit === "Onaltılık") {
+        convertedValue = parseInt(inputValue, 2).toString(16).toUpperCase();
+    } else if (fromUnit === "Ondalık" && toUnit === "İkilik") {
+        convertedValue = parseInt(inputValue, 10).toString(2);
+    } else if (fromUnit === "Ondalık" && toUnit === "Sekizlik") {
+        convertedValue = parseInt(inputValue, 10).toString(8);
+    } else if (fromUnit === "Ondalık" && toUnit === "Onaltılık") {
+        convertedValue = parseInt(inputValue, 10).toString(16).toUpperCase();
+    } else if (fromUnit === "Sekizlik" && toUnit === "İkilik") {
+        convertedValue = parseInt(inputValue, 8).toString(2);
+    } else if (fromUnit === "Sekizlik" && toUnit === "Ondalık") {
+        convertedValue = parseInt(inputValue, 8).toString(10);
+    } else if (fromUnit === "Sekizlik" && toUnit === "Onaltılık") {
+        convertedValue = parseInt(inputValue, 8).toString(16).toUpperCase();
+    } else if (fromUnit === "Onaltılık" && toUnit === "İkilik") {
+        convertedValue = parseInt(inputValue, 16).toString(2);
+    } else if (fromUnit === "Onaltılık" && toUnit === "Ondalık") {
+        convertedValue = parseInt(inputValue, 16).toString(10);
+    } else if (fromUnit === "Onaltılık" && toUnit === "Sekizlik") {
+        convertedValue = parseInt(inputValue, 16).toString(8);
+    } else {
+        convertedValue = "Geçersiz birim dönüşümü!";
+    }
+
+    outputTextarea.value = convertedValue;
+});
