@@ -1310,8 +1310,32 @@ label.form-not-required::after {
     overflow-x: scroll;
     color: #ece;
     background-color: #282828;
-    scrollbar-width: none;
     -ms-overflow-style: none;
+    -webkit-overflow-scrolling: touch;
+    overflow: hidden;
+    position: relative;
+
+    &:before {
+        content: "";
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        height: 100%;
+        width: 2.5%;
+        box-shadow: inset 10px 0px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    &:after {
+        content: "";
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        width: 2.5%;
+        height: 100%;
+        box-shadow: inset -10px 0px 10px rgba(0, 0, 0, 0.2);
+    }
 }
 
 .tabs-navigation::-webkit-scrollbar {
@@ -1321,6 +1345,7 @@ label.form-not-required::after {
 .tabs-navigation>ul li {
     display: flex;
     list-style: none;
+    scrollbar-width: none;
 }
 
 .tabs-navigation>ul li>button {
@@ -1926,7 +1951,7 @@ label.form-not-required::after {
         justify-content: flex-start;
     }
 
-    /* to do */
+    /***** to do *****/
 
     .nav-page {
         width: 100%;
@@ -1948,7 +1973,7 @@ label.form-not-required::after {
         text-align: center;
     }
 
-    /* clock */
+    /***** clock *****/
 
     .clock-container {
         width: 95%;
@@ -1971,6 +1996,13 @@ label.form-not-required::after {
     .stopwatch-itself {
         font-size: 1.50rem;
         width: 95%;
+    }
+
+    /***** word counter *****/
+
+    .wc-container>.wc-textarea {
+        width: 95%;
+        height: 20rem;
     }
 
     /* footer-top */
