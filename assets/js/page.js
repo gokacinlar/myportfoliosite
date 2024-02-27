@@ -165,11 +165,11 @@ const valueOneSelect = document.getElementById("ucValueOne");
 const valueTwoSelect = document.getElementById("ucValueTwo");
 
 function addSpacesToBinary(binaryString, spacing) {
-    let formattedString = '';
+    let formattedString = "";
     for (let i = 0; i < binaryString.length; i++) {
         formattedString += binaryString[i];
         if ((i + 1) % spacing === 0 && i !== binaryString.length - 1) {
-            formattedString += ' ';
+            formattedString += " ";
         }
     }
     return formattedString;

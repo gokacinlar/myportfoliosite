@@ -1332,7 +1332,7 @@ label.form-not-required::after {
 .tabs-navigation>ul:before,
 .tabs-navigation>ul:after {
     content: "";
-    position: absolute;
+    position: static;
     top: 0;
     bottom: 0;
     width: 5%;
@@ -2078,6 +2078,15 @@ label.form-not-required::after {
 
     .tabs-navigation {
         justify-content: flex-start;
+    }
+
+    .tabs-navigation>ul:before,
+    .tabs-navigation>ul:after {
+        content: "";
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        width: 5%;
     }
 
     /***** to do *****/
