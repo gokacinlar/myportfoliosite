@@ -671,8 +671,8 @@ header a.active {
     align-items: center;
 }
 
-.qm-child h4 {
-    font-size: 32px;
+.qm-child>h4 {
+    font-size: clamp(1.25rem, 0.5906rem + 2.9834vw, 2rem);
 }
 
 /* qualifications indicator spans */
@@ -2143,6 +2143,23 @@ label.form-not-required::after {
         height: 20rem;
     }
 
+    /***** unit converter *****/
+
+    .uc-first-value {
+        width: 95%;
+        max-width: 95%;
+    }
+
+    .uc-second-value {
+        width: 95%;
+        max-width: 95%;
+    }
+
+    .uc-input-selection {
+        width: 95%;
+        max-width: 95%;
+    }
+
     /* footer-top */
 
     .footer-top {
@@ -2540,7 +2557,7 @@ label.form-not-required::after {
     }
 }
 
-@media screen and (max-width: 1367px) and (min-width: 1024px) {
+@media screen and (max-width: 1366px) and (min-width: 1024px) {
     /* posts top */
 
     .posts-top h2 {
@@ -2641,7 +2658,7 @@ label.form-not-required::after {
     }
 }
 
-@media screen and (max-width: 1441px) and (min-width: 1367px) {
+@media screen and (max-width: 1441px) and (min-width: 1366px) {
     /* qualifications main */
 
     .qualifications-main img {
