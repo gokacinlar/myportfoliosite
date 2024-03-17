@@ -884,38 +884,38 @@ footer {
 .footer-top-right {
     display: flex;
     flex-direction: row;
+    justify-content: center;
     align-items: center;
 }
 
-.footer-top-right a {
+.ftr-links>a {
     text-decoration: none;
     color: #ece5e0;
     transition: all 0.25s ease-out;
     margin-right: 1rem;
 }
 
-.footer-top-right a:hover {
+.ftr-links>a:hover {
     color: #FF7355;
     transform: scale(1.2);
     transition: color 0s ease-out, transform 0.25s ease-out;
 }
 
-.footer-top-right a:active {
-    transform: scale(1.1);
+.ftr-links>a:active {
+    transform: scale(1.2);
     color: #cc5c43;
 }
 
-.footer-top-right i {
-    font-size: 36px;
-    vertical-align: middle;
-    transition: all 0.25s ease-out;
+.footer-top-right>.ftr-links a>i {
+    font-size: 2rem;
 }
 
-.footer-top-right img {
-    vertical-align: middle;
-    border-radius: 4px;
-    height: 36px;
-    width: 36px;
+.footer-top-right>.ftr-links a>i:hover {
+    font-size: 2rem;
+}
+
+.footer-top-right>.ftr-links a>i {
+    font-size: 2rem;
 }
 
 /* footer-bottom */
@@ -1096,6 +1096,43 @@ aside {
 
 /* collapsible */
 
+.collapsible {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    color: #ece5e0;
+    background-color: #363945;
+    cursor: pointer;
+    padding: 1rem;
+    width: 100%;
+    border: none;
+    -webkit-border-radius: 18px;
+    -moz-border-radius: 18px;
+    border-radius: 18px;
+    outline: none;
+    text-align: left;
+    font-size: 1.25rem;
+    font-weight: bold;
+    transition: all 0.25s ease-in-out;
+}
+
+.collapsible>i {
+    transition: transform .25s ease-in-out;
+}
+
+.active,
+.collapsible:hover {
+    border-radius: 0;
+    -webkit-border-top-left-radius: 18px;
+    -webkit-border-top-right-radius: 18px;
+    -moz-border-radius-topleft: 18px;
+    -moz-border-radius-topright: 18px;
+    border-top-left-radius: 18px;
+    border-top-right-radius: 18px;
+    background-color: #282828;
+}
+
 .collapsible-content {
     display: flex;
     flex-direction: column;
@@ -1105,36 +1142,6 @@ aside {
 
 .collapsible-child {
     margin-bottom: 1rem;
-}
-
-.collapsible {
-    color: #ece5e0;
-    background-color: #363945;
-    cursor: pointer;
-    padding: 2%;
-    width: 100%;
-    border: none;
-    -webkit-border-radius: 18px;
-    -moz-border-radius: 18px;
-    border-radius: 18px;
-    outline: none;
-    text-align: left;
-    font-size: 1.2rem;
-    font-weight: bold;
-    transition: border-radius 0.25s ease-in-out;
-}
-
-.active,
-.collapsible:hover,
-.collapsible:hover i {
-    border-radius: 0;
-    -webkit-border-top-left-radius: 18px;
-    -webkit-border-top-right-radius: 18px;
-    -moz-border-radius-topleft: 18px;
-    -moz-border-radius-topright: 18px;
-    border-top-left-radius: 18px;
-    border-top-right-radius: 18px;
-    background-color: #282828;
 }
 
 .content {
@@ -1159,8 +1166,7 @@ aside {
 }
 
 .rotate {
-    transform: rotate(90deg);
-    transition: transform 0.25s ease-in-out;
+    transform: rotate(180deg);
 }
 
 /********** email form **********/
@@ -1200,15 +1206,18 @@ aside {
     flex-direction: column;
 }
 
+.form-inputs {
+    width: 100%;
+    max-width: 100%;
+}
+
 .form-row {
     display: flex;
     flex-direction: row;
-    flex-wrap: nowrap;
     gap: 0;
 }
 
 .form-row>.form-column>input {
-    flex: 1;
     border: 2px solid transparent;
     border-radius: 6px;
     outline: 0;
@@ -2191,12 +2200,7 @@ label.form-not-required::after {
     }
 
     .footer-top-right i {
-        font-size: 36px;
-    }
-
-    .footer-top-right img {
-        width: 38px;
-        height: 38px;
+        font-size: 1.75rem;
     }
 
     /* footer-bottom */
@@ -2607,7 +2611,6 @@ label.form-not-required::after {
     /***** ABOUT PAGE *****/
 
     .form-row {
-        flex-wrap: nowrap;
         justify-content: space-between;
         gap: .50rem;
     }
@@ -2619,9 +2622,9 @@ label.form-not-required::after {
     }
 
     .form-row>.form-column>input {
+        width: 100%;
         padding: .50em;
         font-size: 1.25rem;
-        width: 200px;
     }
 
     .form-group>textarea {
@@ -2680,11 +2683,15 @@ label.form-not-required::after {
 
     .form-row {
         display: flex;
-        flex-wrap: nowrap;
         align-items: center;
         justify-content: space-between;
         flex-direction: row;
-        gap: 1.25rem;
+        gap: 1rem;
+    }
+
+    .form-inputs {
+        width: 100%;
+        max-width: 100%;
     }
 
     .form-row>.form-column {
@@ -2694,9 +2701,9 @@ label.form-not-required::after {
     }
 
     .form-row>.form-column>input {
+        width: 100%;
         padding: .50em;
         font-size: 1.25rem;
-        width: 225px;
     }
 
     .form-group>textarea {
