@@ -230,11 +230,12 @@ figure figcaption {
     text-align: left;
 }
 
-.article-main p {
+.article-main>p {
     color: #000000;
     margin-bottom: 1.5rem;
     text-indent: 3.5rem;
     text-wrap: pretty;
+    hanging-punctuation: first last;
 }
 
 .article-main>.am-first-paragraph {

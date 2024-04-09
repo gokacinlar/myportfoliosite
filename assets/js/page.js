@@ -1,9 +1,11 @@
+// dom to manipulate the tabs
+
 var navButtons = document.querySelectorAll(".navBtn");
 navButtons.forEach(function (button) {
     button.addEventListener("click", function () {
         var pageName = this.getAttribute("data-page");
         openPage(pageName);
-        document.querySelector('.tool-nav-desc').style.display = "none";
+        document.querySelector(".tool-nav-desc").style.display = "none";
     });
 });
 
@@ -18,24 +20,42 @@ function openPage(pageName) {
         button.classList.remove("active");
     });
     document.getElementById(pageName).style.display = "block";
-    document.querySelector('.navBtn[data-page="' + pageName + '"]').classList.add("active");
+    document
+        .querySelector('.navBtn[data-page="' + pageName + '"]')
+        .classList.add("active");
 }
 
-document.addEventListener('DOMContentLoaded', function () {
-    var list = document.getElementById('toDoList');
+// buttons to navigate through the tabs-navigation
 
-    document.getElementById('addToDo').addEventListener('click', function () {
+let scrollLeftBtn = document.getElementById("tnPrevBtn");
+let scrollRightBtn = document.getElementById("tnNextBtn");
+let tabsNavigation = document.querySelector(".tabs-navigation > ul");
+
+scrollLeftBtn.addEventListener("click", function () {
+    tabsNavigation.scrollLeft -= 1000;
+})
+
+scrollRightBtn.addEventListener("click", function () {
+    tabsNavigation.scrollLeft += 1000;
+})
+
+document.addEventListener("DOMContentLoaded", function () {
+    var list = document.getElementById("toDoList");
+
+    document.getElementById("addToDo").addEventListener("click", function () {
         newElement();
     });
 
-    document.getElementById('myInput').addEventListener('keypress', function (event) {
-        if (event.key === 'Enter') {
-            newElement();
-        }
-    });
+    document
+        .getElementById("myInput")
+        .addEventListener("keypress", function (event) {
+            if (event.key === "Enter") {
+                newElement();
+            }
+        });
 
-    list.addEventListener('click', function (ev) {
-        if (ev.target.classList.contains('close')) {
+    list.addEventListener("click", function (ev) {
+        if (ev.target.classList.contains("close")) {
             var listItem = ev.target.parentElement;
             listItem.style.display = "none";
         }
@@ -43,14 +63,14 @@ document.addEventListener('DOMContentLoaded', function () {
 
     function newElement() {
         var inputValue = document.getElementById("myInput").value;
-        if (inputValue.trim() === '') {
+        if (inputValue.trim() === "") {
             alert("Listeye bir şeyler eklemeniz gerekiyor!");
         } else {
             var li = document.createElement("li");
             li.className = "td-item";
             li.innerHTML = inputValue + '<span class="close bi bi-x-circle"></span>';
             var list = document.getElementById("toDoList");
-            var existingItems = list.querySelectorAll('.td-item');
+            var existingItems = list.querySelectorAll(".td-item");
             var captureBtn = document.getElementById("captureBtn");
             if (existingItems.length === 0) {
                 li.style.borderTopRightRadius = "18px";
@@ -63,8 +83,8 @@ document.addEventListener('DOMContentLoaded', function () {
                 li.style.borderTopLeftRadius = "0px";
             }
             list.appendChild(li);
-            var closeBtn = li.querySelector('.bi-x-circle');
-            closeBtn.addEventListener('click', function () {
+            var closeBtn = li.querySelector(".bi-x-circle");
+            closeBtn.addEventListener("click", function () {
                 li.style.display = "none";
             });
         }
@@ -82,12 +102,15 @@ function clockTime() {
     let meridyen = "ÖÖ" ? "ÖÖ" : "ÖS";
     m = checkTime(m);
     s = checkTime(s);
-    document.getElementById('nativeClock').innerHTML = h + ":" + m + ":" + s + " " + meridyen;
+    document.getElementById("nativeClock").innerHTML =
+        h + ":" + m + ":" + s + " " + meridyen;
     setTimeout(clockTime, 1000);
 }
 
 function checkTime(i) {
-    if (i < 10) { i = "0" + i };
+    if (i < 10) {
+        i = "0" + i;
+    }
     return i;
 }
 
@@ -100,24 +123,25 @@ document.getElementById("swStart").addEventListener("click", () => {
         clearInterval(int);
     }
     int = setInterval(stopWatchTimer, 10);
-})
+});
 
 document.getElementById("swStop").addEventListener("click", () => {
     clearInterval(int);
-})
+});
 
 document.getElementById("swReset").addEventListener("click", () => {
     clearInterval(int);
     [seconds, minutes, hours] = [0, 0, 0];
     stopWatch.innerHTML = "00:00:00";
-})
+});
 
 function stopWatchTimer() {
     seconds += 1;
     if (seconds == 60) {
         seconds = 0;
-        minutes++
-    } if (minutes == 60) {
+        minutes++;
+    }
+    if (minutes == 60) {
         minutes = 0;
         hours++;
     }
@@ -211,4 +235,154 @@ convertBtn.addEventListener("click", () => {
     }
 
     outputTextarea.value = convertedValue;
+});
+
+// wysiwyg blog post editor
+
+let textValue = "";
+
+let classObject = {
+    h1ClassName: "article-title",
+    h2ClassName: "article-h2-title",
+    pClassName: "article-paragraph",
+    aClassName: "am-in-link",
+    imgClassName: "am-in-img"
+};
+
+let formatters = {
+    boldFormatter: "boldFormatter",
+    italicFormatter: "italicFormatter",
+    underlineFormatter: "underlineFormatter"
+}
+
+const syncElements = document.querySelectorAll(".syncText");
+for (let i = 0; i < syncElements.length; i++) {
+    syncElements[i].addEventListener("change", reflectText);
+    syncElements[i].addEventListener("input", reflectText);
+    syncElements[i].addEventListener("keyup", reflectText);
+}
+
+function reflectText(e) {
+    textValue = e.target.value;
+    for (let i = 0; i < syncElements.length; i++) {
+        if (syncElements[i].tagName === "TEXTAREA") {
+            syncElements[i].value = textValue;
+        } else if (syncElements[i].tagName === "DIV") {
+            syncElements[i].innerHTML = textValue;
+        }
+    }
+}
+
+// experimental feature to add to text on cursor position
+// example: insertTextOnCursor(inputTextArea, h1OutPut);
+
+function insertTextOnCursor(inputTextArea, textToBeInserted) {
+    var cursorPosition = inputTextArea.selectionStart;
+    var textBefore = inputTextArea.value.substring(0, cursorPosition);
+    var textAfter = inputTextArea.value.substring(inputTextArea.selectionEnd, inputTextArea.value.length);
+    inputTextArea.value = textBefore + textToBeInserted + textAfter;
+}
+
+let inputTextArea = document.getElementById("weInputArea");
+let outputDiv = document.getElementById("weOutputArea");
+
+// function to prevent tab press to insert "undefined" at textarea
+
+inputTextArea.addEventListener("keydown", function (e) {
+    if (e.key === "Tab") {
+        e.preventDefault(); // prevent default tab behaviour
+    }
+});
+
+// styling to make buttons' border radius 44px with smaller characters than 3
+
+const weEditorButtons = document.querySelectorAll(".we-btn");
+
+weEditorButtons.forEach((button) => {
+    const buttonText = button.innerText;
+    const buttonCharCount = buttonText.length;
+
+    if (buttonCharCount <= 3) {
+        button.style.borderRadius = "44px";
+    }
+})
+
+/*
+    Button functions to add pre-defined HTML elements with custom
+    CSS styling. Styling can be changed within the "classObject"
+    property.
+*/
+
+h1Title.addEventListener("click", function () {
+    var h1Output = `<h1 class="${classObject.h1ClassName}">H1 Title</h1>\n`;
+    outputDiv.innerHTML += h1Output;
+    inputTextArea.value += h1Output;
+    reflectText({ target: inputTextArea });
+});
+
+h2Title.addEventListener("click", function () {
+    var h2Output = `<h2 class="${classObject.h2ClassName}">H2 Title</h2>\n`;
+    outputDiv.innerHTML += h2Output;
+    inputTextArea.value += h2Output;
+    reflectText({ target: inputTextArea });
+});
+
+h3Title.addEventListener("click", function () {
+    var h3Output = `<h3 class="${classObject.h2ClassName}">H3 Title</h3>\n`;
+    outputDiv.innerHTML += h3Output;
+    inputTextArea.value += h3Output;
+    reflectText({ target: inputTextArea });
+})
+
+loremIpsum.addEventListener("click", function () {
+    var pOutput = `<p class="${classObject.pClassName}">Paragraph</p>\n`;
+    outputDiv.innerHTML += pOutput;
+    inputTextArea.value += pOutput;
+    reflectText({ target: inputTextArea });
+});
+
+anchorLink.addEventListener("click", function () {
+    var aOutPut = `<a class="${classObject.aClassName}">Link</a>`;
+    outputDiv.innerHTML += aOutPut;
+    inputTextArea.value += aOutPut;
+    reflectText({ target: inputTextArea });
+})
+
+imageLink.addEventListener("click", function () {
+    var imgOutPut = `<img class="${classObject.imgClassName}" src="assets/img/content" alt="" title="">`
+    outputDiv.innerHTML + imgOutPut;
+    inputTextArea.value += imgOutPut;
+    reflectText({ target: inputTextArea });
+})
+
+// function to format selected text
+
+function formatText() {
+
+    // get the text
+    const selectedText = inputTextArea.value.substring(
+        inputTextArea.selectionStart,
+        inputTextArea.selectionEnd
+    );
+
+    // format the text
+
+    const formattedText = boldFormatter.addEventListener("click", () => {
+
+    });
+}
+
+// check if sections of tabs-navigation has child elements
+
+document.addEventListener("DOMContentLoaded", function () {
+    let tabsContent = document.getElementById("hasChild");
+
+    if (!tabsContent.children.length) {
+        const placeHolderDiv = document.createElement("DIV");
+        placeHolderDiv.setAttribute("class", "placeholder-div");
+        // Combine text and extra element using another template literal
+        placeHolderDiv.innerHTML = `Under construction... <i class="bi bi-robot"></i>`;
+        tabsContent.appendChild(placeHolderDiv);
+        console.log("success");
+    }
 });

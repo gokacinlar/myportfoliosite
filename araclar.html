@@ -43,6 +43,7 @@
     <link rel="icon" type="image/webp" sizes="32x32" href="assets/img/title_logos/titlelogo_32x32.webp">
     <link rel="icon" type="image/webp" sizes="16x16" href="assets/img/title_logos/titlelogo_16x16.webp">
     <link rel="stylesheet" type="text/css" href="assets/css/index.css" as="style">
+    <link rel="stylesheet" type="text/css" href="assets/css/article.css" as="style">
     <title>Derviş Öksüzoğlu | Araçlar</title>
 </head>
 
@@ -78,13 +79,19 @@
     </header>
     <main class="tool-nav">
         <nav class="tabs-navigation">
-            <ul>
+            <button id="tnPrevBtn" class="tn-btn tn-prev"><i class="bi bi-arrow-left-circle-fill"></i></button>
+            <button id="tnNextBtn" class="tn-btn tn-next"><i class="bi bi-arrow-right-circle-fill"></i></button>
+            <ul class="tabs-container">
                 <li>
                     <button data-page="toDo" class="navBtn"><i class="bi bi-check-all"></i>To-Do & Yapılacaklar</button>
                     <button data-page="clock" class="navBtn"><i class="bi bi-stopwatch"></i>Saat & Kronometre</button>
                     <button data-page="wordCounter" class="navBtn"><i class="bi bi-file-word"></i>Kelime Sayacı</button>
                     <button data-page="unitConverter" class="navBtn"><i class="bi bi-nut"></i>Birim
                         Çeviricisi</button>
+                    <button data-page="wysiwygEditor" class="navBtn"><i class="bi bi-file-earmark"></i>Gönderi
+                        Düzenleyicisi</button>
+                    <button data-page="metaTagsGenerator" class="navBtn"><i class="bi bi-tags"></i>Meta Etiket
+                        Düzenleyicisi</button>
                 </li>
             </ul>
         </nav>
@@ -94,18 +101,21 @@
         </article>
         <section class="nav-page" id="toDo">
             <h2>Yapılacaklar</h2>
-            <div id="toDoInputSection" class="to-do-inp-sect">
-                <input type="text" id="myInput" placeholder="Ne yapmak istiyorsunuz?">
-                <span id="addToDo" class="td-add-btn">Yapılacaklara Ekle</span>
+            <div id="isActive">
+                <div id="toDoInputSection" class="to-do-inp-sect">
+                    <input type="text" id="myInput" placeholder="Ne yapmak istiyorsunuz?">
+                    <span id="addToDo" class="td-add-btn">Yapılacaklara Ekle</span>
+                </div>
+                <ul id="toDoList">
+                    <li class="td-item">GYM'e git!<span class="close bi bi-x-circle"></span></li>
+                    <li class="td-item">Faturaları Öde!<span class="close bi bi-x-circle"></span></li>
+                </ul>
             </div>
-            <ul id="toDoList">
-                <li class="td-item">GYM'e git!<span class="close bi bi-x-circle"></span></li>
-                <li class="td-item">Faturaları Öde!<span class="close bi bi-x-circle"></span></li>
-            </ul>
+
         </section>
         <section class="nav-page" id="clock">
             <h2>Saat & Kronometre</h2>
-            <article class="clock-container">
+            <article class="clock-container" id="id=" isActive"">
                 <div class="clock-itself">
                     <h3>Saat</h3>
                     <div id="nativeClock"></div>
@@ -124,7 +134,7 @@
         </section>
         <section class="nav-page" id="wordCounter">
             <h2>Kelime Sayacı</h2>
-            <div class="wc-container">
+            <div class="wc-container" id="isActive">
                 <textarea class="wc-textarea" name="wordCount" id="wcArea" cols="50" rows="20" title="Kelime Sayacı"
                     placeholder="Paragraf girin..."></textarea>
                 <div class="wc-misc">
@@ -140,7 +150,7 @@
         </section>
         <section class="nav-page" id="unitConverter">
             <h2>Birim Çeviricisi</h2>
-            <div class="uc-container">
+            <div class="uc-container" id="isActive">
                 <div class="uc-first-value">
                     <label for="First Input">Çevrilecek Değeri Giriniz:</label>
                     <input type="text" title="Değer Giriniz" name="First Input">
@@ -169,6 +179,44 @@
                     <button class="uc-convert-btn" id="ucConvertBtn">Çevir!</button>
                     <textarea class="uc-output-value" id="ucOutputValue" title="Sonuç" readonly></textarea>
                 </div>
+            </div>
+        </section>
+        <section class="nav-page" id="wysiwygEditor">
+            <h2>Grafiksel Blog Gönderisi Düzenleyicisi</h2>
+            <div class="we-container" id="isActive">
+                <div class="we-editor-toolbox">
+                    <ul class="we-editor-sub-list-body-parts wes-btn">
+                        <li><button class="we-btn" id="h1Title">H1</button></li>
+                        <li><button class="we-btn" id="h2Title">H2</button></li>
+                        <li><button class="we-btn" id="h3Title">H3</button></li>
+                        <li><button class="we-btn" id="loremIpsum">Paragraph</button></li>
+                        <li><button class="we-btn" id="anchorLink">Link</button></li>
+                        <li><button class="we-btn">Ordered List</button></li>
+                        <li><button class="we-btn">Unordered List</button></li>
+                        <li><button class="we-btn" id="imageLink">Image</button></li>
+                        <li><button class="we-btn">Code</button></li>
+                    </ul>
+                    <ul class="we-editor-sub-list-text-formatting wes-btn">
+                        <li><button class="we-btn" id="boldFormatter">Bold</button></li>
+                        <li><button class="we-btn" id="italicFormatter">Italic</button></li>
+                        <li><button class="we-btn" id="underlineFormatter">Underline</button></li>
+                    </ul>
+                </div>
+                <div class="we-main">
+                    <div class="we-editor">
+                        <textarea class="wea-textarea syncText" name="Editor" id="weInputArea"
+                            placeholder="HTML Editor"></textarea>
+                    </div>
+                    <div class="we-output">
+                        <div class="weo-textarea syncText" id="weOutputArea" contenteditable="true"
+                            data-placeholder="Output"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="nav-page" id="metaTagsGenerator">
+            <h2>Meta Etiket Düzenleyicisi</h2>
+            <div class="mtg-container" id="hasChild">
             </div>
         </section>
     </main>
@@ -201,7 +249,7 @@
         </section>
     </footer>
     <script src="assets/js/script.js" as="script"></script>
-    <script src="assets/js/page.js" as="script"></script>
+    <script src="assets/js/page.js" as="script" async defer></script>
 </body>
 
 </html>
