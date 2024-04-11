@@ -102,7 +102,7 @@ function clockTime() {
     let meridyen = "ÖÖ" ? "ÖÖ" : "ÖS";
     m = checkTime(m);
     s = checkTime(s);
-    document.getElementById("nativeClock").innerHTML =
+    document.getElementById("nativeClock").innerText =
         h + ":" + m + ":" + s + " " + meridyen;
     setTimeout(clockTime, 1000);
 }
@@ -132,16 +132,16 @@ document.getElementById("swStop").addEventListener("click", () => {
 document.getElementById("swReset").addEventListener("click", () => {
     clearInterval(int);
     [seconds, minutes, hours] = [0, 0, 0];
-    stopWatch.innerHTML = "00:00:00";
+    stopWatch.innerText = "00:00:00";
 });
 
 function stopWatchTimer() {
     seconds += 1;
-    if (seconds == 60) {
+    if (seconds === 60) {
         seconds = 0;
         minutes++;
     }
-    if (minutes == 60) {
+    if (minutes === 60) {
         minutes = 0;
         hours++;
     }
@@ -150,7 +150,7 @@ function stopWatchTimer() {
     let m = minutes < 10 ? "0" + minutes : minutes;
     let s = seconds < 10 ? "0" + seconds : seconds;
 
-    stopWatch.innerHTML = `${h} : ${m} : ${s}`;
+    stopWatch.innerText = `${h} : ${m} : ${s}`;
 }
 
 // word counter
@@ -164,16 +164,16 @@ wcBtn.addEventListener("click", function () {
     let str = wcArea.value.trim();
     let wordsList = str.split(/\s+/);
     let count = wordsList.length;
-    countResult.innerHTML = count;
+    countResult.innerText = count;
 
-    if (str.length == 0) {
-        countResult.innerHTML = 0;
+    if (str.length === 0) {
+        countResult.innerText = 0;
     }
 });
 
 wcResetBtn.addEventListener("click", () => {
     wcArea.value = "";
-    countResult.innerHTML = "0";
+    countResult.innerText = "0";
     countResult.classList.add("wc-result-animate");
     setTimeout(() => {
         countResult.classList.remove("wc-result-animate");
@@ -246,7 +246,7 @@ let classObject = {
     h2ClassName: "article-h2-title",
     pClassName: "article-paragraph",
     aClassName: "am-in-link",
-    imgClassName: "am-in-img"
+    imgClassName: "am-in-img",
 };
 
 let formatters = {
@@ -256,19 +256,23 @@ let formatters = {
 }
 
 const syncElements = document.querySelectorAll(".syncText");
-for (let i = 0; i < syncElements.length; i++) {
-    syncElements[i].addEventListener("change", reflectText);
-    syncElements[i].addEventListener("input", reflectText);
-    syncElements[i].addEventListener("keyup", reflectText);
+
+// Add event listeners to all syncElements
+for (const element of syncElements) {
+    element.addEventListener("change", reflectText);
+    element.addEventListener("input", reflectText);
+    element.addEventListener("keyup", reflectText);
 }
 
 function reflectText(e) {
-    textValue = e.target.value;
-    for (let i = 0; i < syncElements.length; i++) {
-        if (syncElements[i].tagName === "TEXTAREA") {
-            syncElements[i].value = textValue;
-        } else if (syncElements[i].tagName === "DIV") {
-            syncElements[i].innerHTML = textValue;
+    const textValue = e.target.value;
+
+    // Loop through syncElements using for-of
+    for (const element of syncElements) {
+        if (element.tagName === "TEXTAREA") {
+            element.value = textValue;
+        } else if (element.tagName === "DIV") {
+            element.innerHTML = textValue;
         }
     }
 }
@@ -299,7 +303,7 @@ inputTextArea.addEventListener("keydown", function (e) {
 const weEditorButtons = document.querySelectorAll(".we-btn");
 
 weEditorButtons.forEach((button) => {
-    const buttonText = button.innerText;
+    const buttonText = button.innerHTML;
     const buttonCharCount = buttonText.length;
 
     if (buttonCharCount <= 3) {
@@ -315,47 +319,49 @@ weEditorButtons.forEach((button) => {
 
 h1Title.addEventListener("click", function () {
     var h1Output = `<h1 class="${classObject.h1ClassName}">H1 Title</h1>\n`;
-    outputDiv.innerHTML += h1Output;
+    outputDiv.innerText += h1Output;
     inputTextArea.value += h1Output;
     reflectText({ target: inputTextArea });
 });
 
 h2Title.addEventListener("click", function () {
     var h2Output = `<h2 class="${classObject.h2ClassName}">H2 Title</h2>\n`;
-    outputDiv.innerHTML += h2Output;
+    outputDiv.innerText += h2Output;
     inputTextArea.value += h2Output;
     reflectText({ target: inputTextArea });
 });
 
 h3Title.addEventListener("click", function () {
     var h3Output = `<h3 class="${classObject.h2ClassName}">H3 Title</h3>\n`;
-    outputDiv.innerHTML += h3Output;
+    outputDiv.innerText += h3Output;
     inputTextArea.value += h3Output;
     reflectText({ target: inputTextArea });
 })
 
 loremIpsum.addEventListener("click", function () {
     var pOutput = `<p class="${classObject.pClassName}">Paragraph</p>\n`;
-    outputDiv.innerHTML += pOutput;
+    outputDiv.innerText += pOutput;
     inputTextArea.value += pOutput;
     reflectText({ target: inputTextArea });
 });
 
 anchorLink.addEventListener("click", function () {
     var aOutPut = `<a class="${classObject.aClassName}">Link</a>`;
-    outputDiv.innerHTML += aOutPut;
+    outputDiv.innerText += aOutPut;
     inputTextArea.value += aOutPut;
     reflectText({ target: inputTextArea });
 })
 
 imageLink.addEventListener("click", function () {
     var imgOutPut = `<img class="${classObject.imgClassName}" src="assets/img/content" alt="" title="">`
-    outputDiv.innerHTML + imgOutPut;
+    outputDiv.innerText + imgOutPut;
     inputTextArea.value += imgOutPut;
     reflectText({ target: inputTextArea });
 })
 
-// function to format selected text
+// function to format selected text (experimental)
+
+/*
 
 function formatText() {
 
@@ -372,6 +378,8 @@ function formatText() {
     });
 }
 
+*/
+
 // check if sections of tabs-navigation has child elements
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -383,6 +391,5 @@ document.addEventListener("DOMContentLoaded", function () {
         // Combine text and extra element using another template literal
         placeHolderDiv.innerHTML = `Under construction... <i class="bi bi-robot"></i>`;
         tabsContent.appendChild(placeHolderDiv);
-        console.log("success");
     }
 });
