@@ -1,3 +1,21 @@
+/* support for dark mode */
+
+@media (prefers-color-scheme: dark) {
+    #articleMain {
+        background-color: #272727;
+        color: #ece5e0;
+    }
+
+    #articleMain p {
+        color: #ece5e0 !important;
+    }
+
+    #articleMain .article-top {
+        color: #272727;
+        background-color: #ece5e0 !important;
+    }
+}
+
 /* nav */
 
 nav {

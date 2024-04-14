@@ -244,9 +244,11 @@ let textValue = "";
 let classObject = {
     h1ClassName: "article-title",
     h2ClassName: "article-h2-title",
+    h3ClassName: "article-h3-title",
     pClassName: "article-paragraph",
     aClassName: "am-in-link",
     imgClassName: "am-in-img",
+    codeClass: "am-in-code",
 };
 
 let formatters = {
@@ -257,7 +259,7 @@ let formatters = {
 
 const syncElements = document.querySelectorAll(".syncText");
 
-// Add event listeners to all syncElements
+// add event listeners to all syncElements to reflect input text in both areas
 for (const element of syncElements) {
     element.addEventListener("change", reflectText);
     element.addEventListener("input", reflectText);
@@ -267,7 +269,6 @@ for (const element of syncElements) {
 function reflectText(e) {
     const textValue = e.target.value;
 
-    // Loop through syncElements using for-of
     for (const element of syncElements) {
         if (element.tagName === "TEXTAREA") {
             element.value = textValue;
@@ -277,8 +278,10 @@ function reflectText(e) {
     }
 }
 
-// experimental feature to add to text on cursor position
+// experimental feature to add and format to text on cursor position
 // example: insertTextOnCursor(inputTextArea, h1OutPut);
+
+/*
 
 function insertTextOnCursor(inputTextArea, textToBeInserted) {
     var cursorPosition = inputTextArea.selectionStart;
@@ -287,10 +290,13 @@ function insertTextOnCursor(inputTextArea, textToBeInserted) {
     inputTextArea.value = textBefore + textToBeInserted + textAfter;
 }
 
+*/
+
 let inputTextArea = document.getElementById("weInputArea");
 let outputDiv = document.getElementById("weOutputArea");
 
 // function to prevent tab press to insert "undefined" at textarea
+// temporary solution
 
 inputTextArea.addEventListener("keydown", function (e) {
     if (e.key === "Tab") {
@@ -313,8 +319,8 @@ weEditorButtons.forEach((button) => {
 
 /*
     Button functions to add pre-defined HTML elements with custom
-    CSS styling. Styling can be changed within the "classObject"
-    property.
+    CSS styling of mine. Styling can be changed within the "classObject"
+    property but has to be defined in the article.css file specifically.
 */
 
 h1Title.addEventListener("click", function () {
@@ -332,7 +338,7 @@ h2Title.addEventListener("click", function () {
 });
 
 h3Title.addEventListener("click", function () {
-    var h3Output = `<h3 class="${classObject.h2ClassName}">H3 Title</h3>\n`;
+    var h3Output = `<h3 class="${classObject.h3ClassName}">H3 Title</h3>\n`;
     outputDiv.innerText += h3Output;
     inputTextArea.value += h3Output;
     reflectText({ target: inputTextArea });
@@ -359,6 +365,33 @@ imageLink.addEventListener("click", function () {
     reflectText({ target: inputTextArea });
 })
 
+embedCode.addEventListener("click", function () {
+    var codeOutPut = `<code class="${classObject.codeClass} language-*insert language*">Your code here...</code>`
+    outputDiv.innerText + codeOutPut;
+    inputTextArea.value += codeOutPut;
+    reflectText({ target: inputTextArea })
+});
+
+// function to update the code based on the typed language using prism.js library
+function updateCodeLanguage(language) {
+    const codeElement = document.querySelector("code." + classObject.codeClass); // target the code element using prism.js
+    if (codeElement) {
+        codeElement.classList.remove("language-*"); // remove previous language class
+        codeElement.classList.add("language-" + language); // add the new language class
+    }
+}
+
+inputTextArea.addEventListener("keyup", function (event) {
+    const typedText = event.target.value;
+
+    // extract the typed language
+    const languageMatch = typedText.match(/(\w+)$/); // regex
+    const language = languageMatch ? languageMatch[1].toLowerCase() : ""; // Get the language or an empty string
+
+    // update the code element's language class
+    updateCodeLanguage(language);
+});
+
 // function to format selected text (experimental)
 
 /*
@@ -380,7 +413,8 @@ function formatText() {
 
 */
 
-// check if sections of tabs-navigation has child elements
+// function to check if sections of tabs-navigation has child elements
+// if not, add placeHolderDiv indication of "under construction"
 
 document.addEventListener("DOMContentLoaded", function () {
     let tabsContent = document.getElementById("hasChild");

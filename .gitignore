@@ -10,6 +10,7 @@ img/
 fonts/
 library/
 content/
+lib/
 
 #img
 *.img

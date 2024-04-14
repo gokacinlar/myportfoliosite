@@ -1317,13 +1317,22 @@ label.form-not-required::after {
 
 /******************** Tools Page ********************/
 
+.tabs-navigation::-webkit-scrollbar {
+    display: none;
+}
+
+.tabs-container::-webkit-scrollbar {
+    display: none;
+}
+
 .tabs-navigation {
     display: flex;
     align-content: center;
     justify-content: center;
+    flex-direction: row;
     overflow-x: scroll;
     color: #ece5e0;
-    background-color: #282828;
+    background-color: #272727;
     -ms-overflow-style: none;
     position: relative;
 }
@@ -1363,14 +1372,6 @@ label.form-not-required::after {
     position: relative;
 }
 
-.tabs-navigation::-webkit-scrollbar {
-    display: none;
-}
-
-.tabs-container::-webkit-scrollbar {
-    display: none;
-}
-
 .tabs-navigation>ul {
     position: relative;
 }
@@ -1387,12 +1388,6 @@ label.form-not-required::after {
     justify-content: flex-start;
     min-width: 8rem;
     max-width: 8rem;
-}
-
-.tool-nav:has(h1) {
-    margin: 0 auto;
-    text-align: center;
-    font-size: 2rem;
 }
 
 .navBtn {
@@ -2040,7 +2035,7 @@ label.form-not-required::after {
 
 .we-editor-sub-list-body-parts {
     background-color: #363945;
-    padding: .55em;
+    padding: .55em !important;
     border-radius: 44px;
 }
 

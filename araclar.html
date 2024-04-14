@@ -18,7 +18,8 @@
     <meta name="author" content="Derviş Öksüzoğlu">
     <meta name="keywords"
         content="derviş, öksüzoğlu, blog, portfolyo, blog, pedagoji, felsefe, web geliştirme, psikoloji">
-    <meta name="description" content="Araçlar | Derviş Öksüzoğlu: Pedagoji, Web Geliştirme, Felsefe ve Dahası">
+    <meta name="description"
+        content="Araçlar | Birim Çevirisi, To-Do, Kronometre, Meta Etiket Düzenleyicisi, Kelime Sayacı, RGB Resim Kodu Seçici, HTML5 Gönderi Düzenleyicisi ve Daha Fazlası!">
     <meta name="referrer" content="no-referrer-when-downgrade">
     <meta name="Content-Security-Policy" content="script-src 'none'">
     <meta name="Content-Security-Policy" content="object-src 'none'">
@@ -28,7 +29,8 @@
     <!--open graph-->
     <meta property="og:title" content="Derviş Öksüzoğlu | Araçlar">
     <meta property="og:url" content="https://www.dervisoksuzoglu.net/araclar">
-    <meta property="og:description" content="Derviş Öksüzoğlu: İngilizce Öğretmeni & Front-end Web Geliştiricisi">
+    <meta property="og:description"
+        content="Birim Çevirisi, To-Do, Kronometre, Meta Etiket Düzenleyicisi, Kelime Sayacı, RGB Resim Kodu Seçici, HTML5 Gönderi Düzenleyicisi ve Daha Fazlası!">
     <meta property="og:image" content="https://www.dervisoksuzoglu.net/assets/img/myself.webp">
     <meta property="og:type" content="website">
     <meta property="og:locale" content="tr_TR">
@@ -36,7 +38,8 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:url" content="https://www.dervisoksuzoglu.net/araclar">
     <meta name="twitter:title" content="Derviş Öksüzoğlu | Araçlar">
-    <meta name="twitter:description" content="Derviş Öksüzoğlu: İngilizce Öğretmeni & Front-end Web Geliştiricisi">
+    <meta name="twitter:description"
+        content="Birim Çevirisi, To-Do, Kronometre, Meta Etiket Düzenleyicisi, Kelime Sayacı, RGB Resim Kodu Seçici, HTML5 Gönderi Düzenleyicisi ve Daha Fazlası!">
     <meta name="twitter:image" content="https://www.dervisoksuzoglu.net/assets/img/myself.webp">
     <meta name="twitter:image:alt" content="Derviş Öksüzoğlu">
     <!--favicon-->
@@ -44,6 +47,8 @@
     <link rel="icon" type="image/webp" sizes="16x16" href="assets/img/title_logos/titlelogo_16x16.webp">
     <link rel="stylesheet" type="text/css" href="assets/css/index.css" as="style">
     <link rel="stylesheet" type="text/css" href="assets/css/article.css" as="style">
+    <!--library css-->
+    <link rel="stylesheet" type="text/css" href="lib/prism/prism.css" as="style">
     <title>Derviş Öksüzoğlu | Araçlar</title>
 </head>
 
@@ -115,7 +120,7 @@
         </section>
         <section class="nav-page" id="clock">
             <h2>Saat & Kronometre</h2>
-            <article class="clock-container" id="id=" isActive"">
+            <article class="clock-container" id="isActive">
                 <div class="clock-itself">
                     <h3>Saat</h3>
                     <div id="nativeClock"></div>
@@ -186,20 +191,20 @@
             <div class="we-container" id="isActive">
                 <div class="we-editor-toolbox">
                     <ul class="we-editor-sub-list-body-parts wes-btn">
-                        <li><button class="we-btn" id="h1Title">H1</button></li>
-                        <li><button class="we-btn" id="h2Title">H2</button></li>
-                        <li><button class="we-btn" id="h3Title">H3</button></li>
-                        <li><button class="we-btn" id="loremIpsum">Paragraph</button></li>
-                        <li><button class="we-btn" id="anchorLink">Link</button></li>
-                        <li><button class="we-btn">Ordered List</button></li>
-                        <li><button class="we-btn">Unordered List</button></li>
-                        <li><button class="we-btn" id="imageLink">Image</button></li>
-                        <li><button class="we-btn">Code</button></li>
+                        <li><button class="we-btn" id="h1Title" title="Heading 1">H1</button></li>
+                        <li><button class="we-btn" id="h2Title" title="Heading 2">H2</button></li>
+                        <li><button class="we-btn" id="h3Title" title="Heading 3">H3</button></li>
+                        <li><button class="we-btn" id="loremIpsum" title="Paragraph">Paragraph</button></li>
+                        <li><button class="we-btn" id="anchorLink" title="Link">Link</button></li>
+                        <li><button class="we-btn" title="Ordered List">Ordered List</button></li>
+                        <li><button class="we-btn" title="Unordered List">Unordered List</button></li>
+                        <li><button class="we-btn" id="imageLink" title="Image">Image</button></li>
+                        <li><button class="we-btn" id="embedCode" title="Code">Code</button></li>
                     </ul>
                     <ul class="we-editor-sub-list-text-formatting wes-btn">
-                        <li><button class="we-btn" id="boldFormatter">Bold</button></li>
-                        <li><button class="we-btn" id="italicFormatter">Italic</button></li>
-                        <li><button class="we-btn" id="underlineFormatter">Underline</button></li>
+                        <li><button class="we-btn" id="boldFormatter" title="Bold">Bold</button></li>
+                        <li><button class="we-btn" id="italicFormatter" title="Italic">Italic</button></li>
+                        <li><button class="we-btn" id="underlineFormatter" title="Underline">Underline</button></li>
                     </ul>
                 </div>
                 <div class="we-main">
@@ -209,7 +214,7 @@
                     </div>
                     <div class="we-output">
                         <div class="weo-textarea syncText" id="weOutputArea" contenteditable="true"
-                            data-placeholder="Output"></div>
+                            data-placeholder="HTML5 kodu burada formatlanmış olarak gözükecektir."></div>
                     </div>
                 </div>
             </div>
@@ -250,6 +255,7 @@
     </footer>
     <script src="assets/js/script.js" as="script"></script>
     <script src="assets/js/page.js" as="script" async defer></script>
+    <script src="lib/prism/prism.js" as="script"></script>
 </body>
 
 </html>
