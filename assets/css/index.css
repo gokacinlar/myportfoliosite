@@ -1937,6 +1937,7 @@ label.form-not-required::after {
     grid-row-gap: 0px;
     width: 100%;
     height: 100dvh;
+    margin-bottom: 3rem;
 }
 
 .we-editor-toolbox {
@@ -2045,11 +2046,161 @@ label.form-not-required::after {
     border-radius: 44px;
 }
 
+.we-info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: .50rem;
+}
+
+.we-info>.we-editor-copy-content {
+    outline: 0;
+    border: 0;
+    padding: .75em;
+    color: #ece5e0;
+    background-color: #272727;
+    cursor: pointer;
+    border-radius: 44px;
+    font-weight: bold;
+}
+
 /***** HTML META TAGS GENERATOR *****/
 
 .mtg-container {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 1fr;
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+    font-size: clamp(1.10rem, 0.5906rem + 2.9834vw, 1.50rem);
+    position: relative;
+    margin-bottom: 2rem;
+}
 
+.mtg-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.mtg-main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 1rem;
+}
+
+.mtg-main>div {
+    min-width: 80%;
+    max-width: 80%;
+}
+
+.mt-subtitle {
+    text-align: center;
+    margin-bottom: .25rem;
+}
+
+.mtg-main div>ul {
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    gap: .55rem;
+}
+
+.mtg-main div>ul>li {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: first baseline;
+    justify-content: space-between;
+    gap: .25rem;
+}
+
+.mtg-main div>ul>li>input,
+select {
+    width: 100%;
+    border: 0;
+    outline: 0;
+    border-radius: 6px;
+    padding: .25em;
+    font-size: 1.15rem;
+    border: 2px solid transparent;
+    transition: border .25s ease-in-out;
+}
+
+.mtg-main>div>ul>li>input:focus {
+    border: 2px solid #ffb756;
+}
+
+.mtg-main>div>ul>li>select:focus {
+    border: 2px solid #ffb756;
+}
+
+.mtg-element {
+    padding: 1em;
+    border-radius: 24px;
+    height: fit-content;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+    color: #ece5e0;
+    background-color: #272727;
+}
+
+.mt-submit-btn {
+    margin-top: .50rem;
+    font-size: 1.25rem;
+    border: 0;
+    outline: 0;
+    padding: .75em;
+    border-radius: 24px;
+    width: 100%;
+    cursor: pointer;
+    color: #ece5e0;
+    background-color: #363945;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+    transition: box-shadow .15s ease-in-out;
+
+    &:hover {
+        box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+    }
+}
+
+.mtg-textarea {
+    width: 100%;
+    resize: none;
+    height: fit-content;
+    min-height: 300px;
+    font-size: 1.15rem;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    padding: .25em .25em;
+    border-radius: 6px;
+}
+
+.mtg-textarea:active,
+.mtg-textarea:focus {
+    outline: 0;
+}
+
+.mtg-refresh-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+    gap: .50rem;
+    font-size: 1.25rem;
+    outline: 0;
+    border: 0;
+    padding: .75em;
+    border-radius: 24px;
+    width: 80%;
+    cursor: pointer;
+    color: #ece5e0;
+    background-color: #363945;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+    transition: box-shadow .15s ease-in-out;
+
+    &:hover {
+        box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+    }
 }
 
 /* placeholder div */
@@ -2827,6 +2978,11 @@ label.form-not-required::after {
     .stopwatch-itself {
         font-size: 3rem;
         padding: 32px 32px;
+    }
+
+    .mtg-main>div {
+        min-width: 100%;
+        max-width: 100%;
     }
 }
 

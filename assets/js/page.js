@@ -33,11 +33,11 @@ let tabsNavigation = document.querySelector(".tabs-navigation > ul");
 
 scrollLeftBtn.addEventListener("click", function () {
     tabsNavigation.scrollLeft -= 1000;
-})
+});
 
 scrollRightBtn.addEventListener("click", function () {
     tabsNavigation.scrollLeft += 1000;
-})
+});
 
 document.addEventListener("DOMContentLoaded", function () {
     var list = document.getElementById("toDoList");
@@ -249,13 +249,15 @@ let classObject = {
     aClassName: "am-in-link",
     imgClassName: "am-in-img",
     codeClass: "am-in-code",
+    uListClass: "u-list", // later define
+    oListClass: "o-list", // later define
 };
 
 let formatters = {
     boldFormatter: "boldFormatter",
     italicFormatter: "italicFormatter",
-    underlineFormatter: "underlineFormatter"
-}
+    underlineFormatter: "underlineFormatter",
+};
 
 const syncElements = document.querySelectorAll(".syncText");
 
@@ -309,13 +311,26 @@ inputTextArea.addEventListener("keydown", function (e) {
 const weEditorButtons = document.querySelectorAll(".we-btn");
 
 weEditorButtons.forEach((button) => {
-    const buttonText = button.innerHTML;
+    const buttonText = button.innerText;
     const buttonCharCount = buttonText.length;
 
     if (buttonCharCount <= 3) {
         button.style.borderRadius = "44px";
     }
-})
+});
+
+// function to copy the html editors' content
+
+let weCopyBtn = document.getElementById("weCopy");
+
+weCopyBtn.addEventListener("click", () => {
+    if (inputTextArea.value === "") {
+        alert("Kopyalanacak bir öğe yok.");
+        return null;
+    }
+    inputTextArea.select();
+    inputTextArea.execCommand("copy");
+});
 
 /*
     Button functions to add pre-defined HTML elements with custom
@@ -342,7 +357,7 @@ h3Title.addEventListener("click", function () {
     outputDiv.innerText += h3Output;
     inputTextArea.value += h3Output;
     reflectText({ target: inputTextArea });
-})
+});
 
 loremIpsum.addEventListener("click", function () {
     var pOutput = `<p class="${classObject.pClassName}">Paragraph</p>\n`;
@@ -356,20 +371,42 @@ anchorLink.addEventListener("click", function () {
     outputDiv.innerText += aOutPut;
     inputTextArea.value += aOutPut;
     reflectText({ target: inputTextArea });
-})
+});
 
 imageLink.addEventListener("click", function () {
-    var imgOutPut = `<img class="${classObject.imgClassName}" src="assets/img/content" alt="" title="">`
+    var imgOutPut = `<img class="${classObject.imgClassName}" src="assets/img/content" alt="" title="">`;
     outputDiv.innerText + imgOutPut;
     inputTextArea.value += imgOutPut;
     reflectText({ target: inputTextArea });
-})
+});
 
 embedCode.addEventListener("click", function () {
-    var codeOutPut = `<code class="${classObject.codeClass} language-*insert language*">Your code here...</code>`
+    var codeOutPut = `<code class="${classObject.codeClass} language-*insert language*">Your code here...</code>`;
     outputDiv.innerText + codeOutPut;
     inputTextArea.value += codeOutPut;
-    reflectText({ target: inputTextArea })
+    reflectText({ target: inputTextArea });
+});
+
+uList.addEventListener("click", function () {
+    var unorderedListOutPut = `<ul class="${classObject.uListClass}">
+    <li></li>
+    <li></li>
+</ul>
+`;
+    outputDiv.innerText + unorderedListOutPut;
+    inputTextArea.value += unorderedListOutPut;
+    reflectText({ target: inputTextArea });
+});
+
+oList.addEventListener("click", function () {
+    var orderedListOutPut = `<ol class="${classObject.oListClass}">
+    <li></li>
+    <li></li>
+</ol>
+`;
+    outputDiv.innerText + orderedListOutPut;
+    inputTextArea.value += orderedListOutPut;
+    reflectText({ target: inputTextArea });
 });
 
 // function to update the code based on the typed language using prism.js library
@@ -423,7 +460,128 @@ document.addEventListener("DOMContentLoaded", function () {
         const placeHolderDiv = document.createElement("DIV");
         placeHolderDiv.setAttribute("class", "placeholder-div");
         // Combine text and extra element using another template literal
-        placeHolderDiv.innerHTML = `Under construction... <i class="bi bi-robot"></i>`;
+        placeHolderDiv.innerHTML = `Yapım Aşamasında... <i class="bi bi-robot"></i>`;
         tabsContent.appendChild(placeHolderDiv);
     }
+});
+
+
+/**
+ * META TAGS GENERATOR
+ * GENERATE META TAGS WITH ONE CLICK
+ */
+
+const userTagInputs = {
+    generalInputs: {
+        mtauthor: "mtgmAuthor",
+        mtowner: "mtgmOwner",
+        mtdesc: "mtgmDesc",
+        mtrobots: "mtgmRobots"
+    },
+    openGraphInputs: {
+        ogtitle: "mtgogTitle",
+        ogdesc: "mtgogDesc",
+        ogUrl: "mtgogUrl",
+        ogimgurl: "mtgogImg",
+        ogimgalt: "mtgogImgAlt",
+        ogtype: "mtgogType",
+        oglocale: "mtgogLocale",
+        ogSiteName: "mtgogSiteName"
+    },
+    twitterXInputs: {
+        xcard: "mttXCard",
+        xtitle: "mttXTitle",
+        xdesc: "mttXDesc",
+        xurl: "mttXUrl",
+        ximg: "mttXImg",
+        ximgalt: "mttXImgAlt"
+    }
+};
+
+document.addEventListener("DOMContentLoaded", () => {
+    const mtgContainer = document.getElementById("mtgContainer");
+    const mtSubmitBtn = document.getElementById("mtSubmit");
+
+    // error handling
+    if (!mtgContainer || !mtSubmitBtn) {
+        console.error("Gerekli ögeler bulunamadı.");
+        return;
+    }
+
+    mtSubmitBtn.addEventListener("click", (event) => {
+        // get the values values using object & key method
+        // get the main input 
+        const gInputs = Object.keys(userTagInputs.generalInputs).map(key => {
+            const element = document.getElementById(userTagInputs.generalInputs[key]);
+            return element ? element.value : null;
+        });
+
+        // get the open graph
+        const ogInputs = Object.keys(userTagInputs.openGraphInputs).map(key => {
+            const element = document.getElementById(userTagInputs.openGraphInputs[key]);
+            return element ? element.value : null;
+        });
+
+        // get the x card
+        const xInputs = Object.keys(userTagInputs.twitterXInputs).map(key => {
+            const element = document.getElementById(userTagInputs.twitterXInputs[key]);
+            return element ? element.value : null;
+        });
+
+        // fix me
+        // check if input fields are empty by checking the existence of an element by using "some" method
+        if ((gInputs.some(input => input === "") || ogInputs.some(input => input === "")) || xInputs.some(input => input === "")) {
+            alert("Lütfen tüm alanları doldurun.");
+            event.preventDefault();
+            return;
+        }
+
+        // create the output
+        let checkTextArea = document.getElementById("mtgTextArea");
+        if (!checkTextArea) {
+            let mtgTextArea = document.createElement("textarea");
+            mtgTextArea.classList.add("mtg-textarea");
+            mtgTextArea.id = "mtgTextArea";
+
+            // set the user input with wrapping them inside meta tags 
+            mtgTextArea.value = `<!--General Meta Tags-->
+<meta name="author" content="${gInputs[0]}">
+<meta name="owner" content="${gInputs[1]}">
+<meta name="description" content="${gInputs[2]}">
+<meta name="robots" content="${gInputs[3]}">\n
+
+<!--Open Graph Meta Tags-->
+<meta property="og:title" content="${ogInputs[0]}">
+<meta property="og:description" content="${ogInputs[1]}">
+<meta property="og:url" content="${ogInputs[2]}">
+<meta property="og:image" content="${ogInputs[3]}">
+<meta property="og:image:alt" content="${ogInputs[4]}">
+<meta property="og:type" content="${ogInputs[5]}">
+<meta property="og:locale" content="${ogInputs[6]}">
+<meta property="og:site-name" content="${ogInputs[7]}">
+
+<!--Twitter/X Tags-->
+<meta name="twitter:card" content="${xInputs[0]}">
+<meta name="twitter:title" content="${xInputs[1]}">
+<meta name="twitter:description" content="${xInputs[2]}">
+<meta name="twitter:image" content="${xInputs[3]}">
+<meta name="twitter:image:alt" content="${xInputs[4]}">
+`;
+
+            mtgContainer.appendChild(mtgTextArea);
+
+            let mtgRefreshBtn = document.createElement("button");
+            mtgRefreshBtn.classList.add("mtg-refresh-btn");
+            mtgRefreshBtn.innerHTML = `Yenile <i class="bi bi-arrow-clockwise"></i>`;
+            mtgContainer.appendChild(mtgRefreshBtn);
+
+            mtgRefreshBtn.addEventListener("click", (event) => {
+                mtgTextArea.remove();
+                mtgRefreshBtn.remove();
+            });
+
+        } else {
+            event.preventDefault();
+        }
+    });
 });
