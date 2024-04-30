@@ -3,24 +3,23 @@
 
 <head>
     <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-MPRSKQSFH0"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-5G6Z79KR5H"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag() { dataLayer.push(arguments); }
         gtag('js', new Date());
 
-        gtag('config', 'G-MPRSKQSFH0');
+        gtag('config', 'G-5G6Z79KR5H');
     </script>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="owner" content="Derviş Öksüzoğlu">
-    <meta name="author" content="Derviş Öksüzoğlu">
     <meta name="keywords"
         content="derviş, öksüzoğlu, blog, portfolyo, blog, pedagoji, felsefe, web geliştirme, psikoloji">
     <meta name="description"
-        content="Araçlar | Birim Çevirisi, To-Do, Kronometre, Meta Etiket Düzenleyicisi, Kelime Sayacı, RGB Resim Kodu Seçici, HTML5 Gönderi Düzenleyicisi ve Daha Fazlası!">
-    <meta name="referrer" content="no-referrer-when-downgrade">
+        content="Derviş Öksüzoğlu | Araçlar: Birim Çevirisi, To-Do, Kronometre, Meta Etiket Düzenleyicisi, Kelime Sayacı, RGB Resim Kodu Seçici, HTML5 Gönderi Düzenleyicisi ve Daha Fazlası!">
+    <meta name="referrer" content="none-when-downgrade">
     <meta name="Content-Security-Policy" content="script-src 'none'">
     <meta name="Content-Security-Policy" content="object-src 'none'">
     <link rel="canonical" href="https://www.dervisoksuzoglu.net">
@@ -28,23 +27,26 @@
     <base href="https://www.dervisoksuzoglu.net">
     <!--open graph-->
     <meta property="og:title" content="Derviş Öksüzoğlu | Araçlar">
-    <meta property="og:url" content="https://www.dervisoksuzoglu.net/araclar">
     <meta property="og:description"
-        content="Birim Çevirisi, To-Do, Kronometre, Meta Etiket Düzenleyicisi, Kelime Sayacı, RGB Resim Kodu Seçici, HTML5 Gönderi Düzenleyicisi ve Daha Fazlası!">
-    <meta property="og:image" content="https://www.dervisoksuzoglu.net/assets/img/myself.webp">
+        content="Derviş Öksüzoğlu | Araçlar: Birim Çevirisi, To-Do, Kronometre, Meta Etiket Düzenleyicisi, Kelime Sayacı, RGB Resim Kodu Seçici, HTML5 Gönderi Düzenleyicisi ve Daha Fazlası!">
+    <meta property="og:url" content="https://www.dervisoksuzoglu.net/araclar">
+    <meta property="og:image" content="https://www.dervisoksuzoglu.net/assets/img/main/myself.webp">
+    <meta property="og:image:alt"
+        content="Derviş Öksüzoğlu | Araçlar: Birim Çevirisi, To-Do, Kronometre, Meta Etiket Düzenleyicisi, Kelime Sayacı, RGB Resim Kodu Seçici, HTML5 Gönderi Düzenleyicisi ve Daha Fazlası!">
     <meta property="og:type" content="website">
     <meta property="og:locale" content="tr_TR">
+    <meta property="og:site_name" content="https://www.dervisoksuzoglu.net">
     <!--twitter-->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:url" content="https://www.dervisoksuzoglu.net/araclar">
     <meta name="twitter:title" content="Derviş Öksüzoğlu | Araçlar">
     <meta name="twitter:description"
-        content="Birim Çevirisi, To-Do, Kronometre, Meta Etiket Düzenleyicisi, Kelime Sayacı, RGB Resim Kodu Seçici, HTML5 Gönderi Düzenleyicisi ve Daha Fazlası!">
-    <meta name="twitter:image" content="https://www.dervisoksuzoglu.net/assets/img/myself.webp">
+        content="Derviş Öksüzoğlu | Araçlar: Birim Çevirisi, To-Do, Kronometre, Meta Etiket Düzenleyicisi, Kelime Sayacı, RGB Resim Kodu Seçici, HTML5 Gönderi Düzenleyicisi ve Daha Fazlası!">
+    <meta name="twitter:image" content="https://www.dervisoksuzoglu.net/assets/img/main/myself.webp">
     <meta name="twitter:image:alt" content="Derviş Öksüzoğlu">
     <!--favicon-->
     <link rel="icon" type="image/webp" sizes="32x32" href="assets/img/title_logos/titlelogo_32x32.webp">
     <link rel="icon" type="image/webp" sizes="16x16" href="assets/img/title_logos/titlelogo_16x16.webp">
+    <!--external css-->
     <link rel="stylesheet" type="text/css" href="assets/css/index.css" as="style">
     <link rel="stylesheet" type="text/css" href="assets/css/article.css" as="style">
     <!--library css-->
@@ -196,8 +198,8 @@
                         <li><button class="we-btn" id="h3Title" title="Heading 3">H3</button></li>
                         <li><button class="we-btn" id="loremIpsum" title="Paragraph">Paragraph</button></li>
                         <li><button class="we-btn" id="anchorLink" title="Link">Link</button></li>
-                        <li><button class="we-btn" title="Ordered List">Ordered List</button></li>
-                        <li><button class="we-btn" title="Unordered List">Unordered List</button></li>
+                        <li><button class="we-btn" id="oList" title="Ordered List">Ordered List</button></li>
+                        <li><button class="we-btn" id="uList" title="Unordered List">Unordered List</button></li>
                         <li><button class="we-btn" id="imageLink" title="Image">Image</button></li>
                         <li><button class="we-btn" id="embedCode" title="Code">Code</button></li>
                     </ul>
@@ -211,6 +213,9 @@
                     <div class="we-editor">
                         <textarea class="wea-textarea syncText" name="Editor" id="weInputArea"
                             placeholder="HTML Editor"></textarea>
+                        <div class="we-info">
+                            <button class="we-editor-copy-content" id="weCopy">HTML5 Ögesini Kopyala</button>
+                        </div>
                     </div>
                     <div class="we-output">
                         <div class="weo-textarea syncText" id="weOutputArea" contenteditable="true"
@@ -222,6 +227,126 @@
         <section class="nav-page" id="metaTagsGenerator">
             <h2>Meta Etiket Düzenleyicisi</h2>
             <div class="mtg-container" id="hasChild">
+                <div class="mtg-main" id="mtgContainer">
+                    <div>
+                        <h4 class="mt-subtitle">Genel-Geçer Etiketler</h4>
+                        <ul class="mtg-fundamentals mtg-element">
+                            <li>
+                                <label for="mtgm-Name">Author:</label>
+                                <input id="mtgmAuthor" type="text" name="mtgm-Name" placeholder="Yazar">
+                            </li>
+                            <li>
+                                <label for="mtgm-Owner">Owner:</label>
+                                <input id="mtgmOwner" type="text" name="mtgm-Owner" placeholder="Sahip">
+                            </li>
+                            <li>
+                                <label for="mtgm-Description">Description:</label>
+                                <input id="mtgmDesc" type="text" name="mtgm-Description"
+                                    placeholder="140 ile 160 kelime arası...">
+                            </li>
+                            <li>
+                                <label for="mtgm-Robots">Robots:</label>
+                                <select name="mtgm-Robots" id="mtgmRobots">
+                                    <option value="noindex, nofollow">noindex, nofollow</option>
+                                    <option value="index, follow">index, follow</option>
+                                </select>
+                            </li>
+                            <li>
+                                <label for="mtgm-Referrer">Referrer:</label>
+                                <select name="mtgm-Referrer" id="mtgmReferrer">
+                                    <option value="none">none</option>
+                                    <option value="none-when-downgrade">none-when-downgrade</option>
+                                    <option value="origin">origin</option>
+                                    <option value="origin-when-crossorigin">origin-when-crossorigin</option>
+                                    <option value="unsafe-url">unsafe-url</option>
+                                </select>
+                            </li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="mt-subtitle">Open Graph Etiketleri</h4>
+                        <ul class="mtg-open-graph mtg-element">
+                            <li>
+                                <label for="mtgog-Title">og:title</label>
+                                <input id="mtgogTitle" type="text" name="mtgog-Title" placeholder="Başlık">
+                            </li>
+                            <li>
+                                <label for="mtgog-Description">og:description</label>
+                                <input id="mtgogDesc" type="text" name="mtgog-Description" placeholder="Açıklama">
+                            </li>
+                            <li>
+                                <label for="mtgog-URL">og:url</label>
+                                <input id="mtgogUrl" type="text" name="mtgog-URL" placeholder="URL">
+                            </li>
+                            <li>
+                                <label for="mtgog-Img">og:img</label>
+                                <input id="mtgogImg" type="text" name="mtgog-Img" placeholder="Resim URL'si">
+                            </li>
+                            <li>
+                                <label for="mtgog-ImgAlt">og:img:alt</label>
+                                <input id="mtgogImgAlt" type="text" name="mtgog-ImgAlt" placeholder="Resim Açıklaması">
+                            </li>
+                            <li>
+                                <label for="mtgog-Type">og:type</label>
+                                <select name="mtgog-Type" id="mtgogType">
+                                    <option value="website">website</option>
+                                    <option value="article">article</option>
+                                    <option value="book">book</option>
+                                    <option value="profile">profile</option>
+                                    <option value="audio">audio</option>
+                                    <option value="video">video</option>
+                                </select>
+                            </li>
+                            <li>
+                                <label for="mtgog-Locale">og:locale</label>
+                                <select name="mtgog-Locale" id="mtgogLocale">
+                                    <option value="tr_TR">tr_TR</option>
+                                    <option value="en_US">en_US</option>
+                                </select>
+                            </li>
+                            <li>
+                                <label for="mtgog-SiteName">og:site-name</label>
+                                <input id="mtgogSiteName" type="text" name="mtgog-SiteName" placeholder="Site URL'si">
+                            </li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="mt-subtitle">Twitter/X Etiketleri</h4>
+                        <ul class="mtg-twitter-x mtg-element">
+                            <li>
+                                <label for="mtt-x-cards">twitter:card</label>
+                                <select id="mttXCard" name="mtt-x-Card">
+                                    <option value="summary_large_image">summary_large_image</option>
+                                    <option value="summary">summary</option>
+                                    <option value="app">app</option>
+                                    <option value="player">player</option>
+                                </select>
+                            </li>
+                            <li>
+                                <label for="mtt-x-Title">X title</label>
+                                <input id="mttXTitle" type="text" name="mtt-x-Title" placeholder="Başlık">
+                            </li>
+                            <li>
+                                <label for="mtt-x-Description">X description</label>
+                                <input id="mttXDesc" type="text" name="mtt-x-Description" placeholder="Açıklama">
+                            </li>
+                            <li>
+                                <label for="mtt-x-Img">X img</label>
+                                <input id="mttXImg" type="text" name="mtt-x-Img" placeholder="Resim URL'si">
+                            </li>
+                            <li>
+                                <label for="mtt-x-ImgAlt">X img alt</label>
+                                <input id="mttXImgAlt" type="text" name="mtt-x-ImgAlt" placeholder="Resim Açıklaması">
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="mt-submit">
+                        <button class="mt-submit-btn" id="mtSubmit">Meta Etiketleri Oluştur</button>
+                    </div>
+                </div>
+                <div class="mtg-info">
+                    <h3>Meta Etiketler Nelerdir?</h3>
+                </div>
             </div>
         </section>
     </main>
@@ -254,7 +379,7 @@
         </section>
     </footer>
     <script src="assets/js/script.js" as="script"></script>
-    <script src="assets/js/page.js" as="script" async defer></script>
+    <script src="assets/js/page.js" as="script"></script>
     <script src="lib/prism/prism.js" as="script"></script>
 </body>
 
