@@ -29,3 +29,6 @@ lib/
 *.log
 password.txt
 robots.txt
+
+#etc
+sitemap.xml
