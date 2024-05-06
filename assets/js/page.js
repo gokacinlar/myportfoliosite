@@ -528,7 +528,6 @@ document.addEventListener("DOMContentLoaded", () => {
             return element ? element.value : null;
         });
 
-        // fix me
         // check if input fields are empty by checking the existence of an element by using "some" method
         if ((gInputs.some(input => input === "") || ogInputs.some(input => input === "")) || xInputs.some(input => input === "")) {
             alert("Lütfen tüm alanları doldurun.");
