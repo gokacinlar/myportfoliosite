@@ -11,6 +11,7 @@ fonts/
 library/
 content/
 lib/
+fonts/
 
 #img
 *.img
