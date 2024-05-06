@@ -1,3 +1,7 @@
+if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+    console.log("Karanlık mod tercihi algılandı, karanlık moda geçildi.")
+}
+
 document.addEventListener("DOMContentLoaded", function () {
     const coll = document.getElementsByClassName("collapsible");
 
@@ -15,6 +19,26 @@ document.addEventListener("DOMContentLoaded", function () {
                 content.style.maxHeight = content.scrollHeight + "px";
             }
         });
+    }
+
+    window.onscroll = () => {
+        pBarFunc();
+    };
+
+    const pBarFunc = () => {
+        let winScroll = window.scrollY || document.documentElement.scrollTop;
+        let height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        let scrolled = (winScroll / height) * 100;
+        document.getElementById("myBar").style.width = `${scrolled}%`;
+    }
+
+    const menuIcon = document.getElementById("menu-icon");
+    const navRight = document.getElementById("nav-right");
+
+    menuIcon.addEventListener("click", toggleNav);
+
+    function toggleNav() {
+        navRight.classList.toggle("show");
     }
 });
 
@@ -55,32 +79,6 @@ function updateIndicators(index) {
 
 showSlide(slideIndex);
 
-// nav dropdown
-
-const menuIcon = document.getElementById("menu-icon");
-const navRight = document.getElementById("nav-right");
-
-menuIcon.addEventListener("click", toggleNav);
-
-function toggleNav() {
-    navRight.classList.toggle("show");
-}
-
-// progress bar
-
-window.onscroll = function () {
-    pBarFunc();
-};
-
-function pBarFunc() {
-    var winScroll = window.scrollY || document.documentElement.scrollTop;
-    var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-    var scrolled = (winScroll / height) * 100;
-    document.getElementById("myBar").style.width = scrolled + "%";
-}
-
-// header dropdown
-
 function dropDownFunction() {
     document.getElementById("dropdown").classList.toggle("show");
     var icon = document.querySelector('.header-dropdown .bi');
@@ -99,8 +97,6 @@ window.onclick = function (e) {
         }
     }
 }
-
-// scroll to top button
 
 let mybutton = document.getElementById("scrollTopBtn");
 
