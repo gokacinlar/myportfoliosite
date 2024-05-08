@@ -2,15 +2,6 @@
 <html lang="tr">
 
 <head>
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-5G6Z79KR5H"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
-
-        gtag('config', 'G-5G6Z79KR5H');
-    </script>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -46,6 +37,15 @@
     <link rel="stylesheet" type="text/css" href="assets/css/index.css" as="style">
     <title>Derviş Öksüzoğlu</title>
 </head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-5G6Z79KR5H"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-5G6Z79KR5H');
+</script>
 
 <body>
     <header>
@@ -69,7 +69,6 @@
             <div class="dropdown-content" id="dropdown">
                 <ul class="header-right-navigation">
                     <li><a class="active" href="index.html"><i class="bi bi-house-door"></i>
-
                             Anasayfa</a></li>
                     <li><a href="blog.html"><i class="bi bi-journals"></i>
                             Blog</a></li>
@@ -83,21 +82,50 @@
     </header>
     <main>
         <section class="main-container">
-            <img class="main-background-image" src="assets/img/main/main-image.webp" alt="Main Background Image">
+            <picture class="responsive-img">
+                <source srcset="assets/img/main/res/main-image-small.webp" media="(max-width: 300px)">
+                <source srcset="assets/img/main/res/main-image-medium.webp" media="(max-width: 768px)">
+                <img class="main-background-image" src="assets/img/main/main-image.webp" alt="Main Background Image">
+            </picture>
             <section class="main-child">
-                <img src="assets/img/main/myself.webp" alt="Derviş Öksüzoğlu">
+                <picture class="responsive-img">
+                    <source srcset="assets/img/main/res/myself-small.webp" media="(max-width: 300px)">
+                    <source srcset="assets/img/main/res/myself-medium.webp" media="(max-width: 768px)">
+                    <img src="assets/img/main/myself.webp" alt="Derviş Öksüzoğlu">
+                </picture>
                 <h1 class="mc-main-title">Derviş Öksüzoğlu</h1>
                 <h2 class="mc-sub-title">İngilizce Öğretmeni & Front-end Web Geliştiricisi</h2>
                 <a href="https://www.dervisoksuzoglu.net/about.html">Hakkımda</a>
             </section>
         </section>
         <section class="posts">
-            <div class="posts-top">
+            <div class="posts-top global-separators-w-topic">
                 <hr>
                 <h2>En son yayınlanan makaleler</h2>
                 <hr>
             </div>
             <section class="posts-bottom">
+                <article class="posts-content">
+                    <a class="posts-content-image-link"
+                        href="content/Teknoloji/2024/05/linux-hakkinda-II-linux-kullanmak-icin-teknik-sebeplerin-degerlendirilmesi-02.html">
+                        <img class="lazyload" data-src="assets/img/content/2024/05/01/img/01.webp"
+                            alt="Linux Hakkında I: Linux’u Kullanmak İçin “Etik” Gerekçelerin Değerlendirilmesi"
+                            title="Linux Hakkında I: Linux’u Kullanmak İçin “Etik” Gerekçelerin Değerlendirilmesi"
+                            loading="lazy" decoding="async">
+                    </a>
+                    <h3>Linux Hakkında II: Linux’u Kullanmak İçin “Teknik” Gerekçelerin Değerlendirilmesi</h3>
+                    <hr>
+                    <p class="posts-info">
+                        Linux son kullanıcı açısından donanım & yazılım arasındaki optimizasyon
+                        için ne vaat ediyor? Neyi
+                        Windows'tan veya MacOS'ten doğru yapıyor?
+                    </p>
+                    <div class="posts-redirect">
+                        <a
+                            href=content/Teknoloji/2024/05/linux-hakkinda-II-linux-kullanmak-icin-teknik-sebeplerin-degerlendirilmesi-02.html>Oku<i
+                                class="bi bi-arrow-right"></i></a>
+                    </div>
+                </article>
                 <article class="posts-content">
                     <a class="posts-content-image-link"
                         href="content/Teknoloji/2023/11/linux-hakkinda-I-linux-kullanmak-icin-etik-sebeplerin-degerlendirilmesi-01.html">
@@ -123,17 +151,13 @@
             </section>
         </section>
         <section class="qualifications">
-            <div class="qualifications-top">
+            <div class="qualifications-top global-separators-w-topic">
                 <hr>
                 <h2>Çalışma Alanlarım</h2>
                 <hr>
             </div>
             <section class="qualifications-main">
-                <article class="qm-child">
-                    <a rel="noopener" href="https://www.freepik.com/" target="_blank"><img
-                            class="qm-child-img-first lazyload"
-                            data-src="assets/img/main/qualifications-main-english.webp" alt="Freepik English"
-                            title="Designed by Freepik" loading="lazy"></a>
+                <article class="qm-child qmfirst">
                     <h4>
                         Sürekli öğrenmenin, özgün işler çıkarabilmek ve literatür
                         oluşturabilmek için şart koştuğu dünya çapında bir ortak iletişim
@@ -141,6 +165,17 @@
                         <span class="qmfirst-indicator">lingua franca</span> olan
                         İngilizce'yi öğretmek benim ana mesleğimdir.
                     </h4>
+                    <a rel="noopener" href="https://www.freepik.com/" target="_blank">
+                        <picture class="responsive-img">
+                            <source srcset="assets/img/main/res/qualifications-main-english-small.webp"
+                                media="(max-width: 300px)">
+                            <source srcset="assets/img/main/res/qualifications-main-english-medium.webp"
+                                media="(max-width: 768px)">
+                            <img class="lazyload qm-child-img-first"
+                                data-src="assets/img/main/qualifications-main-english.webp" alt="Freepik English"
+                                title="Designed by Freepik" loading="lazy">
+                        </picture>
+                    </a>
                 </article>
                 <hr class="qm-between-separator">
                 <article class="qm-child qmsecond">
@@ -151,15 +186,22 @@
                         <span class="qmsecond-indicator">estetik, SEO dostu, işlevsel ve içerik öncelikli</span>
                         web siteler yaptığım Front-end Web Geliştiriciliğidir.
                     </h4>
-                    <a rel="noopener" href="https://www.freepik.com/" target="_blank"><img
-                            class="qm-child-img-second lazyload"
-                            data-src="assets/img/main/qualifications-main-webdev.webp" alt="Freepik WebDev"
-                            title="Designed by Freepik" loading="lazy"></a>
+                    <a rel="noopener" href="https://www.freepik.com/" target="_blank">
+                        <picture class="responsive-img">
+                            <source srcset="assets/img/main/res/qualifications-main-webdev-small.webp"
+                                media="(max-width: 300px)">
+                            <source srcset="assets/img/main/res/qualifications-main-webdev-medium.webp"
+                                media="(max-width: 768px)">
+                            <img class="lazyload qm-child-img-second"
+                                data-src="assets/img/main/qualifications-main-webdev.webp" alt="Freepik Web Dev"
+                                title="Designed by Freepik" loading="lazy">
+                        </picture>
+                    </a>
                 </article>
             </section>
         </section>
         <section class="projects">
-            <div class="projects-top">
+            <div class="projects-top global-separators-w-topic">
                 <hr>
                 <h2>Projeler</h2>
                 <hr>
@@ -183,36 +225,11 @@
             </article>
         </section>
     </main>
-    <footer>
-        <section class="footer-top">
-            <article class="footer-top-left">
-                <img class="lazyload" src="assets/img/main/myself.webp" alt="Derviş Öksüzoğlu">
-                <h2>Derviş Öksüzoğlu</h2>
-            </article>
-            <hr>
-            <article class="footer-top-right">
-                <section class="ftr-links">
-                    <a rel="noopener" href="https://www.linkedin.com/in/dervisoksuzoglu/" target="_blank"><i
-                            class="bi bi-linkedin" title="LinkedIn"></i></a>
-                    <a rel="noopener" href="https://www.github.com/gokacinlar/" target="_blank" title="GitHub"><i
-                            class="bi bi-github"></i></a>
-                </section>
-                <img class="lazyload" src="assets/img/main/notbyai/Produced-By-Human-Not-By-AI-Badge-white.png"
-                    alt="İnsan Üretimi, YZ değil.">
-            </article>
-        </section>
-        <section class="footer-bottom">
-            <p>Bu sitedeki tüm materyaller ve kaynaklar, <span class="footer-link-bottom">CC0 1.0 Evrensel
-                    Lisansı</span> kapsamında lisanslanmıştır;
-                tekrardan dağıtılabilir, değiştirilebilir ve hatta para ile satılabilir. Detaylı bilgi için
-                <span class="footer-link-bottom"><a rel="noopener"
-                        href="https://creativecommons.org/publicdomain/zero/1.0/deed.tr"
-                        target="_blank">tıklayın</a></span>.
-            </p>
-        </section>
-    </footer>
+    <do-footer>
+    </do-footer>
+    <script src="assets/js/main.js" as="script"></script>
     <script src="assets/js/script.js" as="script"></script>
-    <script src="assets/js/lazysizes.min.js" as="script"></script>
+    <script src="assets/lib/js/lazysizes.min.js" as="script"></script>
 </body>
 
 </html>
