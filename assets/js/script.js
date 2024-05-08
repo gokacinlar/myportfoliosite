@@ -3,6 +3,15 @@ if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').match
 }
 
 document.addEventListener("DOMContentLoaded", function () {
+    const menuIcon = document.getElementById("menu-icon");
+    const navRight = document.getElementById("nav-right");
+
+    menuIcon.addEventListener("click", toggleNav);
+
+    function toggleNav() {
+        navRight.classList.toggle("show");
+    }
+
     const coll = document.getElementsByClassName("collapsible");
 
     for (let i = 0; i < coll.length; i++) {
@@ -21,25 +30,44 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
+    /**
+     * Progress Bar Indicator
+     */
+
     window.onscroll = () => {
         pBarFunc();
+        scrollFunction();
     };
 
     const pBarFunc = () => {
+        let progressBar = document.getElementById("myBar");
         let winScroll = window.scrollY || document.documentElement.scrollTop;
         let height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
         let scrolled = (winScroll / height) * 100;
-        document.getElementById("myBar").style.width = `${scrolled}%`;
+        progressBar.style.width = `${scrolled}%`;
     }
 
-    const menuIcon = document.getElementById("menu-icon");
-    const navRight = document.getElementById("nav-right");
+    /**
+     * Scroll to Top Button
+     */
 
-    menuIcon.addEventListener("click", toggleNav);
+    const scrollToTopBtn = document.getElementById("scrollTopBtn");
 
-    function toggleNav() {
-        navRight.classList.toggle("show");
+    const scrollFunction = () => {
+        // check if scroll position is bigger than viewport's initial height
+        if (window.pageYOffset > window.innerHeight) {
+            scrollToTopBtn.style.display = "block";
+        } else {
+            scrollToTopBtn.style.display = "none";
+        }
     }
+
+    const topFunction = () => {
+        document.body.scrollTop = 0; // scroll function for Safari
+        document.documentElement.scrollTop = 0; // scroll function for Chromium-based browsers & Firefox
+    }
+
+    scrollToTopBtn.addEventListener("click", topFunction);
 });
 
 // slide carousel
