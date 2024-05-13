@@ -2,7 +2,33 @@ if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').match
     console.log("Karanlık mod tercihi algılandı, karanlık moda geçildi.")
 }
 
+/**
+ * Collapsible Content
+ */
+
+const coll = document.getElementsByClassName("collapsible");
+
+for (let i = 0; i < coll.length; i++) {
+    coll[i].addEventListener("click", function () {
+        this.classList.toggle("active");
+
+        const content = this.nextElementSibling;
+        const icon = this.querySelector(".bi-chevron-down");
+        icon.classList.toggle("rotate");
+
+        if (content.style.maxHeight) {
+            content.style.maxHeight = null;
+        } else {
+            content.style.maxHeight = content.scrollHeight + "px";
+        }
+    });
+}
+
 document.addEventListener("DOMContentLoaded", function () {
+    /**
+     * Topics Dropdown
+     */
+
     const menuIcon = document.getElementById("menu-icon");
     const navRight = document.getElementById("nav-right");
 
@@ -12,23 +38,6 @@ document.addEventListener("DOMContentLoaded", function () {
         navRight.classList.toggle("show");
     }
 
-    const coll = document.getElementsByClassName("collapsible");
-
-    for (let i = 0; i < coll.length; i++) {
-        coll[i].addEventListener("click", function () {
-            this.classList.toggle("active");
-
-            const content = this.nextElementSibling;
-            const icon = this.querySelector(".bi-chevron-down");
-            icon.classList.toggle("rotate");
-
-            if (content.style.maxHeight) {
-                content.style.maxHeight = null;
-            } else {
-                content.style.maxHeight = content.scrollHeight + "px";
-            }
-        });
-    }
 
     /**
      * Progress Bar Indicator
@@ -106,39 +115,3 @@ function updateIndicators(index) {
 }
 
 showSlide(slideIndex);
-
-function dropDownFunction() {
-    document.getElementById("dropdown").classList.toggle("show");
-    var icon = document.querySelector('.header-dropdown .bi');
-    if (icon.classList.contains('bi-list')) {
-        icon.classList.replace('bi-list', 'bi-x');
-    } else {
-        icon.classList.replace('bi-x', 'bi-list');
-    }
-}
-
-window.onclick = function (e) {
-    if (!e.target.matches('.dropbtn')) {
-        var myDropdown = document.getElementById("myDropdown");
-        if (myDropdown.classList.contains('show')) {
-            myDropdown.classList.remove('show');
-        }
-    }
-}
-
-let mybutton = document.getElementById("scrollTopBtn");
-
-window.onscroll = function () { scrollFunction() };
-
-function scrollFunction() {
-    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-        mybutton.style.display = "block";
-    } else {
-        mybutton.style.display = "none";
-    }
-}
-
-function topFunction() {
-    document.body.scrollTop = 0;
-    document.documentElement.scrollTop = 0;
-}

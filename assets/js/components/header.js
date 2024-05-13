@@ -21,10 +21,10 @@ class DoHeader extends HTMLElement {
             </ul>
         </section>
         <section class="header-dropdown">
-            <button class="dropbtn" onclick="dropDownFunction()" title="Menü">
+            <button class="dropbtn" title="Menü" id="dropDownButton">
                 <i class="bi bi-list"></i>
             </button>
-            <div class="dropdown-content" id="dropdown">
+            <div class="dropdown-content" id="dropDownContent">
                 <ul class="header-right-navigation">
                     <li><a href="index.html"><i class="bi bi-house-door"></i>
                             Anasayfa</a></li>
@@ -37,7 +37,6 @@ class DoHeader extends HTMLElement {
                 </ul>
             </div>
         </section>
-        <script src="assets/js/script.js"></script>
     </header>
 	`;
         this.attachShadow({ mode: "open" });
@@ -65,6 +64,19 @@ class DoHeader extends HTMLElement {
 
             if (linkPathname === windowPathname) {
                 link.classList.add('active');
+            }
+        });
+
+        // Dropdown functionality
+        const dropdownButton = this.shadowRoot.getElementById("dropDownButton");
+        dropdownButton.addEventListener("click", () => {
+            const dropDownContent = this.shadowRoot.getElementById("dropDownContent");
+            dropDownContent.classList.toggle("show");
+            const icon = this.shadowRoot.querySelector('.header-dropdown .bi');
+            if (icon.classList.contains('bi-list')) {
+                icon.classList.replace('bi-list', 'bi-x');
+            } else {
+                icon.classList.replace('bi-x', 'bi-list');
             }
         });
     }
