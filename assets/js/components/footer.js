@@ -1,10 +1,9 @@
-// My Porftolio Site's footer web component
-
 class DoFooter extends HTMLElement {
 	constructor() {
 		super();
-		const template = document.createElement("template");
-		template.innerHTML = `
+
+		const documentTemplate = document.createElement("template");
+		documentTemplate.innerHTML = `
 		<style>
 		@import url(assets/css/index.css);
 		</style>
@@ -41,9 +40,8 @@ class DoFooter extends HTMLElement {
 			</section>
 		</footer>
 		`;
-
 		this.attachShadow({ mode: "open" });
-		this.shadowRoot.appendChild(template.content.cloneNode(true));
+		this.shadowRoot.appendChild(documentTemplate.content.cloneNode(true));
 	}
 }
 
