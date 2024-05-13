@@ -37,6 +37,7 @@ class DoHeader extends HTMLElement {
                 </ul>
             </div>
         </section>
+        <script src="assets/js/script.js"></script>
     </header>
 	`;
         this.attachShadow({ mode: "open" });
@@ -53,16 +54,20 @@ class DoHeader extends HTMLElement {
             // URL fragment with query parameters
             const windowUrl = new URL(window.location.href);
             // compare the pathname of link URL and windows URL
+
             /**
              * The pathname is the path section of the URL
              */
-            if (linkUrl.pathname === windowUrl.pathname) {
-                // if the pathnames are the same add the active class
+
+            // Remove the .html extension from the pathname since .htacces removes the .html file extension from URLs
+            const linkPathname = linkUrl.pathname.replace('.html', '');
+            const windowPathname = windowUrl.pathname.replace('.html', '');
+
+            if (linkPathname === windowPathname) {
                 link.classList.add('active');
             }
         });
     }
-
 }
 
 customElements.define("do-header", DoHeader);
