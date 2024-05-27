@@ -4,6 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Content-Security-Policy"
+        content="script-src 'self' 'unsafe-eval' https://www.googletagmanager.com/gtag/js?id=G-5G6Z79KR5H 'unsafe-inline'; object-src 'self'">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="owner" content="Derviş Öksüzoğlu">
     <meta name="keywords" content="derviş, öksüzoğlu, derviş öksüzoğlu, blog, portfolyo, anasayfa">
@@ -65,7 +67,7 @@
                 </picture>
                 <h1 class="mc-main-title">Derviş Öksüzoğlu</h1>
                 <h2 class="mc-sub-title">İngilizce Öğretmeni & Front-end Web Geliştiricisi</h2>
-                <a href="https://www.dervisoksuzoglu.net/about.html">Hakkımda</a>
+                <a class="mc-redirect" href="https://www.dervisoksuzoglu.net/about.html">Hakkımda</a>
             </section>
         </section>
         <section class="posts">
@@ -170,37 +172,13 @@
                 </article>
             </section>
         </section>
-        <section class="projects">
-            <div class="projects-top global-separators-w-topic">
-                <hr>
-                <h2>Projeler</h2>
-                <hr>
-            </div>
-            <article class="carousel">
-                <div class="slides">
-                    <img class="lazyload" data-src="assets/img/main/carousel-loading.gif" alt="Loading Gif"
-                        loading="lazy">
-                    <img class="lazyload" data-src="assets/img/main/carousel-loading.gif" alt="Loading Gif"
-                        loading="lazy">
-                    <img class="lazyload" data-src="assets/img/main/carousel-loading.gif" alt="Loading Gif"
-                        loading="lazy">
-                </div>
-                <button class="prev" onclick="prevSlide()">&#10094;</button>
-                <button class="next" onclick="nextSlide()">&#10095;</button>
-                <div class="indicators">
-                    <span class="indicator" onclick="goToSlide(0)"></span>
-                    <span class="indicator" onclick="goToSlide(1)"></span>
-                    <span class="indicator" onclick="goToSlide(2)"></span>
-                </div>
-            </article>
-        </section>
+        <do-carousel>
+        </do-carousel>
     </main>
     <do-footer>
     </do-footer>
     <script src="assets/js/script.js" as="script"></script>
-    <!--components-->
-    <script src="assets/js/components/header.js" as="script"></script>
-    <script src="assets/js/components/footer.js" as="script"></script>
+    <script src="assets/js/modules.js" type="module" as="script"></script>
     <!--library js-->
     <script src="assets/lib/js/lazysizes.min.js" as="script"></script>
 </body>

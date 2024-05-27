@@ -20,8 +20,6 @@ class DoFooter extends HTMLElement {
 				<hr>
 				<article class="footer-top-right">
 					<section class="ftr-links">
-						<a rel="noopener" href="https://www.linkedin.com/in/dervisoksuzoglu/" target="_blank"><i
-								class="bi bi-linkedin" title="LinkedIn"></i></a>
 						<a rel="noopener" href="https://www.github.com/gokacinlar/" target="_blank" title="GitHub"><i
 								class="bi bi-github"></i></a>
 					</section>

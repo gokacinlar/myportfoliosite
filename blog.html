@@ -4,13 +4,15 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Content-Security-Policy"
+        content="script-src 'self' 'unsafe-eval' https://www.googletagmanager.com/gtag/js?id=G-5G6Z79KR5H 'unsafe-inline'; object-src 'self'">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="owner" content="Derviş Öksüzoğlu">
     <meta name="keywords"
         content="derviş, öksüzoğlu, blog, portfolyo, blog, pedagoji, felsefe, web geliştirme, psikoloji">
     <meta name="description"
         content="Derviş Öksüzoğlu | Blog: İngilizce Öğretmeni & Front-end Web Geliştiricisi; Pedagoji, Web Geliştirme, Felsefe ve Dahası">
-    <meta name="referrer" content="none-when-downgrade">
+    <meta name="referrer" content="no-referrer-when-downgrade">
     <link rel="canonical" href="https://www.dervisoksuzoglu.net">
     <!--base url-->
     <base href="https://www.dervisoksuzoglu.net">
@@ -159,9 +161,7 @@
     <do-footer>
     </do-footer>
     <script src="assets/js/script.js" as="script"></script>
-    <!--components-->
-    <script src="assets/js/components/header.js" as="script"></script>
-    <script src="assets/js/components/footer.js" as="script"></script>
+    <script src="assets/js/modules.js" type="module" as="script"></script>
     <!--library js-->
     <script src="assets/lib/js/lazysizes.min.js" as="script"></script>
 </body>
