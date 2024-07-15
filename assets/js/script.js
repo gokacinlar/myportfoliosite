@@ -32,12 +32,9 @@ document.addEventListener("DOMContentLoaded", function () {
     const menuIcon = document.getElementById("menu-icon");
     const navRight = document.getElementById("nav-right");
 
-    menuIcon.addEventListener("click", toggleNav);
-
-    function toggleNav() {
+    menuIcon.addEventListener("click", () => {
         navRight.classList.toggle("show");
-    }
-
+    });
 
     /**
      * Progress Bar Indicator
@@ -77,4 +74,29 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     scrollToTopBtn.addEventListener("click", topFunction);
+});
+
+/**
+ * PROJECTS PAGE INITIAL MESSAGE
+ */
+
+const $projectsContent = $("#projectsContent");
+const projectsContentMessage = "Burada yaptığım projeler listelenmektedir. GitHub üzerinden veya bana e-posta yoluyla bu projeler hakkında geri dönüş yapabilirsiniz.";
+const $h1Element = $("<h1>").text(projectsContentMessage);
+
+$(document).ready(function () {
+    if ($projectsContent.children().length = 0) {
+        $projectsContent.append($h1Element);
+        $h1Element.css({
+            "font-size": "1.25rem",
+            "font-weight": "500",
+            "display": "inline-flex",
+            "justify-content": "center",
+            "align-items": "center",
+            "text-align": "center",
+            "padding": "1rem"
+        });
+    } else {
+        $h1Element.remove();
+    }
 });
