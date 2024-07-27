@@ -8,6 +8,7 @@
 
 :root,
 :host {
+    /*Color Variables*/
     --clr-white: #ffffff;
     --clr-black: #000000;
     --clr-open-yellow: #fff85d;
@@ -26,6 +27,12 @@
     --hvr-color: #FF7355;
     --btn-hvr-color: #53586b;
     --active-color: #cc5c43;
+
+    /* Border Radius Variables */
+    --border-rds-44: 44px;
+    --border-rds-36: 36px;
+    --border-rds-18: 18px;
+    --border-rds-12: 12px;
 }
 
 * {
@@ -75,7 +82,7 @@ header {
 
 header a {
     padding: 12px;
-    border-radius: 44px;
+    border-radius: var(--border-rds-44);
     color: var(--clr-white);
     text-align: center;
     text-decoration: none;
@@ -122,7 +129,7 @@ header a:hover {
 header a.active {
     background-color: var(--btn-hvr-color);
     color: var(--clr-white);
-    border-radius: 44px;
+    border-radius: var(--border-rds-44);
 }
 
 .header-right a {
@@ -286,7 +293,7 @@ header a.active {
     background: linear-gradient(to left, var(--main-color) 0%, var(--main-color) 50%, var(--txt-color) 50%, var(--txt-color) 100%);
     background-size: 200% 100%;
     background-position: 100% 0%;
-    border-radius: 44px;
+    border-radius: var(--border-rds-44);
     -webkit-box-shadow: 0px 0px 47px 4px #ECE5E0;
     -moz-box-shadow: 0px 0px 47px 4px #ECE5E0;
     box-shadow: 0px 0px 47px 4px #ECE5E0;
@@ -361,7 +368,7 @@ header a.active {
     color: var(--clr-black);
     background-color: var(--main-color);
     padding: .75em;
-    border-radius: 44px;
+    border-radius: var(--border-rds-44);
 }
 
 /* main child a */
@@ -515,6 +522,7 @@ header a.active {
     margin-top: .25rem;
     margin-bottom: .50rem;
     display: -webkit-box;
+    line-clamp: 2;
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
     overflow: hidden;
@@ -523,6 +531,7 @@ header a.active {
 .posts-content>.posts-info {
     margin-top: .50rem;
     display: -webkit-box;
+    line-clamp: 4;
     -webkit-line-clamp: 4;
     -webkit-box-orient: vertical;
     overflow: hidden;
@@ -570,7 +579,7 @@ header a.active {
     background-color: var(--hvr-color);
     text-decoration: none;
     color: var(--txt-color);
-    border-radius: 44px;
+    border-radius: var(--border-rds-44);
     transition: all 0.25s ease-in-out;
 }
 
@@ -659,7 +668,7 @@ header a.active {
 /* global separators */
 
 .global-separators-w-topic {
-    padding: 1.2rem;
+    padding: 1.25rem;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -668,16 +677,45 @@ header a.active {
 
 .global-separators-w-topic>h2 {
     font-size: 1.5rem;
-    padding: 0.50rem;
-    border: 2px ridge var(--txt-color);
-    border-radius: 12px;
+    padding: .50rem;
+    border: 2px solid var(--clr-black);
+    border-radius: var(--border-rds-36);
+    -webkit-border-radius: var(--border-rds-36);
+    -moz-border-radius: var(--border-rds-36);
+    -ms-border-radius: var(--border-rds-36);
+    -o-border-radius: var(--border-rds-36);
     pointer-events: none;
     text-align: center;
+    display: inline;
+    position: relative;
 }
 
-.global-separators-w-topic>hr {
-    border: 1px solid var(--txt-color);
-    width: 50vw;
+.global-separators-w-topic>h2::before {
+    content: "";
+    display: inline-flex;
+    flex: 1 1 0;
+    justify-content: center;
+    align-content: center;
+    margin: auto;
+    position: absolute;
+    inset: 0 100% 0 auto;
+    width: 100%;
+    height: 0%;
+    border: 1px solid var(--clr-black);
+}
+
+.global-separators-w-topic>h2::after {
+    content: "";
+    display: inline-flex;
+    flex: 1 1 0;
+    justify-content: center;
+    align-content: center;
+    margin: auto;
+    position: absolute;
+    inset: 0 auto 0 100%;
+    width: 100%;
+    height: 0%;
+    border: 1px solid var(--clr-black);
 }
 
 /* qualifications main */
@@ -1285,7 +1323,7 @@ aside {
     font-weight: 500;
     margin-top: 1rem;
     margin-bottom: .50rem;
-    border-radius: 44px;
+    border-radius: var(--border-rds-44);
     cursor: pointer;
     transition: all .25s cubic-bezier(0.86, 0, 0.07, 1);
 }
@@ -1366,7 +1404,7 @@ nav {
     color: var(--main-color);
     font-size: 1.50rem;
     padding: .50em;
-    border-radius: 44px;
+    border-radius: var(--border-rds-44);
     transition: all 0.25s ease-in-out;
 }
 
@@ -1477,6 +1515,7 @@ nav {
 .ccl-bottom p {
     font-size: 1.2rem;
     display: -webkit-box;
+    line-clamp: 4;
     -webkit-line-clamp: 4;
     -webkit-box-orient: vertical;
     overflow: hidden;
@@ -1499,7 +1538,7 @@ nav {
     background: linear-gradient(to left, #363945 0%, #363945 50%, #ece5e0 50%, #ece5e0 100%);
     background-size: 200% 100%;
     background-position: 100% 0%;
-    border-radius: 44px;
+    border-radius: var(--border-rds-44);
     transition: all 0.25s ease-in-out;
     -webkit-box-shadow: 0px 0px 8px 0px rgba(74, 74, 74, 0.5);
     -moz-box-shadow: 0px 0px 8px 0px rgba(74, 74, 74, 0.5);
@@ -1697,7 +1736,7 @@ nav {
     text-align: center;
     color: var(--txt-color);
     background-color: var(--main-color);
-    border-radius: 44px;
+    border-radius: var(--border-rds-44);
     overflow: hidden;
     transition: all .25s ease-out;
 }
@@ -2013,7 +2052,7 @@ nav {
     font-size: 1.25rem;
     cursor: pointer;
     transition: all .25s ease-in-out;
-    border-radius: 44px;
+    border-radius: var(--border-rds-44);
     color: var(--main-color);
     border: 2px solid var(--main-color);
 }
@@ -2155,7 +2194,7 @@ nav {
     font-size: 2rem;
     color: var(--main-color);
     background-color: var(--alt-color);
-    border-radius: 44px;
+    border-radius: var(--border-rds-44);
     transition: all .25s ease-in-out;
 }
 
@@ -2204,7 +2243,7 @@ nav {
     font-size: 1.25rem;
     color: var(--main-color);
     background-color: var(--alt-color);
-    border-radius: 44px;
+    border-radius: var(--border-rds-44);
     cursor: pointer;
     transition: all .25s ease-in-out;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
@@ -2221,7 +2260,7 @@ nav {
     font-size: 1.25rem;
     color: var(--main-color);
     background-color: var(--alt-color);
-    border-radius: 44px;
+    border-radius: var(--border-rds-44);
     cursor: pointer;
     transition: all .25s ease-in-out;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
@@ -2244,7 +2283,7 @@ nav {
     font-size: 1.25rem;
     color: var(--main-color);
     background-color: var(--alt-color);
-    border-radius: 44px;
+    border-radius: var(--border-rds-44);
     gap: .25rem;
     display: flex;
     flex-direction: row;
@@ -2548,20 +2587,20 @@ nav {
     opacity: 0;
     position: absolute;
     inset: -5px;
-    border-radius: 44px;
+    border-radius: var(--border-rds-44);
     transition: opacity .15s ease-in-out;
 }
 
 .we-editor-sub-list-body-parts {
     background-color: var(--alt-color);
     padding: .55em !important;
-    border-radius: 44px;
+    border-radius: var(--border-rds-44);
 }
 
 .we-editor-sub-list-text-formatting {
     background-color: var(--alt-nav-bg-color);
     padding: .55em;
-    border-radius: 44px;
+    border-radius: var(--border-rds-44);
 }
 
 .we-info {
@@ -2578,7 +2617,7 @@ nav {
     color: var(--main-color);
     background-color: var(--txt-color);
     cursor: pointer;
-    border-radius: 44px;
+    border-radius: var(--border-rds-44);
     font-weight: bold;
 }
 
@@ -2804,7 +2843,7 @@ select {
     outline: 0;
     border: 0;
     padding: 1rem;
-    border-radius: 44px;
+    border-radius: var(--border-rds-44);
     min-width: 100%;
     cursor: pointer;
 }
@@ -3470,7 +3509,7 @@ select {
 
     .pn-ul-link {
         padding: 1rem;
-        border-radius: 44px;
+        border-radius: var(--border-rds-44);
     }
 
     .notFound-actions {
@@ -3929,7 +3968,7 @@ select {
 
     .pn-ul-link {
         padding: 1rem;
-        border-radius: 44px;
+        border-radius: var(--border-rds-44);
     }
 
     .notFound-actions {
