@@ -80,13 +80,13 @@ document.addEventListener("DOMContentLoaded", function () {
  * PROJECTS PAGE INITIAL MESSAGE
  */
 
-const $projectsContent = $("#projectsContent");
+const projectsContent = $("#projectsContent");
 const projectsContentMessage = "Burada yaptığım projeler listelenmektedir. GitHub üzerinden veya bana e-posta yoluyla bu projeler hakkında geri dönüş yapabilirsiniz.";
-const $h1Element = $("<h1>").text(projectsContentMessage);
+const h1Element = $("<h1>").text(projectsContentMessage);
 
 $(document).ready(function () {
-    if ($projectsContent.children().length = 0) {
-        $projectsContent.append($h1Element);
+    if (projectsContent.children().length = 0) {
+        projectsContent.append($h1Element);
         $h1Element.css({
             "font-size": "1.25rem",
             "font-weight": "500",
@@ -97,6 +97,6 @@ $(document).ready(function () {
             "padding": "1rem"
         });
     } else {
-        $h1Element.remove();
+        h1Element.remove();
     }
 });
