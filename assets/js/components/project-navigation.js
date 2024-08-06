@@ -44,16 +44,28 @@ class DoNavigationProjects extends HTMLElement {
                 throw new Error(`HTTP error! Status: ${response.status}`);
             }
             jsonData = await response.json();
-            console.log(jsonData);
         } catch (err) {
-            console.error(`Error retrieving JSON data:`, err);
+            console.error("Error retrieving JSON data:", err);
             return;
         }
 
         // Function to create and append project items to the website with animation
         // with used fetch api & JSON
-        const appendProjects = (projects, type) => {
+        const appendExtensionProjects = (projects) => {
             projects.forEach(project => {
+                const loader = $("<div>").prop({ className: "loader" });
+
+                const imageWrapper = $("<div>", { class: "image-wrapper" })
+                    .append(loader) // Append the loader
+                    .append(
+                        $("<img>", {
+                            src: project.image,
+                            alt: `${project.name} Image`
+                        }).on("load", function () {
+                            loader.remove(); // Remove the loader when the image has loaded
+                        })
+                    );
+
                 $("<div>", { class: "info-div" })
                     .append(
                         $("<div>", { class: "text-wrapper" })
@@ -61,12 +73,10 @@ class DoNavigationProjects extends HTMLElement {
                                 $("<h1>").text(project.name),
                                 $("<p>").text(project.description),
                                 $("<p>").text(`Kullanılan Dil(ler): ${project.type}`),
-                                $("<a>", { href: project.link, text: "Proje Bağlantısı", target: "_blank" }).attr("class", "project-link")
+                                $("<a>", { href: project.link, text: "Proje Bağlantısı", target: "_blank" })
+                                    .attr("class", "project-link")
                             ),
-                        $("<div>", { class: "image-wrapper" })
-                            .append(
-                                $("<img>", { src: project.image, alt: `${project.name} Image` })
-                            )
+                        imageWrapper // Append the image wrapper here
                     )
                     .hide() // Hide the div initially so that animation could work
                     .appendTo(projectDocumentBody)
@@ -78,10 +88,8 @@ class DoNavigationProjects extends HTMLElement {
         // Add event listeners for buttons
         buttonObj.addons.addEventListener("click", function () {
             if (!isAddonsLoaded) {
-                setTimeout(() => {
-                    appendProjects(jsonData.addons, 'addons');
-                    isAddonsLoaded = true; // Set the flag to true to prevent populating DOM again
-                });
+                appendExtensionProjects(jsonData.addons);
+                isAddonsLoaded = true; // Set the flag to true to prevent populating DOM again
             }
         });
     }
