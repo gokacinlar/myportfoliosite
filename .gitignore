@@ -12,6 +12,7 @@ library/
 content/
 lib/
 fonts/
+json/
 
 #img
 *.img
