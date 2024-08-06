@@ -12,7 +12,11 @@
     <meta name="description"
         content="Derviş Öksüzoğlu | Anasayfa: İngilizce Öğretmeni & Front-end Web Geliştiricisi; Pedagoji, Web Geliştirme, Felsefe ve Dahası">
     <meta name="referrer" content="none-when-downgrade">
+    <meta name="robots" content="index, follow, noarchive, noimageindex, max-snippet: -1, max-image-preview:standard">
+    <link rel="preconnect" href="https://www.google-analytics.com">
     <link rel="canonical" href="https://www.dervisoksuzoglu.net">
+    <link rel="preload" href="/assets/fonts/figtree.woff2" as="font" type="font/woff2" fetchpriority="high"
+        crossorigin="">
     <!--base url-->
     <base href="https://www.dervisoksuzoglu.net">
     <!--open graph-->
@@ -72,51 +76,7 @@
         </section>
         <section class="posts">
             <do-separator text="En son yayınlanan makaleler"></do-separator>
-            <section class="posts-bottom">
-                <article class="posts-content">
-                    <a class="posts-content-image-link"
-                        href="content/Teknoloji/2024/05/linux-hakkinda-II-linux-kullanmak-icin-teknik-sebeplerin-degerlendirilmesi-02.html">
-                        <img class="lazyload" data-src="assets/img/content/2024/05/01/img/01.webp"
-                            alt="Linux Hakkında I: Linux’u Kullanmak İçin “Etik” Gerekçelerin Değerlendirilmesi"
-                            title="Linux Hakkında I: Linux’u Kullanmak İçin “Etik” Gerekçelerin Değerlendirilmesi"
-                            loading="lazy" decoding="async">
-                    </a>
-                    <h3>Linux Hakkında II: Linux’u Kullanmak İçin “Teknik” Gerekçelerin Değerlendirilmesi</h3>
-                    <hr>
-                    <p class="posts-info">
-                        Linux son kullanıcı açısından donanım & yazılım arasındaki optimizasyon
-                        için ne vaat ediyor? Neyi
-                        Windows'tan veya MacOS'ten doğru yapıyor?
-                    </p>
-                    <div class="posts-redirect">
-                        <a
-                            href=content/Teknoloji/2024/05/linux-hakkinda-II-linux-kullanmak-icin-teknik-sebeplerin-degerlendirilmesi-02.html>Oku<i
-                                class="bi bi-arrow-right"></i></a>
-                    </div>
-                </article>
-                <article class="posts-content">
-                    <a class="posts-content-image-link"
-                        href="content/Teknoloji/2023/11/linux-hakkinda-I-linux-kullanmak-icin-etik-sebeplerin-degerlendirilmesi-01.html">
-                        <img class="lazyload" data-src="assets/img/content/2023/11/img/01/01.webp"
-                            alt="Linux Hakkında I: Linux’u Kullanmak İçin “Etik” Gerekçelerin Değerlendirilmesi"
-                            title="Linux Hakkında I: Linux’u Kullanmak İçin “Etik” Gerekçelerin Değerlendirilmesi"
-                            loading="lazy" decoding="async">
-                    </a>
-                    <h3>Linux Hakkında I: Linux’u Kullanmak İçin “Etik” Gerekçelerin Değerlendirilmesi</h3>
-                    <hr>
-                    <p class="posts-info">
-                        Bazı özgürlüklerinizi feda ederek kullanacağınız yaygın & kullanımı kolay bir program mı
-                        yoksa hiçbir şey feda etmeden kullanacağınız yaygın olmayan & genellikle kullanıcı tarafından
-                        yazılıma müdahale gerektiren (konfigürasyon, hataların kullanıcı tarafından çözülmesi gibi
-                        birkaç “ekstra” çabaya dayalı çalışma) bir program mı?
-                    </p>
-                    <div class="posts-redirect">
-                        <a
-                            href=content/Teknoloji/2023/11/linux-hakkinda-I-linux-kullanmak-icin-etik-sebeplerin-degerlendirilmesi-01.html>Oku<i
-                                class="bi bi-arrow-right"></i></a>
-                    </div>
-                </article>
-            </section>
+            <do-showcase-posts></do-showcase-posts>
         </section>
         <section class="qualifications">
             <do-separator text="Çalışma Alanlarım"></do-separator>
@@ -169,10 +129,10 @@
     </main>
     <do-footer>
     </do-footer>
+    <!--Scripts-->
     <script src="assets/js/script.js" as="script"></script>
     <script src="assets/js/modules.js" type="module" as="script"></script>
-    <!--library js-->
-    <script src="assets/lib/js/lazysizes.min.js" as="script"></script>
+    <!--End of Scripts-->
 </body>
 
 </html>
