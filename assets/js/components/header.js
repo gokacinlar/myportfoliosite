@@ -2,6 +2,13 @@ class DoHeader extends HTMLElement {
     constructor() {
         super();
         const documentTemplate = document.createElement("template");
+        const hrefLinks = {
+            homepage: "index.html",
+            about: "about.html",
+            tools: "araclar.html",
+            projects: "projects.html",
+            blog: "https://blog.dervisoksuzoglu.net"
+        }
         documentTemplate.innerHTML = `
 		<style>
         @import url(assets/css/index.css);
@@ -10,14 +17,13 @@ class DoHeader extends HTMLElement {
         <a href="index.html" class="header-text">Derviş Öksüzoğlu</a>
         <section class="header-right">
             <ul class="header-right-navigation">
-                <li><a href="index.html"><i class="bi bi-house-door"></i>
+                <li><a href="${hrefLinks.homepage}"><i class="bi bi-house-door"></i>
                         Anasayfa</a></li>
-                <li><a href="blog.html"><i class="bi bi-journals"></i>
+                <li><a href="${hrefLinks.blog}"><i class="bi bi-journals"></i>
                         Blog</a></li>
-                <li><a href="projects.html"><i class="bi bi-boxes"></i>Projeler</a></li>
-                <li><a href="araclar.html"><i class="bi bi-gear"></i>Araçlar</a></li>
-                <li><a href="about.html"><i class="bi bi-person"></i>
-                        Hakkımda</a></li>
+                <li><a href="${hrefLinks.projects}l"><i class="bi bi-boxes"></i>Projeler</a></li>
+                <li><a href="${hrefLinks.tools}"><i class="bi bi-gear"></i>Araçlar</a></li>
+                <li><a href="${hrefLinks.about}"><i class="bi bi-person"></i>Hakkımda</a></li>
             </ul>
         </section>
         <section class="header-dropdown">
@@ -26,14 +32,13 @@ class DoHeader extends HTMLElement {
             </button>
             <div class="dropdown-content" id="dropDownContent">
                 <ul class="header-right-navigation">
-                    <li><a href="index.html"><i class="bi bi-house-door"></i>
+                    <li><a href="${hrefLinks.homepage}"><i class="bi bi-house-door"></i>
                             Anasayfa</a></li>
-                    <li><a href="blog.html"><i class="bi bi-journals"></i>
+                    <li><a href="${hrefLinks.blog}"><i class="bi bi-journals"></i>
                             Blog</a></li>
-                    <li><a href="projects.html"><i class="bi bi-boxes"></i>Projeler</a></li>
-                    <li><a href="araclar.html"><i class="bi bi-gear"></i>Araçlar</a></li>
-                    <li><a href="about.html"><i class="bi bi-person"></i>
-                            Hakkımda</a></li>
+                    <li><a href="${hrefLinks.projects}l"><i class="bi bi-boxes"></i>Projeler</a></li>
+                    <li><a href="${hrefLinks.tools}"><i class="bi bi-gear"></i>Araçlar</a></li>
+                    <li><a href="${hrefLinks.about}"><i class="bi bi-person"></i>Hakkımda</a></li>
                 </ul>
             </div>
         </section>
@@ -46,7 +51,7 @@ class DoHeader extends HTMLElement {
     // dynamically add "active" classname to each page using connectedCallback & window method
     connectedCallback() {
         // get all the target tags in shadow root
-        const links = this.shadowRoot.querySelectorAll('.header-right-navigation a');
+        const links = this.shadowRoot.querySelectorAll(".header-right-navigation a");
         links.forEach(link => {
             // absolute URL
             const linkUrl = new URL(link.href);
@@ -59,11 +64,11 @@ class DoHeader extends HTMLElement {
              */
 
             // Remove the .html extension from the pathname since .htacces removes the .html file extension from URLs
-            const linkPathname = linkUrl.pathname.replace('.html', '');
-            const windowPathname = windowUrl.pathname.replace('.html', '');
+            const linkPathname = linkUrl.pathname.replace(".html", "");
+            const windowPathname = windowUrl.pathname.replace(".html", "");
 
             if (linkPathname === windowPathname) {
-                link.classList.add('active');
+                link.classList.add("active");
             }
         });
 
@@ -72,11 +77,11 @@ class DoHeader extends HTMLElement {
         dropdownButton.addEventListener("click", () => {
             const dropDownContent = this.shadowRoot.getElementById("dropDownContent");
             dropDownContent.classList.toggle("show");
-            const icon = this.shadowRoot.querySelector('.header-dropdown .bi');
-            if (icon.classList.contains('bi-list')) {
-                icon.classList.replace('bi-list', 'bi-x');
+            const icon = this.shadowRoot.querySelector(".header-dropdown .bi");
+            if (icon.classList.contains("bi-list")) {
+                icon.classList.replace("bi-list", "bi-x");
             } else {
-                icon.classList.replace('bi-x', 'bi-list');
+                icon.classList.replace("bi-x", "bi-list");
             }
         });
     }
