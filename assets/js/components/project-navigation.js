@@ -7,15 +7,21 @@ class DoNavigationProjects extends HTMLElement {
         @import url(assets/css/index.css);
         </style>
         <div class="pn-navigation-list">
-            <ul class="pn-ul">
-                <li>
-                    <button id="addOns" class="pn-ul-link" title="Tarayıcı Eklentileri">Tarayıcı Eklentileri</button>
-                </li>
-            </ul>
+            ${this.renderNavigationContent()}
         </div>
         `;
         this.attachShadow({ mode: "open" });
         this.shadowRoot.appendChild(documentTemplate.content.cloneNode(true));
+    }
+
+    renderNavigationContent() {
+        return `
+        <ul class="pn-ul">
+            <li>
+                <button id="addOns" class="pn-ul-link" title="Tarayıcı Eklentileri">Tarayıcı Eklentileri</button>
+            </li>
+        </ul>
+        `;
     }
 
     async connectedCallback() {
@@ -38,6 +44,7 @@ class DoNavigationProjects extends HTMLElement {
         let jsonData = null;
 
         // Use try-catch block with fetch API to get all the JSON data correctly
+        // jQuery equivalent is ajax via getJSON()
         try {
             const response = await fetch(jsonPath);
             if (!response.ok) {
