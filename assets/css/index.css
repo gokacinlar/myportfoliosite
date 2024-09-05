@@ -489,6 +489,7 @@ header a.active {
 .post-content {
     width: 25%;
     height: auto;
+    min-height: 512px;
     display: flex;
     flex: 0 1 auto;
     flex-direction: column-reverse;
@@ -517,6 +518,11 @@ header a.active {
 }
 
 .post-information {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    min-height: 236px;
     padding: .75em;
     background: var(--main-color);
     border-radius: var(--border-rds-12);
