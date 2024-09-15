@@ -2,10 +2,10 @@ class DoHeader extends HTMLElement {
     constructor() {
         super();
         this.hrefLinks = {
-            homepage: "https://dervisoksuzoglu.net",
-            about: "https://dervisoksuzoglu.net/about",
-            tools: "https://dervisoksuzoglu.net/araclar",
-            projects: "https://dervisoksuzoglu.net/projects",
+            homepage: "/index.html",
+            about: "/about.html",
+            tools: "/araclar.html",
+            projects: "/projects.html",
             blog: "https://blog.dervisoksuzoglu.net"
         };
 
@@ -14,6 +14,14 @@ class DoHeader extends HTMLElement {
             <style>
                 @import url(assets/css/index.css);
             </style>
+            ${this.renderHeader()}
+        `;
+        this.attachShadow({ mode: "open" });
+        this.shadowRoot.appendChild(documentTemplate.content.cloneNode(true));
+    }
+
+    renderHeader() {
+        return `
             <header>
                 <a href="index.html" class="header-text">Derviş Öksüzoğlu</a>
                 ${this.renderHeaderFirst()}
@@ -24,9 +32,7 @@ class DoHeader extends HTMLElement {
                     ${this.renderHeaderSecond()}
                 </section>
             </header>
-        `;
-        this.attachShadow({ mode: "open" });
-        this.shadowRoot.appendChild(documentTemplate.content.cloneNode(true));
+        `
     }
 
     renderHeaderFirst() {
